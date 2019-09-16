@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStackViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, CustomAlertViewDelegate
 {
@@ -16,6 +17,12 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
     func titleStackView(_ titleStackView: TitleStackView, longPressedTitleLabel titleLabel: UILabel) {
         
     }
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var albums: [AlbumEntity]?
+    var queryListener: ListenerRegistration!
+    var imageEntities: [ImageEntity]?
+//    var imageTasks = [String: ImageTask]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -51,28 +58,54 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
         
         self.albumNameArr.removeAll()
         
-        Database.database().reference().child("Photo").observe(.childAdded, with: {(snapshot) in
-            print(snapshot.value!)
-            print(snapshot.key)
-            
-            let albumDTO = AlbumDTO()
-            albumDTO.albumName = (snapshot.value as! [String:String])["AlbumName"]
-            
-            self.albumNameArr.append(albumDTO)
-            self.uidKey.append(snapshot.key)
-            print("albumNameArr : \(self.albumNameArr)")
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        })
+//        Database.database().reference().child("Photo").observe(.childAdded, with: {(snapshot) in
+//            print(snapshot.value!)
+//            print(snapshot.key)
+//
+//            let albumDTO = AlbumDTO()
+//            albumDTO.albumName = (snapshot.value as! [String:String])["AlbumName"]
+//
+//            self.albumNameArr.append(albumDTO)
+//            self.uidKey.append(snapshot.key)
+//            print("albumNameArr : \(self.albumNameArr)")
+//            DispatchQueue.main.async {
+//                self.collectionView.reloadData()
+//            }
+//        })
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         titleStackView.reloadData()
+
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        queryListener = AlbumService.shared.getAll { albums in
+            self.albums = albums
+            
+            if albums.isEmpty {
+                self.collectionView.addNoDataLabel(text: "No Albums added\n\nPlease press the + button above to start")
+            } else {
+                self.collectionView.removeNoDataLabel()
+            }
+            
+            self.collectionView.reloadData()
+//            self.activityIndicator.stopAnimating()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        queryListener.remove()
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return albumNameArr.count
+//        return albumNameArr.count
+        return albums?.count ?? 0
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -85,7 +118,11 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
         photoCell.layer.borderColor = UIColor.black.cgColor
         photoCell.layer.borderWidth = 0.5
         photoCell.layer.cornerRadius = 10
-        photoCell.albumName.text = albumNameArr[indexPath.item].albumName
+//        photoCell.albumName.text = albumNameArr[indexPath.item].albumName
+        if let album = albums?[indexPath.item] {
+            photoCell.configure(albumName: album.name, createdOn: album.dataCreated, numberOfPhotos: album.numberOfPhotos)
+        }
+        
         return photoCell
     }
     
@@ -95,54 +132,40 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
     
     
     @IBAction func albumAdd(_ sender: Any) {
+        let alertController = UIAlertController(title: "Add new album", message: nil, preferredStyle: .alert)
         
-        let customAlert = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertID") as! CustomAlertView
-        customAlert.providesPresentationContextTransitionStyle = true
-        customAlert.definesPresentationContext = true
-        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        customAlert.delegate = self
-        self.present(customAlert, animated: true, completion: nil)
-    }
-    
-    func okButtonTapped(textFieldValue: String, profileImage: UIImage) {
-        
-        DispatchQueue.main.async {
-            CATransaction.begin()
-            CATransaction.setDisableActions(true)
-            
-            if let newData = textFieldValue as? String, newData != "" {
-                
-                // Create a root reference
-                let storageRef = Database.database().reference()
-                
-                let reversRef = storageRef.child("Photo").childByAutoId()
-                
-                let now = NSDate()
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR") as Locale
-//                let currDate = dateFormatter.string(from: now as Date)
-                
-                reversRef.setValue([
-                    "AlbumName" : textFieldValue
-                    ])
-            }
-            
-//            self.albumNameArr.append(textFieldValue)
-            
-//            let indexPath = IndexPath(row: self.albumNameArr.count - 1, section: 0)
-//            self.collectionView.insertItems(at: [indexPath])
-//
-//            CATransaction.commit()
-//
-//            self.collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
-            self.collectionView.reloadData()
+        alertController.addTextField { textField in
+            textField.placeholder = "Album name"
         }
+        
+        let textField = alertController.textFields![0] as UITextField
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+//            self.activityIndicator.startAnimating()
+            AlbumService.shared.addAlbumWith(name: textField.text ?? "No Name")
+            alertController.dismiss(animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        
+        self.present(alertController, animated: true)
+        
+//        let customAlert = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertID") as! CustomAlertView
+//        customAlert.providesPresentationContextTransitionStyle = true
+//        customAlert.definesPresentationContext = true
+//        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+//        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+//        customAlert.delegate = self
+//        self.present(customAlert, animated: true, completion: nil)
     }
     
-    func cancelButtonTapped() {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToAlbumStory", let index = sender as? Int, let albumCollectionViewController = segue.destination as? AlbumCollectionViewController, let album = albums?[index] {
+            albumCollectionViewController.album = album
+        }
     }
 
 }

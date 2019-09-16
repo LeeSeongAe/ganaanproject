@@ -25,6 +25,15 @@
 		AF477B0822BB6F5B00CF7A79 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF477B0722BB6F5B00CF7A79 /* RemoteConfigDefaults.plist */; };
 		AF62AB5F22A657AD009BF162 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62AB5E22A657AD009BF162 /* NavigationView.swift */; };
 		AF62AB6122A657CB009BF162 /* PhotoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62AB6022A657CB009BF162 /* PhotoStackView.swift */; };
+		AF72E5C3232F83E400667B03 /* AlbumEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C2232F83E400667B03 /* AlbumEntity.swift */; };
+		AF72E5C5232F85A700667B03 /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C4232F85A700667B03 /* AlbumService.swift */; };
+		AF72E5C7232F873400667B03 /* FireStore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C6232F873400667B03 /* FireStore+Extensions.swift */; };
+		AF72E5C9232F8BD000667B03 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C8232F8BD000667B03 /* ImageService.swift */; };
+		AF72E5CB232F8E1F00667B03 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5CA232F8E1F00667B03 /* ImageEntity.swift */; };
+		AF72E5CD232F91CB00667B03 /* Storage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5CC232F91CB00667B03 /* Storage+Extensions.swift */; };
+		AF72E5CF232F976100667B03 /* TableView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5CE232F976100667B03 /* TableView+Extentions.swift */; };
+		AF72E5D1232F9BF000667B03 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5D0232F9BF000667B03 /* UIView+Extensions.swift */; };
+		AF72E5D4232FA0A100667B03 /* ImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5D3232FA0A100667B03 /* ImageTask.swift */; };
 		AF7505E122DC692F00146091 /* customLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E022DC692F00146091 /* customLabel.swift */; };
 		AF7505E322DC75E400146091 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E222DC75E400146091 /* customButton.swift */; };
 		AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E422DD8B9700146091 /* CustomAlertView.swift */; };
@@ -68,6 +77,15 @@
 		AF477B0722BB6F5B00CF7A79 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		AF62AB5E22A657AD009BF162 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		AF62AB6022A657CB009BF162 /* PhotoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStackView.swift; sourceTree = "<group>"; };
+		AF72E5C2232F83E400667B03 /* AlbumEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntity.swift; sourceTree = "<group>"; };
+		AF72E5C4232F85A700667B03 /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
+		AF72E5C6232F873400667B03 /* FireStore+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FireStore+Extensions.swift"; sourceTree = "<group>"; };
+		AF72E5C8232F8BD000667B03 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		AF72E5CA232F8E1F00667B03 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
+		AF72E5CC232F91CB00667B03 /* Storage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+Extensions.swift"; sourceTree = "<group>"; };
+		AF72E5CE232F976100667B03 /* TableView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extentions.swift"; sourceTree = "<group>"; };
+		AF72E5D0232F9BF000667B03 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		AF72E5D3232FA0A100667B03 /* ImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTask.swift; sourceTree = "<group>"; };
 		AF7505E022DC692F00146091 /* customLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customLabel.swift; sourceTree = "<group>"; };
 		AF7505E222DC75E400146091 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
 		AF7505E422DD8B9700146091 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
@@ -136,6 +154,7 @@
 		AF1B0ABA227AE65F0022DE0E /* Project1 */ = {
 			isa = PBXGroup;
 			children = (
+				AF72E5D2232FA08700667B03 /* Task */,
 				AFA759BB2313C6A000F73E53 /* Page */,
 				AFA759B82313C56A00F73E53 /* DashBoard */,
 				AF7505DF22DC690500146091 /* Util */,
@@ -167,6 +186,7 @@
 		AF1B0AD0227D33510022DE0E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AF72E5C1232F83AE00667B03 /* Album */,
 				AF7505E622DDCDC900146091 /* UserDTO.swift */,
 				AFA5C53D232650850003CA0F /* AlbumDTO.swift */,
 				AF1B0AD5227D3CBC0022DE0E /* CellCollectionViewController.swift */,
@@ -199,6 +219,29 @@
 				AFA759B4230F84A300F73E53 /* TitleStackView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		AF72E5C1232F83AE00667B03 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				AF72E5C2232F83E400667B03 /* AlbumEntity.swift */,
+				AF72E5C4232F85A700667B03 /* AlbumService.swift */,
+				AF72E5C6232F873400667B03 /* FireStore+Extensions.swift */,
+				AF72E5C8232F8BD000667B03 /* ImageService.swift */,
+				AF72E5CA232F8E1F00667B03 /* ImageEntity.swift */,
+				AF72E5CC232F91CB00667B03 /* Storage+Extensions.swift */,
+				AF72E5CE232F976100667B03 /* TableView+Extentions.swift */,
+				AF72E5D0232F9BF000667B03 /* UIView+Extensions.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		AF72E5D2232FA08700667B03 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				AF72E5D3232FA0A100667B03 /* ImageTask.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 		AF7505DF22DC690500146091 /* Util */ = {
@@ -344,6 +387,7 @@
 				"${BUILT_PRODUCTS_DIR}/BSGridCollectionViewLayout/BSGridCollectionViewLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/BSImageView/BSImageView.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/CustomIOSAlertView/CustomIOSAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -355,6 +399,8 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -365,6 +411,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImageView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CustomIOSAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -376,6 +423,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -394,6 +443,7 @@
 				AF372C7222AA4CC400749C17 /* IntroduceViewController.swift in Sources */,
 				AFA759B7230FD7CC00F73E53 /* PhotoCell.swift in Sources */,
 				AFA5C53A23153A7A0003CA0F /* AlbumCollectionViewController.swift in Sources */,
+				AF72E5C7232F873400667B03 /* FireStore+Extensions.swift in Sources */,
 				AF1B0ABE227AE65F0022DE0E /* ViewController.swift in Sources */,
 				AF62AB6122A657CB009BF162 /* PhotoStackView.swift in Sources */,
 				AF9C718B2282CFC9002D0DF3 /* MenuViewController.swift in Sources */,
@@ -401,16 +451,23 @@
 				AFEFC1AE22A627B6005766B1 /* MenuTableViewCell.swift in Sources */,
 				AFEFC1AC22A54F48005766B1 /* JoinViewController.swift in Sources */,
 				AF9C71892282BE85002D0DF3 /* Util.swift in Sources */,
+				AF72E5C3232F83E400667B03 /* AlbumEntity.swift in Sources */,
+				AF72E5D1232F9BF000667B03 /* UIView+Extensions.swift in Sources */,
 				AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */,
+				AF72E5C9232F8BD000667B03 /* ImageService.swift in Sources */,
 				AF1B0ABC227AE65F0022DE0E /* AppDelegate.swift in Sources */,
 				AFA759B5230F84A300F73E53 /* TitleStackView.swift in Sources */,
 				AF372C7C22AE5F7B00749C17 /* CellCheckCell.swift in Sources */,
+				AF72E5C5232F85A700667B03 /* AlbumService.swift in Sources */,
 				AF1B0AD4227D33A80022DE0E /* CellCollectionViewCell.swift in Sources */,
 				AF1B0AD8227D4E810022DE0E /* CellCheckTableViewController.swift in Sources */,
 				AFA5C53C23153B650003CA0F /* AlbumCell.swift in Sources */,
+				AF72E5D4232FA0A100667B03 /* ImageTask.swift in Sources */,
 				AF372C7622AA4CF600749C17 /* PhotoViewController.swift in Sources */,
 				AF9C718322817A91002D0DF3 /* SWRevealViewController.m in Sources */,
+				AF72E5CB232F8E1F00667B03 /* ImageEntity.swift in Sources */,
 				AFA759BA2313C59900F73E53 /* DashBoardViewController.swift in Sources */,
+				AF72E5CF232F976100667B03 /* TableView+Extentions.swift in Sources */,
 				AF372C7422AA4CE000749C17 /* ScheduleViewController.swift in Sources */,
 				AFA759BF2313CA9F00F73E53 /* ContentViewController.swift in Sources */,
 				AF372C7822AA4D0800749C17 /* QuestionsViewController.swift in Sources */,
@@ -421,6 +478,7 @@
 				AF62AB5F22A657AD009BF162 /* NavigationView.swift in Sources */,
 				AF9C717F2281166D002D0DF3 /* IntroViewController.swift in Sources */,
 				AF7505E322DC75E400146091 /* customButton.swift in Sources */,
+				AF72E5CD232F91CB00667B03 /* Storage+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

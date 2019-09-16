@@ -9,10 +9,15 @@
 import UIKit
 import Photos
 import BSImagePicker
+import FirebaseFirestore
 
 class AlbumCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-//    var cellReaders:Array = ["교회마크.png","수빈.png","이삭.png","다은.png","아형.png","현지.png","예원.png","성애.png","경석.png","김지원.png","해리.png","김예슬.png","우지원.png","숙영.png","지애.png","민정.png","다함.png"]
+    var album: AlbumEntity!
+    var imageEntities: [ImageEntity]?
+    var imageTasks = [String: ImageTask]()
+    var queryListener: ListenerRegistration!
+    
     var photoArray = [UIImage]()
     var selectedAssets = [PHAsset]()
     var selectedImageIndex = Int()

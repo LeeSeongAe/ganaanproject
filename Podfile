@@ -20,4 +20,6 @@ target 'Project1' do
   pod 'CustomIOSAlertView', '~> 0.9.5'
   pod 'SDWebImage'
   pod 'BSImagePicker'
+  pod 'FirebaseStorage'
+  pod 'FirebaseFirestore'
 end
