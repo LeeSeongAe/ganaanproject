@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Join-->
+        <scene sceneID="3nz-0J-A8g">
+            <objects>
+                <viewController storyboardIdentifier="joinVC" title="Join" id="8Xt-rk-zNj" customClass="JoinViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LRM-sF-ZPg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1Q-2s-iwi" customClass="customButton" customModule="Project1" customModuleProvider="target">
+                                <rect key="frame" x="16" y="752" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.95686274510000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="EZj-98-uMM"/>
+                                    <constraint firstAttribute="width" constant="343" id="oiN-sc-9NA"/>
+                                </constraints>
+                                <state key="normal" title="가입하기">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="disabled" title="Fill the Fields"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="joinAction:" destination="8Xt-rk-zNj" eventType="touchUpInside" id="LvS-j3-9e1"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zC2-oj-al8" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="15" y="104" width="345" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="NOy-7v-Y3F"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="1" green="0.3912392884" blue="0.33084460760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.12549019610000001" green="0.13725490200000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5j1-zC-UlK" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="15" y="163" width="345" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gcA-lW-1ic"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.12549019610000001" green="0.13725490200000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fpr-5b-e0R">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="JOIN" id="2Ne-tZ-OAf">
+                                        <barButtonItem key="leftBarButtonItem" title="cancel" id="G4V-4H-4HZ">
+                                            <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="joinCancel:" destination="8Xt-rk-zNj" id="dLH-7g-smw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fpr-5b-e0R" firstAttribute="top" secondItem="mRe-W1-40T" secondAttribute="top" id="8dp-1K-GBB"/>
+                            <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="T1Q-2s-iwi" secondAttribute="trailing" constant="16" id="CI1-vO-V9d"/>
+                            <constraint firstItem="5j1-zC-UlK" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" constant="15" id="FMd-ba-G8u"/>
+                            <constraint firstItem="T1Q-2s-iwi" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" constant="16" id="Iu6-FT-lWr"/>
+                            <constraint firstItem="zC2-oj-al8" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" constant="15" id="W5g-Ea-hzh"/>
+                            <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="zC2-oj-al8" secondAttribute="trailing" constant="15" id="ZHd-Bu-li2"/>
+                            <constraint firstItem="Fpr-5b-e0R" firstAttribute="trailing" secondItem="mRe-W1-40T" secondAttribute="trailing" id="fOK-ln-2t7"/>
+                            <constraint firstAttribute="bottom" secondItem="T1Q-2s-iwi" secondAttribute="bottom" constant="20" id="hHV-3C-LAC"/>
+                            <constraint firstItem="Fpr-5b-e0R" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" id="iVC-VX-MXg"/>
+                            <constraint firstItem="5j1-zC-UlK" firstAttribute="top" secondItem="zC2-oj-al8" secondAttribute="bottom" constant="15" id="pST-4C-4Aa"/>
+                            <constraint firstItem="T1Q-2s-iwi" firstAttribute="centerX" secondItem="LRM-sF-ZPg" secondAttribute="centerX" id="sC4-3J-Vao"/>
+                            <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="5j1-zC-UlK" secondAttribute="trailing" constant="15" id="sFD-UV-Qva"/>
+                            <constraint firstItem="zC2-oj-al8" firstAttribute="top" secondItem="mRe-W1-40T" secondAttribute="top" constant="60" id="waA-XK-ddG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mRe-W1-40T"/>
+                    </view>
+                    <connections>
+                        <outlet property="joinCancelBtn" destination="G4V-4H-4HZ" id="qBH-zt-1Gi"/>
+                        <outlet property="joinEmail" destination="zC2-oj-al8" id="YYb-Oy-cp4"/>
+                        <outlet property="joinPW" destination="5j1-zC-UlK" id="lyD-jb-4WS"/>
+                        <segue destination="DlF-ne-Ej7" kind="show" identifier="JoinEnd" id="pVr-q1-7AV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t36-l0-0m6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="-37.331334332833585"/>
+        </scene>
+        <!--LogInView-->
+        <scene sceneID="WV4-ak-GPG">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="LogInView" storyboardName="Main" referencedIdentifier="LogInView" id="DlF-ne-Ej7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vmF-9c-0vH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="410" y="549"/>
+        </scene>
+    </scenes>
+</document>

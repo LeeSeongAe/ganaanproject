@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>163711823008-murd0h571thht6ijtceqobqeuud6p8l1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.163711823008-murd0h571thht6ijtceqobqeuud6p8l1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA5iVSetK_6uO5d3lkIuge2Fw9J3IHU0MI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>163711823008</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.seongae.Project1</string>
+	<key>PROJECT_ID</key>
+	<string>ganaanproject</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ganaanproject.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:163711823008:ios:4f3aa3d7e5dadde0</string>
+	<key>DATABASE_URL</key>
+	<string>https://ganaanproject.firebaseio.com</string>
+</dict>
+</plist>
