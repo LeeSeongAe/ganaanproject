@@ -81,7 +81,7 @@ final class PhotosViewController : UICollectionViewController {
     
     override func loadView() {
         super.loadView()
-        
+
         // Setup collection view
         collectionView?.backgroundColor = settings.backgroundColor
         collectionView?.allowsMultipleSelection = true

@@ -13,14 +13,14 @@ struct AlbumEntity {
     
     let albumId: String
     let name: String
-    let dataCreated: Date
+    let dateCreated: Date
     let numberOfPhotos: Int
     
     init(id: String, data: [String: Any]) {
         self.albumId = id
         self.name = data["name"] as? String ?? ""
         let dateTimestamp = data["dateCreated"] as? Timestamp
-        self.dataCreated = dateTimestamp?.dateValue() ?? Date.init()
+        self.dateCreated = dateTimestamp?.dateValue() ?? Date.init()
         self.numberOfPhotos = data["numberOfPhotos"] as? Int ?? 0
     }
     

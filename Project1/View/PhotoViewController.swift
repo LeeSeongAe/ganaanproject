@@ -10,9 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStackViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, CustomAlertViewDelegate
-{
-    
+class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStackViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
     func titleStackView(_ titleStackView: TitleStackView, longPressedTitleLabel titleLabel: UILabel) {
         
@@ -120,14 +118,15 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
         photoCell.layer.cornerRadius = 10
 //        photoCell.albumName.text = albumNameArr[indexPath.item].albumName
         if let album = albums?[indexPath.item] {
-            photoCell.configure(albumName: album.name, createdOn: album.dataCreated, numberOfPhotos: album.numberOfPhotos)
+            photoCell.configure(albumName: album.name, createdOn: album.dateCreated, numberOfPhotos: album.numberOfPhotos)
         }
         
         return photoCell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "ToAlbumStory", sender: self)
+        self.performSegue(withIdentifier: "ToAlbumStory", sender: indexPath.item)
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
     
     
@@ -167,6 +166,17 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
             albumCollectionViewController.album = album
         }
     }
+    
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+//            if let albumId = self.albums?[indexPath.row].albumId {
+//                AlbumService.shared.deleteAlbumWith(albumId: albumId)
+//            }
+//            completionHandler(true)
+//        }
+//
+//        return UISwipeActionsConfiguration(actions: [action])
+//    }
 
 }
 

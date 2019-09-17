@@ -23,6 +23,7 @@
 import UIKit
 
 final class AlbumsViewController: UITableViewController {
+    
     init() {
         super.init(style: .grouped)
     }

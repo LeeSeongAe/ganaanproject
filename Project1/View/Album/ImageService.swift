@@ -11,14 +11,15 @@ import FirebaseFirestore
 import FirebaseStorage
 
 class ImageService {
+    
     private init() {}
     
     static let shared = ImageService()
     
     func getAllImagesFor(albumId: String, images: @escaping ([ImageEntity]) -> ()) -> ListenerRegistration {
         let imagesCollection = Firestore.getFirestore().images()
-        .whereField("albumId", isEqualTo: albumId)
-        .order(by: "dateAdded")
+            .whereField("albumId", isEqualTo: albumId)
+            .order(by: "dateAdded")
         
         return imagesCollection.addSnapshotListener { (query, error) in
             guard let query = query else {
@@ -78,7 +79,7 @@ class ImageService {
         }
     }
     
-    func upload(images:[Data], albumId: String, completion: @escaping ()-> ()) {
+    func upload(images:[Data], albumId: String, completion: @escaping () -> ()) {
         let imagesCollectionRef = Firestore.getFirestore().images()
         
         let imagesWithDocRefs = images

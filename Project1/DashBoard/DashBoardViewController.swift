@@ -19,6 +19,7 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
         super.viewDidLoad()
         //DATA
         print("contentImageData : \(contentImageData),, \(selectedImageIndex)")
+        
         //Layout
         let initialView = ContentVCIndex(index: selectedImageIndex) as ContentViewController
         let viewController = NSArray(object: initialView)

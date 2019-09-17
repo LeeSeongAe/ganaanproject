@@ -112,7 +112,7 @@ class ImageTask {
         let fileURL = getImageFileUrl(imageId: imageId)
         
         do {
-            if let imageData = UIImageJPEGRepresentation(image, 1) {
+            if let imageData = image.jpegData(compressionQuality: 1) {
                 try imageData.write(to: fileURL)
             }
         } catch {

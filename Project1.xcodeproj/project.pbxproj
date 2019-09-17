@@ -34,6 +34,11 @@
 		AF72E5CF232F976100667B03 /* TableView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5CE232F976100667B03 /* TableView+Extentions.swift */; };
 		AF72E5D1232F9BF000667B03 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5D0232F9BF000667B03 /* UIView+Extensions.swift */; };
 		AF72E5D4232FA0A100667B03 /* ImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5D3232FA0A100667B03 /* ImageTask.swift */; };
+		AF72E5DD2330A4BE00667B03 /* SelectPhotosViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5D82330A4BD00667B03 /* SelectPhotosViewController+DataSource.swift */; };
+		AF72E5DE2330A4BE00667B03 /* SelectPhotosViewController+FlowLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5D92330A4BD00667B03 /* SelectPhotosViewController+FlowLayoutDelegate.swift */; };
+		AF72E5DF2330A4BE00667B03 /* SelectPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5DA2330A4BE00667B03 /* SelectPhotosViewController.swift */; };
+		AF72E5E02330A4BE00667B03 /* SelectPhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5DB2330A4BE00667B03 /* SelectPhotosCell.swift */; };
+		AF72E5E12330A4BE00667B03 /* SelectPhotosViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5DC2330A4BE00667B03 /* SelectPhotosViewController+Delegate.swift */; };
 		AF7505E122DC692F00146091 /* customLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E022DC692F00146091 /* customLabel.swift */; };
 		AF7505E322DC75E400146091 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E222DC75E400146091 /* customButton.swift */; };
 		AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E422DD8B9700146091 /* CustomAlertView.swift */; };
@@ -86,6 +91,11 @@
 		AF72E5CE232F976100667B03 /* TableView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extentions.swift"; sourceTree = "<group>"; };
 		AF72E5D0232F9BF000667B03 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AF72E5D3232FA0A100667B03 /* ImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTask.swift; sourceTree = "<group>"; };
+		AF72E5D82330A4BD00667B03 /* SelectPhotosViewController+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SelectPhotosViewController+DataSource.swift"; sourceTree = "<group>"; };
+		AF72E5D92330A4BD00667B03 /* SelectPhotosViewController+FlowLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SelectPhotosViewController+FlowLayoutDelegate.swift"; sourceTree = "<group>"; };
+		AF72E5DA2330A4BE00667B03 /* SelectPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotosViewController.swift; sourceTree = "<group>"; };
+		AF72E5DB2330A4BE00667B03 /* SelectPhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotosCell.swift; sourceTree = "<group>"; };
+		AF72E5DC2330A4BE00667B03 /* SelectPhotosViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SelectPhotosViewController+Delegate.swift"; sourceTree = "<group>"; };
 		AF7505E022DC692F00146091 /* customLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customLabel.swift; sourceTree = "<group>"; };
 		AF7505E222DC75E400146091 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
 		AF7505E422DD8B9700146091 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
@@ -154,6 +164,7 @@
 		AF1B0ABA227AE65F0022DE0E /* Project1 */ = {
 			isa = PBXGroup;
 			children = (
+				AF72E5D72330A4A900667B03 /* SelectPhtos */,
 				AF72E5D2232FA08700667B03 /* Task */,
 				AFA759BB2313C6A000F73E53 /* Page */,
 				AFA759B82313C56A00F73E53 /* DashBoard */,
@@ -242,6 +253,18 @@
 				AF72E5D3232FA0A100667B03 /* ImageTask.swift */,
 			);
 			path = Task;
+			sourceTree = "<group>";
+		};
+		AF72E5D72330A4A900667B03 /* SelectPhtos */ = {
+			isa = PBXGroup;
+			children = (
+				AF72E5DB2330A4BE00667B03 /* SelectPhotosCell.swift */,
+				AF72E5DA2330A4BE00667B03 /* SelectPhotosViewController.swift */,
+				AF72E5D82330A4BD00667B03 /* SelectPhotosViewController+DataSource.swift */,
+				AF72E5DC2330A4BE00667B03 /* SelectPhotosViewController+Delegate.swift */,
+				AF72E5D92330A4BD00667B03 /* SelectPhotosViewController+FlowLayoutDelegate.swift */,
+			);
+			path = SelectPhtos;
 			sourceTree = "<group>";
 		};
 		AF7505DF22DC690500146091 /* Util */ = {
@@ -442,6 +465,7 @@
 			files = (
 				AF372C7222AA4CC400749C17 /* IntroduceViewController.swift in Sources */,
 				AFA759B7230FD7CC00F73E53 /* PhotoCell.swift in Sources */,
+				AF72E5E12330A4BE00667B03 /* SelectPhotosViewController+Delegate.swift in Sources */,
 				AFA5C53A23153A7A0003CA0F /* AlbumCollectionViewController.swift in Sources */,
 				AF72E5C7232F873400667B03 /* FireStore+Extensions.swift in Sources */,
 				AF1B0ABE227AE65F0022DE0E /* ViewController.swift in Sources */,
@@ -464,14 +488,18 @@
 				AFA5C53C23153B650003CA0F /* AlbumCell.swift in Sources */,
 				AF72E5D4232FA0A100667B03 /* ImageTask.swift in Sources */,
 				AF372C7622AA4CF600749C17 /* PhotoViewController.swift in Sources */,
+				AF72E5E02330A4BE00667B03 /* SelectPhotosCell.swift in Sources */,
 				AF9C718322817A91002D0DF3 /* SWRevealViewController.m in Sources */,
 				AF72E5CB232F8E1F00667B03 /* ImageEntity.swift in Sources */,
 				AFA759BA2313C59900F73E53 /* DashBoardViewController.swift in Sources */,
 				AF72E5CF232F976100667B03 /* TableView+Extentions.swift in Sources */,
+				AF72E5DE2330A4BE00667B03 /* SelectPhotosViewController+FlowLayoutDelegate.swift in Sources */,
 				AF372C7422AA4CE000749C17 /* ScheduleViewController.swift in Sources */,
+				AF72E5DF2330A4BE00667B03 /* SelectPhotosViewController.swift in Sources */,
 				AFA759BF2313CA9F00F73E53 /* ContentViewController.swift in Sources */,
 				AF372C7822AA4D0800749C17 /* QuestionsViewController.swift in Sources */,
 				AF189FFF22C0DA4F00AF287C /* CellContentCell.swift in Sources */,
+				AF72E5DD2330A4BE00667B03 /* SelectPhotosViewController+DataSource.swift in Sources */,
 				AF7505E722DDCDC900146091 /* UserDTO.swift in Sources */,
 				AFA5C53E232650860003CA0F /* AlbumDTO.swift in Sources */,
 				AF1B0AD6227D3CBC0022DE0E /* CellCollectionViewController.swift in Sources */,
