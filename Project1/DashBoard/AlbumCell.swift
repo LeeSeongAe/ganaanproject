@@ -20,17 +20,16 @@ class AlbumCell: UICollectionViewCell {
     
     private func setupCell() {
         layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
-        layer.cornerRadius = 8
+        layer.borderColor = UIColor.white.cgColor
     }
     
     func configure(image: UIImage?) {
         self.ganaanImage.image = image
         
         if image != nil {
-//            self.activityIndicator.stopAnimating()
+            self.activityIndicator.stopAnimating()
         } else {
-//            self.activityIndicator.startAnimating()
+            self.activityIndicator.startAnimating()
         }
     }
 }

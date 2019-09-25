@@ -9,6 +9,7 @@
 import UIKit
 
 extension SelectPhotosViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! SelectPhotosCell
         cell.configure(image: images[indexPath.row])

@@ -80,6 +80,7 @@ class ImageService {
     }
     
     func upload(images:[Data], albumId: String, completion: @escaping () -> ()) {
+        
         let imagesCollectionRef = Firestore.getFirestore().images()
         
         let imagesWithDocRefs = images

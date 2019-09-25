@@ -6,9 +6,6 @@ PODS:
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
   - BSGridCollectionViewLayout (1.2.3)
-  - BSImagePicker (2.10.0):
-    - BSGridCollectionViewLayout (= 1.2.3)
-    - BSImageView (= 1.0.3)
   - BSImageView (1.0.3)
   - CustomIOSAlertView (0.9.5)
   - Firebase/Auth (6.3.0):
@@ -146,7 +143,8 @@ PODS:
   - TextFieldEffects (1.5.1)
 
 DEPENDENCIES:
-  - BSImagePicker
+  - BSGridCollectionViewLayout
+  - BSImageView
   - CustomIOSAlertView (~> 0.9.5)
   - Firebase/Auth
   - Firebase/Core
@@ -154,6 +152,7 @@ DEPENDENCIES:
   - Firebase/RemoteConfig
   - Firebase/Storage
   - FirebaseAnalytics
+  - FirebaseAuthInterop
   - FirebaseFirestore
   - FirebaseStorage
   - RxCocoa
@@ -167,7 +166,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BoringSSL-GRPC
     - BSGridCollectionViewLayout
-    - BSImagePicker
     - BSImageView
     - CustomIOSAlertView
     - Firebase
@@ -200,7 +198,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   BSGridCollectionViewLayout: 568273e113fbc815f868f1898ef0465aee68f955
-  BSImagePicker: fa0c15b6740e8aa7a7b7f0fe38a71ad4cfa0ec4a
   BSImageView: a149459433a2687157d034c78e059d30ac7f2544
   CustomIOSAlertView: cc4fa8e36219be3fd5ebcd40789f5b4aaae0f38e
   Firebase: 8432d732974498afd5987e9001a05f90f1a3d625
@@ -230,6 +227,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: 46ccf3029756e1456549ab15b1a254316ac65d05
+PODFILE CHECKSUM: 49369fdad9b5b2e2efa295f508ee943938606ccd
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.5

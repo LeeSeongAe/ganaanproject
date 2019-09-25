@@ -15,7 +15,7 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
     func titleStackView(_ titleStackView: TitleStackView, longPressedTitleLabel titleLabel: UILabel) {
         
     }
-    
+
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var albums: [AlbumEntity]?
     var queryListener: ListenerRegistration!
@@ -55,21 +55,6 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
         titleStackView.backgroundColor = .yellow
         
         self.albumNameArr.removeAll()
-        
-//        Database.database().reference().child("Photo").observe(.childAdded, with: {(snapshot) in
-//            print(snapshot.value!)
-//            print(snapshot.key)
-//
-//            let albumDTO = AlbumDTO()
-//            albumDTO.albumName = (snapshot.value as! [String:String])["AlbumName"]
-//
-//            self.albumNameArr.append(albumDTO)
-//            self.uidKey.append(snapshot.key)
-//            print("albumNameArr : \(self.albumNameArr)")
-//            DispatchQueue.main.async {
-//                self.collectionView.reloadData()
-//            }
-//        })
         
     }
     

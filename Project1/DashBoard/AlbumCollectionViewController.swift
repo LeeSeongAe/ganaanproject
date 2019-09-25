@@ -8,10 +8,9 @@
 
 import UIKit
 import Photos
-import BSImagePicker
 import FirebaseFirestore
 
-class AlbumCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageTaskDownloadedDelegate {
+class AlbumCollectionViewController: UIViewController, UICollectionViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageTaskDownloadedDelegate {
     
     
     var album: AlbumEntity!
@@ -27,12 +26,17 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDelegate,
     var photoArray = [UIImage]()
     var selectedAssets = [PHAsset]()
     var selectedImageIndex = Int()
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = album?.name
-        photoArray = [UIImage(named: "교회마크.png")] as! [UIImage]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,7 +54,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDelegate,
             }
             
             strongSelf.collectionView.reloadData()
-//            strongSelf.activityIndicator.stopAnimating()
+            strongSelf.activityIndicator.stopAnimating()
         }
     }
     
@@ -81,44 +85,28 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return imageEntities?.count ?? 0
-        return photoArray.count
+        return imageEntities?.count ?? 0
+
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let albumCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCell", for: indexPath) as! AlbumCell
         
-//        albumCell.ganaanImage.image = UIImage(named: photoArray[indexPath.item])
-
-        albumCell.ganaanImage.image = photoArray[indexPath.item]
-        
-//        if let imageEntities = imageEntities, imageEntities.count > indexPath.row {
-//            let imageEntity = imageEntities[indexPath.row]
-//            albumCell.configure(image: imageTasks[imageEntity.imageId]?.image)
-//        }
+        if let imageEntities = imageEntities, imageEntities.count > indexPath.row {
+            let imageEntity = imageEntities[indexPath.item]
+            albumCell.configure(image: imageTasks[imageEntity.imageId]?.image)
+        }
         
         albumCell.ganaanImage?.tag = indexPath.item
         
         return albumCell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let senderTag = indexPath.item
-        
-        if senderTag == 0 {
-            getImageFromLibrary()
-        } else {
-            self.performSegue(withIdentifier: "ToDashBoard", sender: senderTag)
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "SelectPhotosSegue", let selectPhotosController =
-            segue.destination.children.first as? SelectPhotosViewController {
-            selectPhotosController.album = album
+        if segue.identifier == "SelectPhotosSegue" {
+            getImageFromLibrary()
         }
         
         if let viewController = segue.destination as? DashBoardViewController {
@@ -138,53 +126,26 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDelegate,
                                                 for i in 0..<asset.count {
                                                     self.selectedAssets.append(asset[i])
                                                 }
-                                                self.convertAssetToImages()
         },
                                              completion: nil)
     }
-    
-    func convertAssetToImages() {
+
         
-        if selectedAssets.count != 0 {
-            for i in 0..<selectedAssets.count {
-                let manager = PHImageManager.default()
-                let option = PHImageRequestOptions()
-                
-                var thumbnail = UIImage()
-                
-                option.isSynchronous = true
-                
-                manager.requestImage(for: selectedAssets[i], targetSize: CGSize(width: 200, height: 200), contentMode: .aspectFit, options: option, resultHandler: {(result, info) -> Void in
-                    thumbnail = result!
-                })
-                
-                let data = thumbnail.pngData()
-                let newImage = UIImage(data: data!)
-                self.photoArray.append(newImage! as UIImage)
-//                self.images.append(newImage!)
-                
-//                DispatchQueue.main.async {
-//                    self.imageUploadStorage()
-//                }
-            }
-        }
-        self.collectionView.reloadData()
-        self.selectedAssets.removeAll()
-    }
-    
-    func imageUploadStorage() {
-        if let selectedIndexs = collectionView.indexPathsForSelectedItems {
-            let imagesDataToUpload = selectedIndexs
-                .map{ $0.row }
-                .map{ photoArray[$0] }
-                .map{ $0.pngData() }
+    func bs_presentImagePickerController(_ imagePicker: BSImagePickerViewController, animated: Bool, select: ((_ asset: PHAsset) -> Void)?, deselect: ((_ asset: PHAsset) -> Void)?, cancel: (([PHAsset]) -> Void)?, finish: (([PHAsset]) -> Void)?, completion: (() -> Void)?, selectLimitReached: ((Int) -> Void)? = nil) {
+        BSImagePickerViewController.authorize(fromViewController: self) { (authorized) -> Void in
+            // Make sure we are authorized before proceding
+            guard authorized == true else { return }
             
-            ImageService.shared.upload(images: imagesDataToUpload as! [Data], albumId: album.albumId) {
-                self.dismiss(animated: true, completion: nil)
-            }
+            // Set blocks
+            imagePicker.photosViewController.selectionClosure = select
+            imagePicker.photosViewController.deselectionClosure = deselect
+            imagePicker.photosViewController.cancelClosure = cancel
+            imagePicker.photosViewController.finishClosure = finish
+            imagePicker.photosViewController.selectLimitReachedClosure = selectLimitReached
+            imagePicker.photosViewController.album = self.album
+            // Present
+            self.present(imagePicker, animated: animated, completion: completion)
         }
-        self.collectionView.reloadData()
     }
-    
     
 }

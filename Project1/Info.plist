@@ -20,6 +20,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>앨범</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>사진첩</string>
 	<key>UILaunchStoryboardName</key>

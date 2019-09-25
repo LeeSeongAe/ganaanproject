@@ -68,9 +68,9 @@ class SelectPhotosViewController: UIViewController {
             let imagesDataToUpload = selectedIndexes
                 .map { $0.row }
                 .map { images[$0] }
-                .map { $0.pngData()!  }
+                .map { $0.jpegData(compressionQuality: 1)  }
             
-            ImageService.shared.upload(images: imagesDataToUpload, albumId: album.albumId) {
+            ImageService.shared.upload(images: imagesDataToUpload as! [Data], albumId: album.albumId) {
                 self.dismiss(animated: true, completion: nil)
             }
             

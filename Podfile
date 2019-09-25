@@ -19,7 +19,9 @@ target 'Project1' do
   pod 'Firebase/Storage'
   pod 'CustomIOSAlertView', '~> 0.9.5'
   pod 'SDWebImage'
-  pod 'BSImagePicker'
+  pod 'BSImageView'
   pod 'FirebaseStorage'
   pod 'FirebaseFirestore'
+  pod 'FirebaseAuthInterop'
+  pod 'BSGridCollectionViewLayout'
 end

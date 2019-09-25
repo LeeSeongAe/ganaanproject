@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D54273E3FB6C99113300D62C1F7192BA"
+               BlueprintIdentifier = "D7940BE184F37BA203D5586A4D2F87BF"
                BuildableName = "CustomIOSAlertView.framework"
                BlueprintName = "CustomIOSAlertView"
                ReferencedContainer = "container:Pods.xcodeproj">

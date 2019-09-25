@@ -1034,6 +1034,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wtz-cE-Nio">
+                                                    <rect key="frame" x="45" y="45" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </activityIndicatorView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SmE-S0-cB7">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="111"/>
                                                 </imageView>
@@ -1047,6 +1051,7 @@
                                             <constraint firstAttribute="bottom" secondItem="SmE-S0-cB7" secondAttribute="bottom" id="n0U-NL-8xw"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="wtz-cE-Nio" id="4eS-hb-QWJ"/>
                                             <outlet property="ganaanImage" destination="SmE-S0-cB7" id="KRX-jh-5CZ"/>
                                         </connections>
                                     </collectionViewCell>
@@ -1056,6 +1061,10 @@
                                     <outlet property="delegate" destination="cHc-u2-7c1" id="Q4x-Si-17K"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nK5-uU-Z1Z">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1074,6 +1083,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="nK5-uU-Z1Z" id="Sqf-s9-BXc"/>
                         <outlet property="collectionView" destination="hf1-aU-POR" id="Udj-bJ-xMp"/>
                         <segue destination="B7a-xY-hdo" kind="show" identifier="ToDashBoard" id="vJk-oE-rG8"/>
                     </connections>
@@ -1253,7 +1263,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="9mL-Ys-pqf" customClass="SelectPhotosCell" customModule="SwiftFirestorePhotoAlbum" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="9mL-Ys-pqf" customClass="SelectPhotosCell" customModule="Project1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="104" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
