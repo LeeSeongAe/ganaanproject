@@ -21,9 +21,10 @@ class IntroViewController: UIViewController, TitleStackViewDataSource {
     @IBOutlet weak var pageView: UIPageControl!
     
     @IBOutlet weak var scheduleButton: UIButton!
+    @IBOutlet weak var initpageLabel: UILabel!
     
     @IBOutlet weak var sliderCollectionView: UICollectionView!
-    var imageData:Array = [UIImage(named: "이해석"), UIImage(named: "지애"), UIImage(named: "이삭")]
+    var imageData:Array = [UIImage(named: "수련회0"), UIImage(named: "수련회1"), UIImage(named: "수련회2"),UIImage(named: "수련회3"),UIImage(named: "수련회4")]
 //    var imageData:Array = ["수빈.png","이삭.png","지애.png"]
     var timer = Timer()
     var counter = 0
@@ -54,6 +55,8 @@ class IntroViewController: UIViewController, TitleStackViewDataSource {
         DispatchQueue.main.async {
             self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
+        
+        initpageLabel.text = "💒 SongDo Ganaan Youth 💖"
         
     }
     
