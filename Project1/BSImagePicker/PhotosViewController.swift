@@ -14,7 +14,7 @@ class PhotosViewController: UICollectionViewController {
 
     var album: AlbumEntity!
 //    var selectedImage: [IndexPath]
-    
+
     var selectionClosure: ((_ asset: PHAsset) -> Void)?
     var deselectionClosure: ((_ asset: PHAsset) -> Void)?
     var cancelClosure: ((_ assets: [PHAsset]) -> Void)?
@@ -114,7 +114,6 @@ class PhotosViewController: UICollectionViewController {
         
         let fetchOptions = PHFetchOptions()
         let allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-        
         let im = PHImageManager.default()
         
         let targetSize = CGSize(width: 350, height: 350)
@@ -276,8 +275,8 @@ extension PhotosViewController {
         
         // We need a cell
         guard let cell = collectionView.cellForItem(at: indexPath) as? BsPhotoCell else { return false }
-        
-        let asset = photosDataSource.fetchResult.object(at: indexPath.row)
+        let allPhotoCount = photosDataSource.fetchResult.count
+        let asset = photosDataSource.fetchResult.object(at: allPhotoCount - (indexPath.row + 1))
         
         // Select or deselect?
         if assetStore.contains(asset) { // Deselect
@@ -312,14 +311,15 @@ extension PhotosViewController {
             
             // Select
         } else if assetStore.count < settings.maxNumberOfSelections {
-            
             // Select asset if not already selected
             assetStore.append(asset)
-            
+            print("select: \(asset)")
             if let selectionCharacter = settings.selectionCharacter {
                 cell.selectionString = String(selectionCharacter)
+                print("select: \(String(selectionCharacter))")
             } else {
                 cell.selectionString = String(assetStore.count)
+                 print("select: \(String(assetStore.count))")
             }
             
             cell.photoSelected = true
@@ -338,7 +338,6 @@ extension PhotosViewController {
             collectionView.reloadItems(at: selectedIndexPaths)
             UIView.setAnimationsEnabled(true)
             //TO-DO
-            // Dictionary에 저장해놨다가 필요싱
             
             let imagesDataToUpload = selectedIndexPaths
                 .map { $0.row }
@@ -346,7 +345,6 @@ extension PhotosViewController {
                 .map { $0.jpegData(compressionQuality: 1) }
             
             imageUpload(images: imagesDataToUpload as! [Data])
-//            ImageService.shared.upload(images: imagesDataToUpload as! [Data], albumId: album.albumId) {}
             
         } else if assetStore.count >= settings.maxNumberOfSelections {
             selectLimitReachedClosure?(assetStore.count)

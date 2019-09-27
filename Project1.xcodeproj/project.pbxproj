@@ -63,6 +63,7 @@
 		AF7505E322DC75E400146091 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E222DC75E400146091 /* customButton.swift */; };
 		AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E422DD8B9700146091 /* CustomAlertView.swift */; };
 		AF7505E722DDCDC900146091 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E622DDCDC900146091 /* UserDTO.swift */; };
+		AF9C2C82233DEC1E0061C3AC /* slideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C2C81233DEC1E0061C3AC /* slideCell.swift */; };
 		AF9C717F2281166D002D0DF3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C717E2281166D002D0DF3 /* IntroViewController.swift */; };
 		AF9C718322817A91002D0DF3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9C718122817A91002D0DF3 /* SWRevealViewController.m */; };
 		AF9C718722827123002D0DF3 /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9C718622827122002D0DF3 /* SlideMenu.storyboard */; };
@@ -140,6 +141,7 @@
 		AF7505E222DC75E400146091 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
 		AF7505E422DD8B9700146091 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		AF7505E622DDCDC900146091 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		AF9C2C81233DEC1E0061C3AC /* slideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slideCell.swift; sourceTree = "<group>"; };
 		AF9C717E2281166D002D0DF3 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		AF9C718022817A90002D0DF3 /* Project1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project1-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF9C718122817A91002D0DF3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				AF372C7B22AE5F7B00749C17 /* CellCheckCell.swift */,
 				AF7505E422DD8B9700146091 /* CustomAlertView.swift */,
 				AF9C717E2281166D002D0DF3 /* IntroViewController.swift */,
+				AF9C2C81233DEC1E0061C3AC /* slideCell.swift */,
 				AF9C718222817A91002D0DF3 /* SWRevealViewController.h */,
 				AF9C718122817A91002D0DF3 /* SWRevealViewController.m */,
 				AF9C718022817A90002D0DF3 /* Project1-Bridging-Header.h */,
@@ -521,6 +524,7 @@
 				AF72E6082333C9D700667B03 /* NSIndexSet+NSIndexPath.swift in Sources */,
 				AF1B0AD4227D33A80022DE0E /* CellCollectionViewCell.swift in Sources */,
 				AF1B0AD8227D4E810022DE0E /* CellCheckTableViewController.swift in Sources */,
+				AF9C2C82233DEC1E0061C3AC /* slideCell.swift in Sources */,
 				AF72E6062333C90800667B03 /* AlbumTitleView.swift in Sources */,
 				AF72E5FD2333148100667B03 /* PreviewViewController.swift in Sources */,
 				AFA5C53C23153B650003CA0F /* AlbumCell.swift in Sources */,

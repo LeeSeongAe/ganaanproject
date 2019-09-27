@@ -10,11 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStackViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func titleStackView(_ titleStackView: TitleStackView, longPressedTitleLabel titleLabel: UILabel) {
-        
-    }
+class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var albums: [AlbumEntity]?
@@ -136,14 +132,6 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
         alertController.addAction(saveAction)
         
         self.present(alertController, animated: true)
-        
-//        let customAlert = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertID") as! CustomAlertView
-//        customAlert.providesPresentationContextTransitionStyle = true
-//        customAlert.definesPresentationContext = true
-//        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-//        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-//        customAlert.delegate = self
-//        self.present(customAlert, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -151,20 +139,8 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
             albumCollectionViewController.album = album
         }
     }
-    
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
-//            if let albumId = self.albums?[indexPath.row].albumId {
-//                AlbumService.shared.deleteAlbumWith(albumId: albumId)
-//            }
-//            completionHandler(true)
-//        }
-//
-//        return UISwipeActionsConfiguration(actions: [action])
-//    }
 
 }
-
 
 //Datasource
 extension PhotoViewController {

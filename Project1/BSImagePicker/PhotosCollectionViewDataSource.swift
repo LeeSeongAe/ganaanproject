@@ -53,7 +53,6 @@ class PhotosCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         if cell.tag != 0 {
             photosManager.cancelImageRequest(PHImageRequestID(cell.tag))
         }
-        
         let asset = fetchResult[indexPath.row]
         cell.asset = asset
         
