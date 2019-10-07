@@ -8,11 +8,16 @@
 
 import UIKit
 
-class IntroduceViewController: UIViewController {
+class IntroduceViewController: UIViewController, TitleStackViewDataSource {
 
+    @IBOutlet weak var titleStackView: TitleStackView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
@@ -25,5 +30,21 @@ class IntroduceViewController: UIViewController {
         self.navigationController?.navigationBar.layoutIfNeeded()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        titleStackView.reloadData()
+    }
 
+}
+
+extension IntroduceViewController {
+    
+    func title(for titleStackView: TitleStackView) -> String? {
+        return "Information of Youth 👫"
+    }
+    
+    func subtitle(for titleStackView: TitleStackView) -> String? {
+        return nil
+    }
 }

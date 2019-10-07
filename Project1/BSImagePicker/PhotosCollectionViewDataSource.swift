@@ -39,12 +39,14 @@ class PhotosCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchResult.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         UIView.setAnimationsEnabled(false)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BsPhotoCell.cellIdentifier, for: indexPath) as! BsPhotoCell
-        cell.accessibilityIdentifier = "photo_cell_\(indexPath.item)"
+        let allPhotoCount = fetchResult.count
+        cell.accessibilityIdentifier = "photo_cell_\(allPhotoCount - (indexPath.row + 1))"
         cell.isAccessibilityElement = true
         if let settings = settings {
             cell.settings = settings
@@ -53,6 +55,7 @@ class PhotosCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         if cell.tag != 0 {
             photosManager.cancelImageRequest(PHImageRequestID(cell.tag))
         }
+        
         let asset = fetchResult[indexPath.row]
         cell.asset = asset
         

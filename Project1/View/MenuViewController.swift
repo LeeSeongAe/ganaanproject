@@ -10,10 +10,16 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var menuListArray = ["Home", "Introduce", "Schedule", "Photo", "Q&A", "Cell"]
+//    var menuListArray = ["Home", "Introduce", "Schedule", "Photo", "Q&A", "Cell"]
+    var menuListArray = ["Home", "Introduce", "Photo", "Cell"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.width - 70
         
     }

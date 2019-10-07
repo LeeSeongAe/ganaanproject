@@ -78,6 +78,11 @@ class PhotosViewController: UICollectionViewController {
         super.loadView()
 //        self.selectedImage = selectedImage
         // Setup collection view
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        
         collectionView?.backgroundColor = settings.backgroundColor
         collectionView?.allowsMultipleSelection = true
         
@@ -146,7 +151,9 @@ class PhotosViewController: UICollectionViewController {
     @objc func doneButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
         finishClosure?(assetStore.assets)
-        ImageService.shared.upload(images: imageData, albumId: album.albumId) {}
+            
+        ImageService.shared.upload(images: imageAssets(asset: assetStore.assets) as! [Data], albumId: album.albumId) {
+        }
     }
     
     
@@ -277,6 +284,7 @@ extension PhotosViewController {
         guard let cell = collectionView.cellForItem(at: indexPath) as? BsPhotoCell else { return false }
         let allPhotoCount = photosDataSource.fetchResult.count
         let asset = photosDataSource.fetchResult.object(at: allPhotoCount - (indexPath.row + 1))
+//        let asset = photosDataSource.fetchResult.object(at: indexPath.row)
         
         // Select or deselect?
         if assetStore.contains(asset) { // Deselect
@@ -297,12 +305,12 @@ extension PhotosViewController {
             collectionView.reloadItems(at: selectedIndexPaths)
             UIView.setAnimationsEnabled(true)
             
-            let imagesDataToUpload = selectedIndexPaths
-                .map { $0.row }
-                .map { images[$0] }
-                .map { $0.jpegData(compressionQuality: 1) }
-            
-            imageUpload(images: imagesDataToUpload as! [Data])
+//            let imagesDataToUpload = selectedIndexPaths
+//                .map { $0.row }
+//                .map { images[$0] }
+//                .map { $0.jpegData(compressionQuality: 1) }
+//
+//            imageUpload(images: imagesDataToUpload as! [Data])
             
             cell.photoSelected = false
             
@@ -328,29 +336,47 @@ extension PhotosViewController {
             // Call selection closure
             selectionClosure?(asset)
             
-            let selectedIndexPaths = assetStore.assets.compactMap({ (asset) -> IndexPath? in
-                let index = photosDataSource.fetchResult.index(of: asset)
-                guard index != NSNotFound else { return nil }
-                return IndexPath(item: index, section: 1)
-            })
-            
-            UIView.setAnimationsEnabled(false)
-            collectionView.reloadItems(at: selectedIndexPaths)
-            UIView.setAnimationsEnabled(true)
-            //TO-DO
-            
-            let imagesDataToUpload = selectedIndexPaths
-                .map { $0.row }
-                .map { images[$0] }
-                .map { $0.jpegData(compressionQuality: 1) }
-            
-            imageUpload(images: imagesDataToUpload as! [Data])
+//            imageAssets(asset: [asset])
+//            let selectedIndexPaths = assetStore.assets.compactMap({ (asset) -> IndexPath? in
+//                let index = photosDataSource.fetchResult.index(of: asset)
+//                guard index != NSNotFound else { return nil }
+//                return IndexPath(item: index, section: 1)
+//            })
+//
+//            UIView.setAnimationsEnabled(false)
+//            collectionView.reloadItems(at: selectedIndexPaths)
+//            UIView.setAnimationsEnabled(true)
+//            //TO-DO
+//
+//            let imagesDataToUpload = selectedIndexPaths
+//                .map { $0.row }
+//                .map { images[$0] }
+//                .map { $0.jpegData(compressionQuality: 1) }
+//
+//            imageUpload(images: imagesDataToUpload as! [Data])
             
         } else if assetStore.count >= settings.maxNumberOfSelections {
             selectLimitReachedClosure?(assetStore.count)
         }
         
+        
+        
         return false
+    }
+    
+    func imageAssets(asset: [PHAsset]) -> [Data?] {
+        let selectedIndexPaths = assetStore.assets.compactMap({ (asset) -> IndexPath? in
+            let index = photosDataSource?.fetchResult.index(of: asset)
+            guard index != NSNotFound else { return nil }
+            return IndexPath(item: index!, section: 1)
+        })
+        
+        let imagesDataToUpload = selectedIndexPaths
+            .map { $0.row }
+            .map { images[$0] }
+            .map { $0.jpegData(compressionQuality: 1) }
+        
+        return imagesDataToUpload
     }
     
     func imageUpload(images: [Data]) {

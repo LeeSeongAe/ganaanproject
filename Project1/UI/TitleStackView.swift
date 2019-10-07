@@ -85,14 +85,12 @@ class TitleStackView: UIStackView {
     func addTitleLabel(withTitle title: String) {
         let label = UILabel()
         label.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
-        label.font = UIFont(name: "SFProDisplay-Thin", size: 26)
+        label.font = UIFont(name: "Chalkduster", size: 22)
         label.textColor = .black
-        label.backgroundColor = .yellow
+        label.backgroundColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
         label.isUserInteractionEnabled = true
-        
-        label.text = "title"
         self.insertArrangedSubview(label, at: 0)
 //        label.topAnchor.constraint(equalTo: label.superview!.topAnchor, constant: 25.0).isActive = true
         

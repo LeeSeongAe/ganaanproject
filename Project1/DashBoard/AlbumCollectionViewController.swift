@@ -10,8 +10,7 @@ import UIKit
 import Photos
 import FirebaseFirestore
 
-class AlbumCollectionViewController: UIViewController, UICollectionViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageTaskDownloadedDelegate {
-    
+class AlbumCollectionViewController: UIViewController, UICollectionViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageTaskDownloadedDelegate, TitleStackViewDataSource {
     
     var album: AlbumEntity!
     var imageEntities: [ImageEntity]?
@@ -27,20 +26,33 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
     var selectedAssets = [PHAsset]()
     var selectedImageIndex = Int()
     
+    @IBOutlet weak var titleStackView: TitleStackView!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = album?.name
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        
+//        self.title = album?.name
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        titleStackView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        selectedPhoto = nil
         
         queryListener = ImageService.shared.getAllImagesFor(albumId: album.albumId) { [weak self] images in
             guard let strongSelf = self else { return }
@@ -54,7 +66,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
             }
             
             strongSelf.collectionView.reloadData()
-            strongSelf.activityIndicator.stopAnimating()
+//            strongSelf.activityIndicator.stopAnimating()
         }
     }
     
@@ -127,7 +139,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
                                                     self.selectedAssets.append(asset[i])
                                                 }
         },
-                                             completion: nil)
+                                             completion:nil)
     }
 
         
@@ -148,4 +160,16 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
         }
     }
     
+}
+
+
+extension AlbumCollectionViewController {
+    
+    func title(for titleStackView: TitleStackView) -> String? {
+        return album?.name
+    }
+    
+    func subtitle(for titleStackView: TitleStackView) -> String? {
+        return nil
+    }
 }

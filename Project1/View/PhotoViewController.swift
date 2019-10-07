@@ -15,7 +15,7 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var albums: [AlbumEntity]?
     var queryListener: ListenerRegistration!
-    var imageEntities: [ImageEntity]?
+//    var imageEntities: [ImageEntity]?
 //    var imageTasks = [String: ImageTask]()
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -48,7 +48,6 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
-        titleStackView.backgroundColor = .yellow
         
         self.albumNameArr.removeAll()
         
@@ -111,6 +110,7 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
     }
     
     
+    
     @IBAction func albumAdd(_ sender: Any) {
         let alertController = UIAlertController(title: "Add new album", message: nil, preferredStyle: .alert)
         
@@ -146,7 +146,7 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
 extension PhotoViewController {
     
     func title(for titleStackView: TitleStackView) -> String? {
-        return "송가청 앨범"
+        return "GanaanYouth Album 📸"
     }
     
     func subtitle(for titleStackView: TitleStackView) -> String? {

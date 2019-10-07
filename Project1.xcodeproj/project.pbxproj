@@ -64,6 +64,7 @@
 		AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E422DD8B9700146091 /* CustomAlertView.swift */; };
 		AF7505E722DDCDC900146091 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E622DDCDC900146091 /* UserDTO.swift */; };
 		AF9C2C82233DEC1E0061C3AC /* slideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C2C81233DEC1E0061C3AC /* slideCell.swift */; };
+		AF9C2C852341D4480061C3AC /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */; };
 		AF9C717F2281166D002D0DF3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C717E2281166D002D0DF3 /* IntroViewController.swift */; };
 		AF9C718322817A91002D0DF3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9C718122817A91002D0DF3 /* SWRevealViewController.m */; };
 		AF9C718722827123002D0DF3 /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9C718622827122002D0DF3 /* SlideMenu.storyboard */; };
@@ -142,6 +143,8 @@
 		AF7505E422DD8B9700146091 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		AF7505E622DDCDC900146091 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		AF9C2C81233DEC1E0061C3AC /* slideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slideCell.swift; sourceTree = "<group>"; };
+		AF9C2C832341D4470061C3AC /* Project1Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Project1Release.entitlements; sourceTree = "<group>"; };
+		AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		AF9C717E2281166D002D0DF3 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		AF9C718022817A90002D0DF3 /* Project1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project1-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF9C718122817A91002D0DF3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9C2C852341D4480061C3AC /* ExternalAccessory.framework in Frameworks */,
 				B7DD234406ED28DAA9200388 /* Pods_Project1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +210,7 @@
 		AF1B0ABA227AE65F0022DE0E /* Project1 */ = {
 			isa = PBXGroup;
 			children = (
+				AF9C2C832341D4470061C3AC /* Project1Release.entitlements */,
 				AF72E5E223330E2100667B03 /* BSImagePicker */,
 				AF72E5D72330A4A900667B03 /* SelectPhtos */,
 				AF72E5D2232FA08700667B03 /* Task */,
@@ -368,6 +373,7 @@
 		BCD5E697934DEFAEFF3AC7FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */,
 				FCD7A8538E5CCBC7C1AF04C3 /* Pods_Project1.framework */,
 			);
 			name = Frameworks;
@@ -728,6 +734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Project1/Project1Release.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZLCK4RV4K;
 				INFOPLIST_FILE = Project1/Info.plist;

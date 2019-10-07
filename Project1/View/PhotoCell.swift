@@ -18,7 +18,7 @@ class PhotoCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        dateFormatter.dateFormat = "dd MMM YYYY"
+        dateFormatter.dateFormat = "YYYY-MM-dd"
     }
     
     func configure(albumName: String, createdOn: Date, numberOfPhotos: Int) {

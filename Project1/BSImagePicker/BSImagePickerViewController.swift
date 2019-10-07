@@ -116,6 +116,10 @@ class BSImagePickerViewController: UINavigationController {
     open override func loadView() {
         super.loadView()
         
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        
         // TODO: Settings
         view.backgroundColor = UIColor.white
         

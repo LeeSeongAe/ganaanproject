@@ -21,6 +21,10 @@ class AlbumsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        
         let visualEffectView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: UIBlurEffect(style: .light)))
         visualEffectView.frame = tableView.bounds
         visualEffectView.autoresizingMask = [.flexibleWidth , .flexibleHeight]

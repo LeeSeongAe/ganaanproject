@@ -13,15 +13,19 @@ import SnapKit
 import Firebase
 
 
-class ViewController: UIViewController {
-    var disposeBag = DisposeBag()
+class ViewController: UIViewController, TitleStackViewDataSource {
     
+    var disposeBag = DisposeBag()
+    @IBOutlet weak var progressbar: UIActivityIndicatorView!
+    
+    @IBOutlet weak var titleStackView: TitleStackView!
     @IBOutlet weak var phoneNumField: UITextField!
     @IBOutlet weak var pwField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var phoneNumValidView: UIView!
     @IBOutlet weak var pwValidView: UIView!
     
+    @IBOutlet weak var joinButton: customButton!
     
     let phoneNumValid : BehaviorSubject<Bool> = BehaviorSubject(value: false) // 스스로 data를 가지고 있는 , 외부에서 data 할당이 가능한
     let phoneNumInputText : BehaviorSubject<String> = BehaviorSubject(value: "")
@@ -34,6 +38,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        
+        
+        progressbar.hidesWhenStopped = true
+        self.view.bringSubviewToFront(progressbar)
         RemoteConfig.remoteConfig().setDefaults(fromPlist: "RemoteConfigDefaults")
         
         RemoteConfig.remoteConfig().fetch(withExpirationDuration: TimeInterval(0)) { (status, error) -> Void in
@@ -62,12 +73,21 @@ class ViewController: UIViewController {
         
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        titleStackView.reloadData()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        progressbar.stopAnimating()
+    }
     
     func displayWelcome() {
 
 //        let color = RemoteConfig.remoteConfig().value(forKey: "splash_background")
-        let color = RemoteConfig.remoteConfig().configValue(forKey: "splash_background").stringValue
+        _ = RemoteConfig.remoteConfig().configValue(forKey: "splash_background").stringValue
         let caps = RemoteConfig.remoteConfig().configValue(forKey: "splash_message_caps").boolValue
         let message = RemoteConfig.remoteConfig().configValue(forKey: "splash_message").stringValue
         
@@ -192,6 +212,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
+        progressbar.startAnimating()
 //        callCurrentTime()
 //        jsonPost()
         
@@ -276,6 +297,18 @@ extension UIColor {
             green: CGFloat(g) / 0xff,
             blue: CGFloat(b) / 0xff, alpha: 1
         )
+    }
+}
+
+
+extension ViewController {
+    
+    func title(for titleStackView: TitleStackView) -> String? {
+        return "Ganaan Youth 💕"
+    }
+    
+    func subtitle(for titleStackView: TitleStackView) -> String? {
+        return nil
     }
 }
 
