@@ -44,7 +44,7 @@ extension IntroduceViewController {
         return "Information of Youth 👫"
     }
     
-    func subtitle(for titleStackView: TitleStackView) -> String? {
-        return nil
-    }
+//    func subtitle(for titleStackView: TitleStackView) -> String? {
+//        return nil
+//    }
 }

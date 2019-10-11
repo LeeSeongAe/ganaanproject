@@ -12,12 +12,13 @@ extension AlbumCollectionViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        self.performSegue(withIdentifier: "PhotoDetailsSegue", sender: indexPath.row)
-        let senderTag = indexPath.item
         
+        let senderTag = indexPath.item
+//
         if senderTag == 0 {
             getImageFromLibrary()
         } else {
-            self.performSegue(withIdentifier: "ToDashBoard", sender: senderTag)
+            self.performSegue(withIdentifier: "ToDashBoard", sender: indexPath.row)
         }
         
     }

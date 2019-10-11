@@ -116,9 +116,9 @@ extension IntroViewController {
         return "💖 GOD BLESS YOU 💖"
     }
 
-    func subtitle(for titleStackView: TitleStackView) -> String? {
-        return nil
-    }
+//    func subtitle(for titleStackView: TitleStackView) -> String? {
+//        return nil
+//    }
 }
     
 extension IntroViewController: UICollectionViewDelegate, UICollectionViewDataSource {

@@ -273,8 +273,8 @@ extension CellCheckTableViewController {
         return "[" + navTitle + "]"
     }
     
-    func subtitle(for titleStackView: TitleStackView) -> String? {
-        return nil
-    }
+//    func subtitle(for titleStackView: TitleStackView) -> String? {
+//        return nil
+//    }
 }
 

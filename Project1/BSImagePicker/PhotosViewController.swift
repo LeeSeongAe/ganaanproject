@@ -226,6 +226,8 @@ class PhotosViewController: UICollectionViewController {
         navigationItem.rightBarButtonItem = doneBarButton
     }
     
+    
+    
     func updateAlbumTitle(_ album: PHAssetCollection) {
         guard let title = album.localizedTitle else { return }
         // Update album title
@@ -257,6 +259,10 @@ class PhotosViewController: UICollectionViewController {
         composedDataSource = ComposedCollectionViewDataSource(dataSources: [cameraDataSource, newDataSource])
         collectionView?.dataSource = composedDataSource
         collectionView?.delegate = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
 }
 
@@ -304,13 +310,7 @@ extension PhotosViewController {
             UIView.setAnimationsEnabled(false)
             collectionView.reloadItems(at: selectedIndexPaths)
             UIView.setAnimationsEnabled(true)
-            
-//            let imagesDataToUpload = selectedIndexPaths
-//                .map { $0.row }
-//                .map { images[$0] }
-//                .map { $0.jpegData(compressionQuality: 1) }
-//
-//            imageUpload(images: imagesDataToUpload as! [Data])
+        
             
             cell.photoSelected = false
             
@@ -335,25 +335,6 @@ extension PhotosViewController {
             
             // Call selection closure
             selectionClosure?(asset)
-            
-//            imageAssets(asset: [asset])
-//            let selectedIndexPaths = assetStore.assets.compactMap({ (asset) -> IndexPath? in
-//                let index = photosDataSource.fetchResult.index(of: asset)
-//                guard index != NSNotFound else { return nil }
-//                return IndexPath(item: index, section: 1)
-//            })
-//
-//            UIView.setAnimationsEnabled(false)
-//            collectionView.reloadItems(at: selectedIndexPaths)
-//            UIView.setAnimationsEnabled(true)
-//            //TO-DO
-//
-//            let imagesDataToUpload = selectedIndexPaths
-//                .map { $0.row }
-//                .map { images[$0] }
-//                .map { $0.jpegData(compressionQuality: 1) }
-//
-//            imageUpload(images: imagesDataToUpload as! [Data])
             
         } else if assetStore.count >= settings.maxNumberOfSelections {
             selectLimitReachedClosure?(assetStore.count)

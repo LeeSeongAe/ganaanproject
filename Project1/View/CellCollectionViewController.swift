@@ -85,7 +85,7 @@ extension CellCollectionViewController {
         return "CELL 😘"
     }
     
-    func subtitle(for titleStackView: TitleStackView) -> String? {
-        return nil
-    }
+//    func subtitle(for titleStackView: TitleStackView) -> String? {
+//        return nil
+//    }
 }

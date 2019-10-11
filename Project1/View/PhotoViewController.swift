@@ -149,7 +149,7 @@ extension PhotoViewController {
         return "GanaanYouth Album 📸"
     }
     
-    func subtitle(for titleStackView: TitleStackView) -> String? {
-        return nil
-    }
+//    func subtitle(for titleStackView: TitleStackView) -> String? {
+//        return nil
+//    }
 }

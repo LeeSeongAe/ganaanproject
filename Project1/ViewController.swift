@@ -307,9 +307,9 @@ extension ViewController {
         return "Ganaan Youth 💕"
     }
     
-    func subtitle(for titleStackView: TitleStackView) -> String? {
-        return nil
-    }
+//    func subtitle(for titleStackView: TitleStackView) -> String? {
+//        return nil
+//    }
 }
 
 

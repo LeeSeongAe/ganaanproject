@@ -9,11 +9,22 @@
 import UIKit
 
 class DashBoardViewController: UIViewController, UIPageViewControllerDataSource {
-//  MARK: - variable
+    //  MARK: - variable
     @IBOutlet weak var pageView: UIView!
     
     var contentImageData = NSArray()
     var selectedImageIndex = Int()
+    
+    var imageId: String!
+    
+    var image: UIImage? {
+        didSet {
+//                        if imageView != nil, let image = image {
+//                            set(image: image)
+//                        }
+            print("⭕️")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +49,7 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
     //MARK: - Page view
     
     func ContentVCIndex(index: Int) -> ContentViewController {
-        print("index : \(index)")
+        print("index : \(index), contentImageData.count : \(contentImageData.count)")
         if contentImageData.count == 0 || index >= contentImageData.count {
             return ContentViewController()
         }
@@ -46,8 +57,8 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
         let ContentVC = self.storyboard?.instantiateViewController(withIdentifier: "contentViewController") as! ContentViewController
         
         ContentVC.pageIndex = index
-        ContentVC.contentImage = contentImageData[index] as! UIImage
         
+        ContentVC.contentImage = contentImageData[index] as! UIImage
         return ContentVC
     }
     
@@ -73,7 +84,7 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
         if pageIndex == NSNotFound {
             return nil
         }
-            
+        
         pageIndex += 1
         
         if pageIndex == contentImageData.count {
@@ -83,6 +94,13 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
         return ContentVCIndex(index: pageIndex)
     }
     //MARK: -
-
-
+    
+    @IBAction func deleteHandler(_ sender: Any) {
+        //        activityIndicator.startAnimating()
+        
+        ImageService.shared.delete(imageId: imageId) {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
 }

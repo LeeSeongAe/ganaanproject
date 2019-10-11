@@ -18,7 +18,6 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
     var queryListener: ListenerRegistration!
     
     let urlSession = URLSession(configuration: URLSessionConfiguration.default)
-    var selectedPhoto: (index: Int, contentViewController: ContentViewController)?
     
     var images = [UIImage]()
     
@@ -31,8 +30,12 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var selectedPhoto: (index: Int, dashBoardViewController: DashBoardViewController)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        selectedPhoto = nil
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -91,7 +94,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
             collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
             
             if let selectedPhoto = self.selectedPhoto, selectedPhoto.index == index, imageEntities?.count ?? 0 > index, let imageEntity = imageEntities?[index], let imageTask = imageTasks[imageEntity.imageId], let image = imageTask.image {
-                selectedPhoto.contentViewController.contentImage = image
+                photoArray = [image]
             }
         }
     }
@@ -117,14 +120,27 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "SelectPhotosSegue" {
-            getImageFromLibrary()
+//        if segue.identifier == "SelectPhotosSegue" {
+//            getImageFromLibrary()
+//        } else if segue.identifier == "PhotoDetailsSegue", let photoDetailsController = segue.destination as? PhotoDetailsViewController, let index = sender as? Int, imageEntities?.count ?? 0 > index, let imageEntity = imageEntities?[index] {
+////            selectedPhoto = (index, photoDetailsController)
+//            photoDetailsController.imageId = imageEntity.imageId
+//            photoDetailsController.image = imageTasks[imageEntity.imageId]?.image
+//        }
+        
+        if segue.identifier == "ToDashBoard", let dashBoardViewController = segue.destination as? DashBoardViewController, let index = sender as? Int, imageEntities?.count ?? 0 > index, let imageEntity = imageEntities?[index] {
+            selectedPhoto = (index, dashBoardViewController)
+            dashBoardViewController.imageId = imageEntity.imageId
+            dashBoardViewController.image = imageTasks[imageEntity.imageId]?.image
+            dashBoardViewController.contentImageData = selectedAssets as NSArray
+            dashBoardViewController.selectedImageIndex = sender as! Int
         }
         
-        if let viewController = segue.destination as? DashBoardViewController {
-            viewController.contentImageData = photoArray as NSArray
-            viewController.selectedImageIndex = sender as! Int
-        }
+//        if let viewController = segue.destination as? DashBoardViewController {
+//            viewController.contentImageData = photoArray as NSArray
+//            viewController.selectedImageIndex = sender as! Int
+//        }
+        
     }
     
     func getImageFromLibrary() {
@@ -169,7 +185,7 @@ extension AlbumCollectionViewController {
         return album?.name
     }
     
-    func subtitle(for titleStackView: TitleStackView) -> String? {
-        return nil
-    }
+//    func subtitle(for titleStackView: TitleStackView) -> String? {
+//        return nil
+//    }
 }
