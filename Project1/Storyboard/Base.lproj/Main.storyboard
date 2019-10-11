@@ -1200,6 +1200,9 @@
                     <navigationItem key="navigationItem" id="4pl-PC-A5G">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YEh-Nk-aZm">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="photoAddAction:" destination="cHc-u2-7c1" id="4Ol-hZ-ZU2"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

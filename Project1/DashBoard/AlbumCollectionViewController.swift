@@ -91,11 +91,12 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
     
     func imageDownloaded(id: String) {
         if let index = imageEntities?.firstIndex(where: { $0.imageId == id }) {
+            
             collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
             
-            if let selectedPhoto = self.selectedPhoto, selectedPhoto.index == index, imageEntities?.count ?? 0 > index, let imageEntity = imageEntities?[index], let imageTask = imageTasks[imageEntity.imageId], let image = imageTask.image {
-                photoArray = [image]
-            }
+            let imageTask = imageTasks[(imageEntities?[index].imageId)!]
+            let image = imageTask?.image
+            photoArray.append(image!)
         }
     }
     
@@ -112,34 +113,24 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
             let imageEntity = imageEntities[indexPath.item]
             albumCell.configure(image: imageTasks[imageEntity.imageId]?.image)
         }
-        
         albumCell.ganaanImage?.tag = indexPath.item
         
         return albumCell
     }
     
+    @IBAction func photoAddAction(_ sender: Any) {
+        getImageFromLibrary()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-//        if segue.identifier == "SelectPhotosSegue" {
-//            getImageFromLibrary()
-//        } else if segue.identifier == "PhotoDetailsSegue", let photoDetailsController = segue.destination as? PhotoDetailsViewController, let index = sender as? Int, imageEntities?.count ?? 0 > index, let imageEntity = imageEntities?[index] {
-////            selectedPhoto = (index, photoDetailsController)
-//            photoDetailsController.imageId = imageEntity.imageId
-//            photoDetailsController.image = imageTasks[imageEntity.imageId]?.image
-//        }
-        
         if segue.identifier == "ToDashBoard", let dashBoardViewController = segue.destination as? DashBoardViewController, let index = sender as? Int, imageEntities?.count ?? 0 > index, let imageEntity = imageEntities?[index] {
-            selectedPhoto = (index, dashBoardViewController)
-            dashBoardViewController.imageId = imageEntity.imageId
+                selectedPhoto = (index, dashBoardViewController)
+                dashBoardViewController.imageId = imageEntity.imageId
             dashBoardViewController.image = imageTasks[imageEntity.imageId]?.image
-            dashBoardViewController.contentImageData = selectedAssets as NSArray
+            dashBoardViewController.contentImageData = photoArray as NSArray
             dashBoardViewController.selectedImageIndex = sender as! Int
         }
-        
-//        if let viewController = segue.destination as? DashBoardViewController {
-//            viewController.contentImageData = photoArray as NSArray
-//            viewController.selectedImageIndex = sender as! Int
-//        }
         
     }
     
@@ -154,6 +145,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
                                                 for i in 0..<asset.count {
                                                     self.selectedAssets.append(asset[i])
                                                 }
+//                                                self.convertAssetToImages()
         },
                                              completion:nil)
     }

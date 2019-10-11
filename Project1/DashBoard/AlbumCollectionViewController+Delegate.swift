@@ -12,15 +12,8 @@ extension AlbumCollectionViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        self.performSegue(withIdentifier: "PhotoDetailsSegue", sender: indexPath.row)
-        
-        let senderTag = indexPath.item
-//
-        if senderTag == 0 {
-            getImageFromLibrary()
-        } else {
-            self.performSegue(withIdentifier: "ToDashBoard", sender: indexPath.row)
-        }
-        
+        print(indexPath.row)
+        self.performSegue(withIdentifier: "ToDashBoard", sender: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
