@@ -12,11 +12,4 @@ class slideCell: UICollectionViewCell {
     
     @IBOutlet weak var sliderImage: UIImageView!
     
-    override func awakeFromNib() {
-        setupCell()
-    }
-    
-    func setupCell() {
-        
-    }
 }

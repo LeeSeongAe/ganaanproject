@@ -67,7 +67,7 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
         let contentVC = viewController as! ContentViewController
         var pageIndex = contentVC.pageIndex as Int
         
-        if pageIndex == 1 || pageIndex == NSNotFound {
+        if pageIndex == 0 || pageIndex == NSNotFound {
             return nil
         }
         
