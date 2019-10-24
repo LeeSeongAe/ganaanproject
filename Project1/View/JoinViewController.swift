@@ -11,22 +11,35 @@ import TextFieldEffects
 import FirebaseAuth
 
 
-class JoinViewController: UIViewController {
+class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var joinEmail: MadokaTextField!
     @IBOutlet weak var joinPW: MadokaTextField!
+    
+    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var selectedRoll: customLabel!
     
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var joinNav: UINavigationBar!
     @IBOutlet weak var joinCancelBtn: UIBarButtonItem!
     
+    let rollMember = ["", "목사님","간사님","부장집사님","셀원", "요셉1셀장","요셉2셀장","요셉3셀장","요셉4셀장","요셉5셀장","요셉6셀장","여호수아1셀장","여호수아2셀장","여호수아3셀장","여호수아4셀장","여호수아5셀장","여호수아6셀장","갈렙1셀장","갈렙2셀장", "갈렙3셀장", "갈렙4셀장"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController?.isNavigationBarHidden = false
         
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.layoutIfNeeded()
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+
+        selectedRoll.text = ""
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     
@@ -37,20 +50,22 @@ class JoinViewController: UIViewController {
     @IBAction func joinAction(_ sender: Any) {
         
         
-            if joinEmail.text == "" {
-                print("이메일을 입력하세요!")
-                return
-            }
-            
-            if joinPW.text == "" {
-                print("비밀번호를 입력하세요!")
-                return
-            }
+        if joinEmail.text == "" {
+            self.showAlert(message: "이메일을 입력하세요!")
+            return
+        }
+        
+        if joinPW.text == "" {
+            self.showAlert(message: "비밀번호를 입력하세요!")
+            return
+        }
+        
+        if selectedRoll.text == "" {
+            self.showAlert(message: "담당사역을 선택해주세요!")
+            return
+        }
             
         signUp(email: joinEmail.text!, password: joinPW.text!)
-        
-        
-
     }
     
     func signUp(email:String, password:String) {
@@ -71,9 +86,26 @@ class JoinViewController: UIViewController {
                     }
                 }
             } else {
-                print("회원가입 성공!!!")
                 dump(user)
-                self.performSegue(withIdentifier: "JoinEnd", sender: nil)
+                let alertController = UIAlertController(title: "회원가입 성공", message: nil, preferredStyle: .alert)
+                        
+//                        alertController.addTextField { textField in
+//                            textField.placeholder = ""
+//                        }
+                        
+//                        let textField = alertController.textFields![0] as UITextField
+                        
+                        let saveAction = UIAlertAction(title: "OK", style: .default) { _ in
+                            self.userUidCheck()
+                            alertController.dismiss(animated: true)
+                        }
+                        
+//                        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+//
+//                        alertController.addAction(cancelAction)
+                        alertController.addAction(saveAction)
+                        
+                        self.present(alertController, animated: true)
             }
             
             })
@@ -89,6 +121,33 @@ class JoinViewController: UIViewController {
         
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return rollMember.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return rollMember[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        selectedRoll.text = rollMember[row]
+    }
+    
+    func userUidCheck() {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        print("userID :: \(userID)")
+        
+        UserDefaults.standard.set(selectedRoll.text, forKey: userID)
+        
+        self.dismiss(animated: true, completion: nil)
+//        self.performSegue(withIdentifier: "JoinEnd", sender: nil)
+    }
     
 }
 

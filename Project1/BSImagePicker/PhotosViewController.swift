@@ -55,7 +55,7 @@ class PhotosViewController: UICollectionViewController {
     
     required init(fetchResults: [PHFetchResult<PHAssetCollection>], assetStore: AssetStore, settings aSettings: BSImagePickerSettings) {
         albumsDataSource = AlbumTableViewDataSource(fetchResults: fetchResults)
-        cameraDataSource = CameraCollectionViewDataSource(settings: aSettings, cameraAvailable: UIImagePickerController.isSourceTypeAvailable(.camera))
+        cameraDataSource = CameraCollectionViewDataSource(settings: aSettings, cameraAvailable: UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum))
         settings = aSettings
         self.assetStore = assetStore
         
@@ -237,6 +237,7 @@ class PhotosViewController: UICollectionViewController {
     func initializePhotosDataSource(_ album: PHAssetCollection) {
         // Set up a photo data source with album
         let fetchOptions = PHFetchOptions()
+
         fetchOptions.sortDescriptors = [
             NSSortDescriptor(key: "creationDate", ascending: false)
         ]
@@ -275,7 +276,7 @@ extension PhotosViewController {
         if let composedDataSource = composedDataSource , composedDataSource.dataSources[indexPath.section].isEqual(cameraDataSource) {
             let cameraController = UIImagePickerController()
             cameraController.allowsEditing = false
-            cameraController.sourceType = .camera
+            cameraController.sourceType = .savedPhotosAlbum
             cameraController.delegate = self
             
             self.present(cameraController, animated: true, completion: nil)
@@ -289,6 +290,7 @@ extension PhotosViewController {
         // We need a cell
         guard let cell = collectionView.cellForItem(at: indexPath) as? BsPhotoCell else { return false }
         let allPhotoCount = photosDataSource.fetchResult.count
+        
         let asset = photosDataSource.fetchResult.object(at: allPhotoCount - (indexPath.row + 1))
 //        let asset = photosDataSource.fetchResult.object(at: indexPath.row)
         
@@ -355,7 +357,7 @@ extension PhotosViewController {
         let imagesDataToUpload = selectedIndexPaths
             .map { $0.row }
             .map { images[$0] }
-            .map { $0.jpegData(compressionQuality: 1) }
+            .map { $0.pngData() }
         
         return imagesDataToUpload
     }

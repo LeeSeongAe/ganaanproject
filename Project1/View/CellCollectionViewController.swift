@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CellCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, TitleStackViewDataSource {
  
@@ -66,8 +67,25 @@ class CellCollectionViewController: UIViewController, UICollectionViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         navTitle = cellTotal[indexPath.row]
-        self.performSegue(withIdentifier: "CellCheckCell", sender: nil)
-        print("\(navTitle)")
+        
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        let value = UserDefaults.standard.object(forKey: userID) as! String
+        print("value:: \(String(describing: value))")
+        
+        let cellKey = navTitle + "셀장"
+        
+        if cellKey == value || value == "목사님" || value == "간사님" || value == "부장집사님" {
+            self.performSegue(withIdentifier: "CellCheckCell", sender: nil)
+        } else {
+            let alertController = UIAlertController(title: "접근권한이 없습니다.", message: nil, preferredStyle: .alert)
+            
+            let saveAction = UIAlertAction(title: "OK", style: .default) { _ in
+                alertController.dismiss(animated: true)
+            }
+            alertController.addAction(saveAction)
+            self.present(alertController, animated: true)
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any? ) {

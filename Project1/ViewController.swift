@@ -65,11 +65,10 @@ class ViewController: UIViewController, TitleStackViewDataSource {
         phoneNumField.text = "lovemanse7@naver.com"
         pwField.text = "12345678"
         
-//        self.view.addSubview(box)
-//        box.snp.makeConstraints{(make) in
-//            make.center.equalTo(self.view)
-//        }
-//        box.image = #imageLiteral(resourceName: "icon")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
     }
     
@@ -150,10 +149,6 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     
     @IBAction func joinAction(_ sender: Any) {
         performSegue(withIdentifier: "joinVC", sender: nil)
-//        let storyboard = UIStoryboard(name: "Join", bundle: nil)
-//        let joinVC = storyboard.instantiateViewController(withIdentifier: "joinVC")
-//        self.navigationController?.present(joinVC, animated: true
-//            , completion: nil)
     }
     
     

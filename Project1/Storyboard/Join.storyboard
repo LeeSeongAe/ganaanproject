@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,7 +42,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="NOy-7v-Y3F"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -64,7 +62,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="gcA-lW-1ic"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -91,21 +89,60 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jsT-3j-HxY">
+                                <rect key="frame" x="0.0" y="298" width="375" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="ZG4-Uk-05p"/>
+                                    <constraint firstAttribute="height" constant="216" id="wlw-yM-Fcw"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Xt-rk-zNj" id="lOC-pZ-j8T"/>
+                                    <outlet property="delegate" destination="8Xt-rk-zNj" id="eiA-6f-bLK"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해당되는 사역자분은 선택해주세요!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEn-gJ-ydS">
+                                <rect key="frame" x="0.0" y="248" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.48051604050000002" green="0.30673473350000002" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Hl6-wS-O5d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYy-Yr-K1u">
+                                <rect key="frame" x="0.0" y="524" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.48051604054219388" green="0.30673473349080871" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="b9a-xI-YNZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Fpr-5b-e0R" firstAttribute="top" secondItem="mRe-W1-40T" secondAttribute="top" id="8dp-1K-GBB"/>
+                            <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="uYy-Yr-K1u" secondAttribute="trailing" id="BTK-oT-IRT"/>
                             <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="T1Q-2s-iwi" secondAttribute="trailing" constant="16" id="CI1-vO-V9d"/>
                             <constraint firstItem="5j1-zC-UlK" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" constant="15" id="FMd-ba-G8u"/>
                             <constraint firstItem="T1Q-2s-iwi" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" constant="16" id="Iu6-FT-lWr"/>
+                            <constraint firstItem="jsT-3j-HxY" firstAttribute="centerY" secondItem="LRM-sF-ZPg" secondAttribute="centerY" id="SQ3-6R-T2P"/>
                             <constraint firstItem="zC2-oj-al8" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" constant="15" id="W5g-Ea-hzh"/>
+                            <constraint firstItem="uYy-Yr-K1u" firstAttribute="top" secondItem="jsT-3j-HxY" secondAttribute="bottom" constant="10" id="XeV-vP-Kdx"/>
                             <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="zC2-oj-al8" secondAttribute="trailing" constant="15" id="ZHd-Bu-li2"/>
+                            <constraint firstItem="jsT-3j-HxY" firstAttribute="top" secondItem="aEn-gJ-ydS" secondAttribute="bottom" constant="10" id="evI-uD-KJE"/>
                             <constraint firstItem="Fpr-5b-e0R" firstAttribute="trailing" secondItem="mRe-W1-40T" secondAttribute="trailing" id="fOK-ln-2t7"/>
+                            <constraint firstItem="aEn-gJ-ydS" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" id="fTk-fT-i5x"/>
+                            <constraint firstItem="jsT-3j-HxY" firstAttribute="centerX" secondItem="LRM-sF-ZPg" secondAttribute="centerX" id="gub-UT-QmS"/>
                             <constraint firstAttribute="bottom" secondItem="T1Q-2s-iwi" secondAttribute="bottom" constant="20" id="hHV-3C-LAC"/>
                             <constraint firstItem="Fpr-5b-e0R" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" id="iVC-VX-MXg"/>
+                            <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="aEn-gJ-ydS" secondAttribute="trailing" id="mcS-Zl-VET"/>
                             <constraint firstItem="5j1-zC-UlK" firstAttribute="top" secondItem="zC2-oj-al8" secondAttribute="bottom" constant="15" id="pST-4C-4Aa"/>
                             <constraint firstItem="T1Q-2s-iwi" firstAttribute="centerX" secondItem="LRM-sF-ZPg" secondAttribute="centerX" id="sC4-3J-Vao"/>
                             <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="5j1-zC-UlK" secondAttribute="trailing" constant="15" id="sFD-UV-Qva"/>
+                            <constraint firstItem="uYy-Yr-K1u" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" id="shI-fl-7Cs"/>
                             <constraint firstItem="zC2-oj-al8" firstAttribute="top" secondItem="mRe-W1-40T" secondAttribute="top" constant="60" id="waA-XK-ddG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mRe-W1-40T"/>
@@ -114,12 +151,14 @@
                         <outlet property="joinCancelBtn" destination="G4V-4H-4HZ" id="qBH-zt-1Gi"/>
                         <outlet property="joinEmail" destination="zC2-oj-al8" id="YYb-Oy-cp4"/>
                         <outlet property="joinPW" destination="5j1-zC-UlK" id="lyD-jb-4WS"/>
+                        <outlet property="pickerView" destination="jsT-3j-HxY" id="Bfh-bj-c8W"/>
+                        <outlet property="selectedRoll" destination="uYy-Yr-K1u" id="gDT-pa-jfF"/>
                         <segue destination="DlF-ne-Ej7" kind="show" identifier="JoinEnd" id="pVr-q1-7AV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t36-l0-0m6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="212" y="-37.331334332833585"/>
+            <point key="canvasLocation" x="212" y="-37.684729064039409"/>
         </scene>
         <!--LogInView-->
         <scene sceneID="WV4-ak-GPG">

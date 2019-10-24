@@ -145,6 +145,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
                                                 for i in 0..<asset.count {
                                                     self.selectedAssets.append(asset[i])
                                                 }
+                                                print("😆 \(asset)")
 //                                                self.convertAssetToImages()
         },
                                              completion:nil)

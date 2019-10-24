@@ -23,8 +23,8 @@ class IntroViewController: UIViewController, TitleStackViewDataSource {
     @IBOutlet weak var scheduleButton: UIButton!
     
     @IBOutlet weak var sliderCollectionView: UICollectionView!
-    var imageData:Array = [UIImage(named: "수련회0"), UIImage(named: "수련회1"), UIImage(named: "수련회3"),UIImage(named: "수련회4")]
-//    var imageData:Array = ["수빈.png","이삭.png","지애.png"]
+    var imageData:Array = [UIImage(named: "수련회"), UIImage(named: "토요기도회"), UIImage(named: "인사팀"),UIImage(named: "노방전도")]
+    
     var timer = Timer()
     var counter = 0
     

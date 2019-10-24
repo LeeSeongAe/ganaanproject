@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "92EC5166-D3A7-4895-9B66-10DB3D6689AC"
+            uuid = "92407ECE-20FA-4E9F-970B-9C7F019BA305"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project1/DashBoard/AlbumCollectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "getImageFromLibrary()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
