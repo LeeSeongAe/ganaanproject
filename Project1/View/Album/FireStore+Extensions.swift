@@ -14,7 +14,6 @@ extension Firestore {
     class func getFirestore() -> Firestore {
         let db = Firestore.firestore()
         let settings = db.settings
-//        settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
         return db
     }

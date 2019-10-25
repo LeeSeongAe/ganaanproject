@@ -357,7 +357,7 @@ extension PhotosViewController {
         let imagesDataToUpload = selectedIndexPaths
             .map { $0.row }
             .map { images[$0] }
-            .map { $0.pngData() }
+            .map { $0.jpegData(compressionQuality: 0.5) }
         
         return imagesDataToUpload
     }

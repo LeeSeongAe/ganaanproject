@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "92407ECE-20FA-4E9F-970B-9C7F019BA305"
-            shouldBeEnabled = "No"
+            uuid = "8B0687FA-2FDD-400F-A78D-168535B0FB1C"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Project1/DashBoard/AlbumCollectionViewController.swift"
+            filePath = "Project1/Task/ImageTask.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "getImageFromLibrary()"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "loadImageFromCache(imageId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E62D56AE-314E-4EB0-87F9-FA3652153459"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Project1/Task/ImageTask.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "getImageFileUrl(imageId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

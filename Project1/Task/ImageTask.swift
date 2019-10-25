@@ -112,7 +112,7 @@ class ImageTask {
         let fileURL = getImageFileUrl(imageId: imageId)
         
         do {
-            if let imageData = image.pngData() {
+            if let imageData = image.jpegData(compressionQuality: 0.5) {
                 try imageData.write(to: fileURL)
             }
         } catch {

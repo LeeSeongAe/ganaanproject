@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ContentViewController: UIViewController {
     
@@ -15,14 +16,16 @@ class ContentViewController: UIViewController {
     
     var pageIndex = Int()
     var contentImage = UIImage()
-    var contentImageArray = [UIImage]()
+    var imageUrl:URL? = nil
     // MARK: - variable End
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let url = imageUrl {
+            contentImageView?.sd_setImage(with: url, completed: nil)
+        }
         
-        contentImageView.image = contentImage
-        contentImageView.contentMode = .scaleAspectFit
+        contentImageView?.contentMode = .scaleAspectFit
     }
 
 }

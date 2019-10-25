@@ -9,6 +9,8 @@
 import UIKit
 import Photos
 import FirebaseFirestore
+import OpalImagePicker
+import SDWebImage
 
 class AlbumCollectionViewController: UIViewController, UICollectionViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageTaskDownloadedDelegate, TitleStackViewDataSource {
     
@@ -20,7 +22,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
     let urlSession = URLSession(configuration: URLSessionConfiguration.default)
     
     var images = [UIImage]()
-    
+    var imageURLs: [URL] = []
     var photoArray = [UIImage]()
     var selectedAssets = [PHAsset]()
     var selectedImageIndex = Int()
@@ -44,7 +46,6 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
             overrideUserInterfaceStyle = .light
         }
         
-//        self.title = album?.name
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,11 +57,21 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
         super.viewDidAppear(animated)
         
         selectedPhoto = nil
+        print(album.albumId)
         
         queryListener = ImageService.shared.getAllImagesFor(albumId: album.albumId) { [weak self] images in
             guard let strongSelf = self else { return }
             strongSelf.imageEntities = images
-            strongSelf.updateImageTasks()
+            
+            var urls: [URL] = []
+            for imageEntity in images {
+                if let urlString = imageEntity.url {
+                    urls.append(URL(string: urlString)!)
+                }
+            }
+            strongSelf.imageURLs = urls
+            //self!.imageURLs = images.map{ URL(string: $0.url)! }
+//            strongSelf.updateImageTasks()
             
             if images.isEmpty {
                 strongSelf.collectionView.addNoDataLabel(text: "No Photos added yet.\n\nPlease press the + button to begin")
@@ -69,7 +80,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
             }
             
             strongSelf.collectionView.reloadData()
-//            strongSelf.activityIndicator.stopAnimating()
+            //            strongSelf.activityIndicator.stopAnimating()
         }
     }
     
@@ -80,14 +91,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
             queryListener.remove()
         }
     }
-    
-    func updateImageTasks() {
-        imageEntities?.forEach { imageEntity in
-            if imageEntity.status == .ready, imageTasks[imageEntity.imageId] == nil, let urlStr = imageEntity.url, let url = URL(string: urlStr) {
-                imageTasks[imageEntity.imageId] = ImageTask(id: imageEntity.imageId, url: url, session: urlSession, delegate: self)
-            }
-        }
-    }
+
     
     func imageDownloaded(id: String) {
         if let index = imageEntities?.firstIndex(where: { $0.imageId == id }) {
@@ -95,14 +99,14 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
             collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
             
             let imageTask = imageTasks[(imageEntities?[index].imageId)!]
-            let image = imageTask?.image
-            photoArray.append(image!)
+            _ = imageTask?.image
+            //            photoArray.append(image!)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageEntities?.count ?? 0
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -111,7 +115,9 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
         
         if let imageEntities = imageEntities, imageEntities.count > indexPath.row {
             let imageEntity = imageEntities[indexPath.item]
-            albumCell.configure(image: imageTasks[imageEntity.imageId]?.image)
+            if let urlString = imageEntity.url {
+                albumCell.ganaanImage?.sd_setImage(with: URL(string: urlString), completed: nil)
+            }
         }
         albumCell.ganaanImage?.tag = indexPath.item
         
@@ -125,48 +131,57 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "ToDashBoard", let dashBoardViewController = segue.destination as? DashBoardViewController, let index = sender as? Int, imageEntities?.count ?? 0 > index, let imageEntity = imageEntities?[index] {
-                selectedPhoto = (index, dashBoardViewController)
-                dashBoardViewController.imageId = imageEntity.imageId
+            selectedPhoto = (index, dashBoardViewController)
+            dashBoardViewController.imageId = imageEntity.imageId
             dashBoardViewController.image = imageTasks[imageEntity.imageId]?.image
             dashBoardViewController.contentImageData = photoArray as NSArray
+            dashBoardViewController.imageURLs = imageURLs
             dashBoardViewController.selectedImageIndex = sender as! Int
         }
         
     }
     
     func getImageFromLibrary() {
-        let vc = BSImagePickerViewController()
         
-        self.bs_presentImagePickerController(vc, animated: true,
-                                             select: {(asset: PHAsset) -> Void in },
-                                             deselect: {(asset: PHAsset) -> Void in },
-                                             cancel: {(asset: [PHAsset]) -> Void in },
-                                             finish: {(asset: [PHAsset]) -> Void in
-                                                for i in 0..<asset.count {
-                                                    self.selectedAssets.append(asset[i])
-                                                }
-                                                print("😆 \(asset)")
-//                                                self.convertAssetToImages()
-        },
-                                             completion:nil)
+        let imagePicker = OpalImagePickerController()
+        presentOpalImagePickerController(imagePicker, animated: true,
+                                         select: { (assets) in
+                                            //Select Assets
+                                            let images = self.getImages(fromAssets: assets)
+                                            let imagesDataToUpload = images.map{ return $0.jpegData(compressionQuality: 0.5) }
+                                            
+                                            ImageService.shared.upload(images: imagesDataToUpload as! [Data], albumId: self.album.albumId) {
+                                                self.dismiss(animated: true, completion: nil)
+                                            }
+        }, cancel: {
+            //Cancel
+            self.dismiss(animated: true, completion: nil)
+        })
     }
-
+    
+    func getImages(fromAssets assets: [PHAsset]) -> [UIImage] {
+        let requestOptions = PHImageRequestOptions()
+        requestOptions.resizeMode = PHImageRequestOptionsResizeMode.exact
+        requestOptions.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
+        // this one is key
+        requestOptions.isSynchronous = true
         
-    func bs_presentImagePickerController(_ imagePicker: BSImagePickerViewController, animated: Bool, select: ((_ asset: PHAsset) -> Void)?, deselect: ((_ asset: PHAsset) -> Void)?, cancel: (([PHAsset]) -> Void)?, finish: (([PHAsset]) -> Void)?, completion: (() -> Void)?, selectLimitReached: ((Int) -> Void)? = nil) {
-        BSImagePickerViewController.authorize(fromViewController: self) { (authorized) -> Void in
-            // Make sure we are authorized before proceding
-            guard authorized == true else { return }
-            
-            // Set blocks
-            imagePicker.photosViewController.selectionClosure = select
-            imagePicker.photosViewController.deselectionClosure = deselect
-            imagePicker.photosViewController.cancelClosure = cancel
-            imagePicker.photosViewController.finishClosure = finish
-            imagePicker.photosViewController.selectLimitReachedClosure = selectLimitReached
-            imagePicker.photosViewController.album = self.album
-            // Present
-            self.present(imagePicker, animated: animated, completion: completion)
+        var images:[UIImage] = []
+        
+        for asset in assets
+        {
+            if (asset.mediaType == PHAssetMediaType.image)
+            {
+                
+                PHImageManager.default().requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .default, options: requestOptions, resultHandler: { (pickedImage, info) in
+                    if let image = pickedImage {
+                        images.append(image)
+                    }
+                })
+                
+            }
         }
+        return images
     }
     
 }
@@ -178,7 +193,7 @@ extension AlbumCollectionViewController {
         return album?.name
     }
     
-//    func subtitle(for titleStackView: TitleStackView) -> String? {
-//        return nil
-//    }
+    //    func subtitle(for titleStackView: TitleStackView) -> String? {
+    //        return nil
+    //    }
 }

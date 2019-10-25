@@ -79,6 +79,7 @@
 		AFA759BA2313C59900F73E53 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA759B92313C59900F73E53 /* DashBoardViewController.swift */; };
 		AFA759BF2313CA9F00F73E53 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA759BE2313CA9F00F73E53 /* ContentViewController.swift */; };
 		AFE3FC0B23585BDA00F4A144 /* IntroduceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE3FC0A23585BDA00F4A144 /* IntroduceCell.swift */; };
+		AFE3FC2F23613A2600F4A144 /* PageBulletinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE3FC2E23613A2600F4A144 /* PageBulletinVC.swift */; };
 		AFEFC1AC22A54F48005766B1 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFC1AB22A54F48005766B1 /* JoinViewController.swift */; };
 		AFEFC1AE22A627B6005766B1 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFC1AD22A627B6005766B1 /* MenuTableViewCell.swift */; };
 		AFF6C47922D459BC001E2775 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFF6C47822D459BC001E2775 /* GoogleService-Info.plist */; };
@@ -163,6 +164,7 @@
 		AFA759B92313C59900F73E53 /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
 		AFA759BE2313CA9F00F73E53 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		AFE3FC0A23585BDA00F4A144 /* IntroduceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceCell.swift; sourceTree = "<group>"; };
+		AFE3FC2E23613A2600F4A144 /* PageBulletinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBulletinVC.swift; sourceTree = "<group>"; };
 		AFEFC1AB22A54F48005766B1 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		AFEFC1AD22A627B6005766B1 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		AFF6C47822D459BC001E2775 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 		AFA759BB2313C6A000F73E53 /* Page */ = {
 			isa = PBXGroup;
 			children = (
+				AFE3FC2E23613A2600F4A144 /* PageBulletinVC.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				AF72E5C3232F83E400667B03 /* AlbumEntity.swift in Sources */,
 				AF72E6012333167000667B03 /* BSImagePickerViewController.swift in Sources */,
 				AF72E5D1232F9BF000667B03 /* UIView+Extensions.swift in Sources */,
+				AFE3FC2F23613A2600F4A144 /* PageBulletinVC.swift in Sources */,
 				AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */,
 				AF72E5C9232F8BD000667B03 /* ImageService.swift in Sources */,
 				AF72E5ED233311A300667B03 /* AssetStore.swift in Sources */,

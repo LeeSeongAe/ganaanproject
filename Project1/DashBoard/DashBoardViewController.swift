@@ -14,14 +14,12 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
     
     var contentImageData = NSArray()
     var selectedImageIndex = Int()
+    var imageURLs: [URL]? = nil
     
     var imageId: String!
     
     var image: UIImage? {
         didSet {
-//                        if imageView != nil, let image = image {
-//                            set(image: image)
-//                        }
             print("⭕️")
         }
     }
@@ -50,7 +48,7 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
     
     func ContentVCIndex(index: Int) -> ContentViewController {
         print("index : \(index), contentImageData.count : \(contentImageData.count)")
-        if contentImageData.count == 0 || index >= contentImageData.count {
+        if imageURLs!.count == 0 || index >= imageURLs!.count {
             return ContentViewController()
         }
         
@@ -58,7 +56,8 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
         
         ContentVC.pageIndex = index
         
-        ContentVC.contentImage = contentImageData[index] as! UIImage
+        //ContentVC.contentImage = contentImageData[index] as! UIImage
+        ContentVC.imageUrl = imageURLs![index]
         return ContentVC
     }
     
@@ -87,7 +86,7 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
         
         pageIndex += 1
         
-        if pageIndex == contentImageData.count {
+        if pageIndex == imageURLs!.count {
             return nil
         }
         

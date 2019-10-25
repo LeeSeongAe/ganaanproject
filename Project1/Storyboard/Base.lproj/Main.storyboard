@@ -1217,7 +1217,7 @@
                                                         <constraint firstAttribute="width" constant="20" id="ahh-0b-P58"/>
                                                     </constraints>
                                                 </activityIndicatorView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SmE-S0-cB7">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SmE-S0-cB7">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="111"/>
                                                 </imageView>
                                             </subviews>
@@ -1485,6 +1485,29 @@
             </objects>
             <point key="canvasLocation" x="2793" y="2738"/>
         </scene>
+        <!--Page BulletinVC-->
+        <scene sceneID="6cG-l4-Prv">
+            <objects>
+                <pageViewController storyboardIdentifier="pageBulletinVC" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="2Dm-Z8-Yuz" customClass="PageBulletinVC" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CiA-Gz-xkl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2793" y="3711"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JJj-5r-pWQ">
+            <objects>
+                <viewController restorationIdentifier="FirstVC" storyboardIdentifier="FirstVC" id="aVg-Uv-P1Y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LrF-x8-kdI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="l1k-W8-Yu1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ZS-Lm-tRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3487" y="3710"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="GdV-gE-cYX">
             <objects>
@@ -1612,6 +1635,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5uh-lv-cA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4636" y="1175"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bbT-Va-Jeb">
+            <objects>
+                <viewController restorationIdentifier="SecondVC" storyboardIdentifier="SecondVC" id="0JK-Fg-D57" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wuU-ST-s4x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.78147772117495973" green="0.57471483263185463" blue="0.96130555868148804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="q9i-n3-NLv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wj9-Rd-ghW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4180" y="3710"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0U5-HL-STf">
+            <objects>
+                <viewController restorationIdentifier="ThirdVC" storyboardIdentifier="ThirdVC" id="XGV-4m-ymT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z0E-r0-8eu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.89727638048931457" green="0.82994993120713279" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="61D-nW-Igq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6k-0k-BZN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4870" y="3710"/>
         </scene>
     </scenes>
     <resources>

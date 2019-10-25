@@ -24,4 +24,6 @@ target 'Project1' do
   pod 'FirebaseFirestore'
   pod 'FirebaseAuthInterop'
   pod 'BSGridCollectionViewLayout'
+  pod 'OpalImagePicker'
+  pod 'SDWebImage'
 end
