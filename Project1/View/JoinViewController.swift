@@ -88,21 +88,10 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             } else {
                 dump(user)
                 let alertController = UIAlertController(title: "회원가입 성공", message: nil, preferredStyle: .alert)
-                        
-//                        alertController.addTextField { textField in
-//                            textField.placeholder = ""
-//                        }
-                        
-//                        let textField = alertController.textFields![0] as UITextField
-                        
                         let saveAction = UIAlertAction(title: "OK", style: .default) { _ in
                             self.userUidCheck()
                             alertController.dismiss(animated: true)
                         }
-                        
-//                        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
-//
-//                        alertController.addAction(cancelAction)
                         alertController.addAction(saveAction)
                         
                         self.present(alertController, animated: true)
@@ -145,8 +134,9 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         UserDefaults.standard.set(selectedRoll.text, forKey: userID)
         
-        self.dismiss(animated: true, completion: nil)
-//        self.performSegue(withIdentifier: "JoinEnd", sender: nil)
+        self.dismiss(animated: true, completion: {
+            ViewController().userID = userID
+        })
     }
     
 }

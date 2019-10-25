@@ -13,19 +13,34 @@ class ContentViewController: UIViewController {
     
     // MARK: - variable
     @IBOutlet weak var contentImageView: UIImageView!
-    
+    var imageId: String!
     var pageIndex = Int()
     var contentImage = UIImage()
     var imageUrl:URL? = nil
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // MARK: - variable End
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        
         if let url = imageUrl {
             contentImageView?.sd_setImage(with: url, completed: nil)
+            activityIndicator.stopAnimating()
         }
         
         contentImageView?.contentMode = .scaleAspectFit
     }
 
+    @IBAction func deleteHandler(_ sender: Any) {
+        activityIndicator.startAnimating()
+        ImageService.shared.delete(imageId: imageId){
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
 }

@@ -35,6 +35,10 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        
         screenSize = UIScreen.main.bounds
         screenWidth = screenSize.width - 10
         screenHeight = screenSize.height
@@ -50,6 +54,8 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
         self.navigationController?.navigationBar.layoutIfNeeded()
         
         self.albumNameArr.removeAll()
+        
+        collectionView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture(gesture:))))
         
     }
     
@@ -139,6 +145,22 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
             albumCollectionViewController.album = album
         }
     }
+    
+        @objc func handleLongPressGesture(gesture: UIGestureRecognizer){
+            let location = gesture.location(in: self.collectionView)
+            guard let indexPath = collectionView.indexPathForItem(at: location) else {return}
+            let item = albums![indexPath.row]
+    
+            let alert = UIAlertController(title: nil, message: "Remove \(item)", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (_) in
+                if let albumId = self.albums?[indexPath.row].albumId {
+                    AlbumService.shared.deleteAlbumWith(albumId: albumId)
+                }
+            self.collectionView.deleteItems(at: [indexPath])
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
 
 }
 

@@ -34,10 +34,11 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     
     var box = UIImageView()
     var remoteConfig : RemoteConfig!
+    var userID: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("userID💒 :: \(userID)")
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         }
@@ -62,9 +63,9 @@ class ViewController: UIViewController, TitleStackViewDataSource {
 //        bindOutput()
         self.navigationController?.isNavigationBarHidden = true
         
-        phoneNumField.text = "lovemanse7@naver.com"
-        pwField.text = "12345678"
-        
+        currentUserCheck()
+//        phoneNumField.text = "lovemanse7@naver.com"
+//        pwField.text = "12345678"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,6 +82,18 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         progressbar.stopAnimating()
+    }
+    
+    override func reloadInputViews() {
+        print("")
+    }
+    
+    func currentUserCheck() {
+        if let currentEmail = Auth.auth().currentUser?.email {
+            phoneNumField.text = currentEmail
+        } else {
+            phoneNumField.text = ""
+        }
     }
     
     func displayWelcome() {
@@ -153,7 +166,7 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     
     
     @IBAction func testInput(_ sender: Any) {
-        phoneNumField.text = "lovemanse7@naver.com"
+        phoneNumField.text = "ganaanAdmin@gmail.com"
         pwField.text = "12345678"
 //        self.checkPhoneNumValid("admin")
 //        self.checkPasswordValid("123456")

@@ -45,7 +45,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         }
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

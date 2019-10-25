@@ -8,12 +8,17 @@
 
 import UIKit
 
-//class PageBulletinVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class PageBulletinVC: UIPageViewController {
+    
 //
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Do any additional setup after loading the view.
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        // Do any additional setup after loading the view.
+    }
+}
 
 
