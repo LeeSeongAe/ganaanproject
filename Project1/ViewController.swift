@@ -60,12 +60,10 @@ class ViewController: UIViewController, TitleStackViewDataSource {
         }
         
         bindUI()
-//        bindOutput()
+        bindOutput()
         self.navigationController?.isNavigationBarHidden = true
         
         currentUserCheck()
-//        phoneNumField.text = "lovemanse7@naver.com"
-//        pwField.text = "12345678"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,10 +80,6 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         progressbar.stopAnimating()
-    }
-    
-    override func reloadInputViews() {
-        print("")
     }
     
     func currentUserCheck() {
@@ -119,19 +113,19 @@ class ViewController: UIViewController, TitleStackViewDataSource {
             .bind(to: phoneNumInputText)
             .disposed(by: disposeBag)
         
-//        phoneNumInputText
-//            .map(checkPhoneNumValid)
-//            .bind(to: phoneNumValid)
-//            .disposed(by: disposeBag)
+        phoneNumInputText
+            .map(checkPhoneNumValid)
+            .bind(to: phoneNumValid)
+            .disposed(by: disposeBag)
         
         pwField.rx.text.orEmpty
             .bind(to: pwInputText)
             .disposed(by: disposeBag)
         
-//        pwInputText
-//            .map(checkPasswordValid)
-//            .bind(to: pwValid)
-//            .disposed(by: disposeBag)
+        pwInputText
+            .map(checkPasswordValid)
+            .bind(to: pwValid)
+            .disposed(by: disposeBag)
     }
     
     private func bindOutput() {
@@ -168,55 +162,6 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     @IBAction func testInput(_ sender: Any) {
         phoneNumField.text = "ganaanAdmin@gmail.com"
         pwField.text = "12345678"
-//        self.checkPhoneNumValid("admin")
-//        self.checkPasswordValid("123456")
-    }
-    
-    func jsonPost() {
-        let userId = self.phoneNumField.text
-        let password = self.pwField.text
-        let param = ["userId":userId, "password":password]
-        let paramData = try! JSONSerialization.data(withJSONObject: param, options: [])
-        
-        let ganaanUrl = URL(string: "")
-        
-        var request = URLRequest(url: ganaanUrl!)
-        request.httpMethod = "POST"
-        request.httpBody = paramData
-        
-        request.addValue("applicaion/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(String(paramData.count), forHTTPHeaderField: "Content-Length")
-        
-        DispatchQueue.main.async {
-           
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                guard let data = data, error == nil else { // check for fundamental networking error
-                    print("error=\(String(describing: error))")
-                    return
-                }
-                
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 { // check for http errors
-                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(String(describing: response))")
-                    self.loginSuccess()
-                }
-                
-                let responseString = String(data: data, encoding: .utf8)
-                print("responseString = \(String(describing: responseString))")
-            }
-            task.resume()
-        }
-    }
-    
-    func callCurrentTime() {
-        do {
-            let testUrl = URL(string: "www.naver.com")
-            let response = try String(contentsOf: testUrl!)
-            NSLog("CurrentTime : \(response)")
-            
-        } catch let e as NSError {
-            print(e.localizedDescription)
-        }
     }
     
     @IBAction func loginAction(_ sender: Any) {
@@ -255,18 +200,6 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let identifier = segue.identifier {
-//            switch identifier {
-//
-//            case "JoinView":
-//                if let vc = segue.destination as? JoinViewController {
-//                    vc.navigationController?.isNavigationBarHidden = false
-//                }
-//
-//            default:
-//                break
-//            }
-//        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
