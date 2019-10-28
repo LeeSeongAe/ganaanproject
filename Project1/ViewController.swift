@@ -68,7 +68,7 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        CurrentUser.shared.loginCheck = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -174,6 +174,7 @@ class ViewController: UIViewController, TitleStackViewDataSource {
         Auth.auth().signIn(withEmail: phoneNumField.text!, password: pwField.text!) { (user, error) in
             print("🆖\(String(describing: error))")
             if error == nil { //로그인 성공
+                CurrentUser.shared.loginCheck = true
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.changeRootVCToSWRevealVC()
                 

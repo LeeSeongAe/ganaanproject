@@ -56,6 +56,12 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
         self.albumNameArr.removeAll()
         
         collectionView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture(gesture:))))
+
+        if CurrentUser.shared.currentUserEmail(email: "ganaanadmin@gmail.com") {
+            albumAddButton.isEnabled = true
+        } else {
+            albumAddButton.isEnabled = false
+        }
         
     }
     
@@ -146,22 +152,25 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
         }
     }
     
-        @objc func handleLongPressGesture(gesture: UIGestureRecognizer){
+    @objc func handleLongPressGesture(gesture: UIGestureRecognizer){
+        
+        if CurrentUser.shared.currentUserEmail(email: "ganaanadmin@gmail.com") && CurrentUser.shared.loginCheck! == true {
             let location = gesture.location(in: self.collectionView)
             guard let indexPath = collectionView.indexPathForItem(at: location) else {return}
             let item = albums![indexPath.row]
-    
+            
             let alert = UIAlertController(title: nil, message: "Remove \(item)", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (_) in
                 if let albumId = self.albums?[indexPath.row].albumId {
                     AlbumService.shared.deleteAlbumWith(albumId: albumId)
                 }
-            self.collectionView.deleteItems(at: [indexPath])
+                self.collectionView.deleteItems(at: [indexPath])
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
         }
-
+    }
+    
 }
 
 //Datasource

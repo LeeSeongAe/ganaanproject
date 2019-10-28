@@ -27,6 +27,7 @@
 		AF50A5492338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50A5482338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift */; };
 		AF62AB5F22A657AD009BF162 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62AB5E22A657AD009BF162 /* NavigationView.swift */; };
 		AF62AB6122A657CB009BF162 /* PhotoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62AB6022A657CB009BF162 /* PhotoStackView.swift */; };
+		AF6AA44C2366CD6C00763694 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA44B2366CD6C00763694 /* CurrentUser.swift */; };
 		AF72E5C3232F83E400667B03 /* AlbumEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C2232F83E400667B03 /* AlbumEntity.swift */; };
 		AF72E5C5232F85A700667B03 /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C4232F85A700667B03 /* AlbumService.swift */; };
 		AF72E5C7232F873400667B03 /* FireStore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C6232F873400667B03 /* FireStore+Extensions.swift */; };
@@ -86,6 +87,7 @@
 		AF50A5482338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumCollectionViewController+FlowLayoutDelegate.swift"; sourceTree = "<group>"; };
 		AF62AB5E22A657AD009BF162 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		AF62AB6022A657CB009BF162 /* PhotoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStackView.swift; sourceTree = "<group>"; };
+		AF6AA44B2366CD6C00763694 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		AF72E5C2232F83E400667B03 /* AlbumEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntity.swift; sourceTree = "<group>"; };
 		AF72E5C4232F85A700667B03 /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
 		AF72E5C6232F873400667B03 /* FireStore+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FireStore+Extensions.swift"; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				AF72E5D3232FA0A100667B03 /* ImageTask.swift */,
+				AF6AA44B2366CD6C00763694 /* CurrentUser.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				AFE3FC2F23613A2600F4A144 /* PageBulletinVC.swift in Sources */,
 				AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */,
 				AF72E5C9232F8BD000667B03 /* ImageService.swift in Sources */,
+				AF6AA44C2366CD6C00763694 /* CurrentUser.swift in Sources */,
 				AF1B0ABC227AE65F0022DE0E /* AppDelegate.swift in Sources */,
 				AFA759B5230F84A300F73E53 /* TitleStackView.swift in Sources */,
 				AF372C7C22AE5F7B00749C17 /* CellCheckCell.swift in Sources */,
@@ -640,7 +644,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Project1/Project1Release.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KZLCK4RV4K;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Project1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
