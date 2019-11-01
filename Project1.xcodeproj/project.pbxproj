@@ -28,6 +28,15 @@
 		AF62AB5F22A657AD009BF162 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62AB5E22A657AD009BF162 /* NavigationView.swift */; };
 		AF62AB6122A657CB009BF162 /* PhotoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62AB6022A657CB009BF162 /* PhotoStackView.swift */; };
 		AF6AA44C2366CD6C00763694 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA44B2366CD6C00763694 /* CurrentUser.swift */; };
+		AF6AA44E2367DA3B00763694 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA44D2367DA3B00763694 /* FirstViewController.swift */; };
+		AF6AA4502367DA4B00763694 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA44F2367DA4B00763694 /* SecondViewController.swift */; };
+		AF6AA4522367DA5500763694 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA4512367DA5500763694 /* ThirdViewController.swift */; };
+		AF6AA454236802EB00763694 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA453236802EB00763694 /* NoticeViewController.swift */; };
+		AF6AA45623680B0800763694 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA45523680B0800763694 /* IndexViewController.swift */; };
+		AF6AA45823680B5D00763694 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA45723680B5D00763694 /* UIView+constraints.swift */; };
+		AF6AA45A2369094A00763694 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA4592369094A00763694 /* ListView.swift */; };
+		AF6AA45C236916C100763694 /* BulletinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA45B236916C100763694 /* BulletinViewController.swift */; };
+		AF6AA45E236947E200763694 /* FirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA45D236947E200763694 /* FirstCell.swift */; };
 		AF72E5C3232F83E400667B03 /* AlbumEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C2232F83E400667B03 /* AlbumEntity.swift */; };
 		AF72E5C5232F85A700667B03 /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C4232F85A700667B03 /* AlbumService.swift */; };
 		AF72E5C7232F873400667B03 /* FireStore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C6232F873400667B03 /* FireStore+Extensions.swift */; };
@@ -41,6 +50,7 @@
 		AF7505E322DC75E400146091 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E222DC75E400146091 /* customButton.swift */; };
 		AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E422DD8B9700146091 /* CustomAlertView.swift */; };
 		AF7505E722DDCDC900146091 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E622DDCDC900146091 /* UserDTO.swift */; };
+		AF8875F0236ABA6F005C6703 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8875EF236ABA6F005C6703 /* ListTableViewController.swift */; };
 		AF8D40C8234EF1F500DC280A /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8D40C7234EF1F500DC280A /* PhotoDetailsViewController.swift */; };
 		AF9C2C82233DEC1E0061C3AC /* slideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C2C81233DEC1E0061C3AC /* slideCell.swift */; };
 		AF9C2C852341D4480061C3AC /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */; };
@@ -66,7 +76,7 @@
 
 /* Begin PBXFileReference section */
 		AF189FFE22C0DA4F00AF287C /* CellContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentCell.swift; sourceTree = "<group>"; };
-		AF1B0AB8227AE65F0022DE0E /* Project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1B0AB8227AE65F0022DE0E /* GanaanYouth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GanaanYouth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1B0ABB227AE65F0022DE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF1B0ABD227AE65F0022DE0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF1B0AC0227AE65F0022DE0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +98,15 @@
 		AF62AB5E22A657AD009BF162 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		AF62AB6022A657CB009BF162 /* PhotoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStackView.swift; sourceTree = "<group>"; };
 		AF6AA44B2366CD6C00763694 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		AF6AA44D2367DA3B00763694 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		AF6AA44F2367DA4B00763694 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		AF6AA4512367DA5500763694 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		AF6AA453236802EB00763694 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		AF6AA45523680B0800763694 /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		AF6AA45723680B5D00763694 /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
+		AF6AA4592369094A00763694 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		AF6AA45B236916C100763694 /* BulletinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinViewController.swift; sourceTree = "<group>"; };
+		AF6AA45D236947E200763694 /* FirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCell.swift; sourceTree = "<group>"; };
 		AF72E5C2232F83E400667B03 /* AlbumEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntity.swift; sourceTree = "<group>"; };
 		AF72E5C4232F85A700667B03 /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
 		AF72E5C6232F873400667B03 /* FireStore+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FireStore+Extensions.swift"; sourceTree = "<group>"; };
@@ -101,9 +120,9 @@
 		AF7505E222DC75E400146091 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
 		AF7505E422DD8B9700146091 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		AF7505E622DDCDC900146091 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		AF8875EF236ABA6F005C6703 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		AF8D40C7234EF1F500DC280A /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		AF9C2C81233DEC1E0061C3AC /* slideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slideCell.swift; sourceTree = "<group>"; };
-		AF9C2C832341D4470061C3AC /* Project1Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Project1Release.entitlements; sourceTree = "<group>"; };
 		AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		AF9C717E2281166D002D0DF3 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		AF9C718022817A90002D0DF3 /* Project1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project1-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -164,7 +183,7 @@
 		AF1B0AB9227AE65F0022DE0E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF1B0AB8227AE65F0022DE0E /* Project1.app */,
+				AF1B0AB8227AE65F0022DE0E /* GanaanYouth.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,7 +191,6 @@
 		AF1B0ABA227AE65F0022DE0E /* Project1 */ = {
 			isa = PBXGroup;
 			children = (
-				AF9C2C832341D4470061C3AC /* Project1Release.entitlements */,
 				AF72E5D2232FA08700667B03 /* Task */,
 				AFA759BB2313C6A000F73E53 /* Page */,
 				AFA759B82313C56A00F73E53 /* DashBoard */,
@@ -271,6 +289,7 @@
 			children = (
 				AF7505E022DC692F00146091 /* customLabel.swift */,
 				AF7505E222DC75E400146091 /* customButton.swift */,
+				AF6AA4592369094A00763694 /* ListView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -293,6 +312,15 @@
 			isa = PBXGroup;
 			children = (
 				AFE3FC2E23613A2600F4A144 /* PageBulletinVC.swift */,
+				AF6AA44D2367DA3B00763694 /* FirstViewController.swift */,
+				AF6AA45D236947E200763694 /* FirstCell.swift */,
+				AF6AA44F2367DA4B00763694 /* SecondViewController.swift */,
+				AF6AA4512367DA5500763694 /* ThirdViewController.swift */,
+				AF6AA453236802EB00763694 /* NoticeViewController.swift */,
+				AF6AA45523680B0800763694 /* IndexViewController.swift */,
+				AF6AA45723680B5D00763694 /* UIView+constraints.swift */,
+				AF6AA45B236916C100763694 /* BulletinViewController.swift */,
+				AF8875EF236ABA6F005C6703 /* ListTableViewController.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -325,7 +353,7 @@
 			);
 			name = Project1;
 			productName = Project1;
-			productReference = AF1B0AB8227AE65F0022DE0E /* Project1.app */;
+			productReference = AF1B0AB8227AE65F0022DE0E /* GanaanYouth.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -426,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6AA4502367DA4B00763694 /* SecondViewController.swift in Sources */,
 				AF372C7222AA4CC400749C17 /* IntroduceViewController.swift in Sources */,
 				AFA759B7230FD7CC00F73E53 /* PhotoCell.swift in Sources */,
 				AFA5C53A23153A7A0003CA0F /* AlbumCollectionViewController.swift in Sources */,
@@ -433,6 +462,7 @@
 				AF1B0ABE227AE65F0022DE0E /* ViewController.swift in Sources */,
 				AF62AB6122A657CB009BF162 /* PhotoStackView.swift in Sources */,
 				AF9C718B2282CFC9002D0DF3 /* MenuViewController.swift in Sources */,
+				AF6AA45A2369094A00763694 /* ListView.swift in Sources */,
 				AF7505E122DC692F00146091 /* customLabel.swift in Sources */,
 				AFEFC1AE22A627B6005766B1 /* MenuTableViewCell.swift in Sources */,
 				AFEFC1AC22A54F48005766B1 /* JoinViewController.swift in Sources */,
@@ -442,13 +472,16 @@
 				AFE3FC2F23613A2600F4A144 /* PageBulletinVC.swift in Sources */,
 				AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */,
 				AF72E5C9232F8BD000667B03 /* ImageService.swift in Sources */,
+				AF6AA4522367DA5500763694 /* ThirdViewController.swift in Sources */,
 				AF6AA44C2366CD6C00763694 /* CurrentUser.swift in Sources */,
+				AF6AA45823680B5D00763694 /* UIView+constraints.swift in Sources */,
 				AF1B0ABC227AE65F0022DE0E /* AppDelegate.swift in Sources */,
 				AFA759B5230F84A300F73E53 /* TitleStackView.swift in Sources */,
 				AF372C7C22AE5F7B00749C17 /* CellCheckCell.swift in Sources */,
 				AF72E5C5232F85A700667B03 /* AlbumService.swift in Sources */,
 				AF1B0AD4227D33A80022DE0E /* CellCollectionViewCell.swift in Sources */,
 				AF1B0AD8227D4E810022DE0E /* CellCheckTableViewController.swift in Sources */,
+				AF8875F0236ABA6F005C6703 /* ListTableViewController.swift in Sources */,
 				AF9C2C82233DEC1E0061C3AC /* slideCell.swift in Sources */,
 				AFA5C53C23153B650003CA0F /* AlbumCell.swift in Sources */,
 				AF72E5D4232FA0A100667B03 /* ImageTask.swift in Sources */,
@@ -457,12 +490,16 @@
 				AF72E5CB232F8E1F00667B03 /* ImageEntity.swift in Sources */,
 				AFA759BA2313C59900F73E53 /* DashBoardViewController.swift in Sources */,
 				AFE3FC0B23585BDA00F4A144 /* IntroduceCell.swift in Sources */,
+				AF6AA45C236916C100763694 /* BulletinViewController.swift in Sources */,
 				AF50A5492338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift in Sources */,
+				AF6AA454236802EB00763694 /* NoticeViewController.swift in Sources */,
 				AF72E5CF232F976100667B03 /* TableView+Extentions.swift in Sources */,
 				AF372C7422AA4CE000749C17 /* ScheduleViewController.swift in Sources */,
 				AFA759BF2313CA9F00F73E53 /* ContentViewController.swift in Sources */,
+				AF6AA44E2367DA3B00763694 /* FirstViewController.swift in Sources */,
 				AF50A5472338B27600FACE3D /* AlbumCollectionViewController+Delegate.swift in Sources */,
 				AF372C7822AA4D0800749C17 /* QuestionsViewController.swift in Sources */,
+				AF6AA45623680B0800763694 /* IndexViewController.swift in Sources */,
 				AF189FFF22C0DA4F00AF287C /* CellContentCell.swift in Sources */,
 				AF7505E722DDCDC900146091 /* UserDTO.swift in Sources */,
 				AF8D40C8234EF1F500DC280A /* PhotoDetailsViewController.swift in Sources */,
@@ -471,6 +508,7 @@
 				AF62AB5F22A657AD009BF162 /* NavigationView.swift in Sources */,
 				AF9C717F2281166D002D0DF3 /* IntroViewController.swift in Sources */,
 				AF7505E322DC75E400146091 /* customButton.swift in Sources */,
+				AF6AA45E236947E200763694 /* FirstCell.swift in Sources */,
 				AF72E5CD232F91CB00667B03 /* Storage+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,16 +657,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KZLCK4RV4K;
+				DEVELOPMENT_TEAM = DFU5BM2782;
 				INFOPLIST_FILE = Project1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seongae.Project1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth;
+				PRODUCT_NAME = GanaanYouth;
 				SWIFT_OBJC_BRIDGING_HEADER = "Project1/View/Project1-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -642,17 +681,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Project1/Project1Release.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DFU5BM2782;
 				INFOPLIST_FILE = Project1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seongae.Project1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth;
+				PRODUCT_NAME = GanaanYouth;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Project1/View/Project1-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

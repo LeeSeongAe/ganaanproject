@@ -26,4 +26,6 @@ target 'Project1' do
   pod 'BSGridCollectionViewLayout'
   pod 'OpalImagePicker'
   pod 'SDWebImage'
+  pod 'Parchment'
+  pod 'Tabman'
 end

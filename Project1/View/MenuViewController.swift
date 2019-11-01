@@ -11,7 +11,7 @@ import UIKit
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
 //    var menuListArray = ["Home", "Introduce", "Schedule", "Photo", "Q&A", "Cell"]
-    var menuListArray = ["Home", "Introduce", "Photo", "Cell"]
+    var menuListArray = ["Home", "Introduce", "Photo", "Cell", "pageView", "Bulletin"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

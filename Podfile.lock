@@ -1,4 +1,5 @@
 PODS:
+  - AutoInsetter (1.8.0)
   - BoringSSL-GRPC (0.0.3):
     - BoringSSL-GRPC/Implementation (= 0.0.3)
     - BoringSSL-GRPC/Interface (= 0.0.3)
@@ -129,6 +130,8 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - OpalImagePicker (2.1.0)
+  - Pageboy (3.4.0)
+  - Parchment (1.6.0)
   - Protobuf (3.8.0)
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
@@ -141,6 +144,9 @@ PODS:
   - SDWebImage/Core (5.0.6)
   - SnapKit (4.0.1)
   - SwiftyJSON (5.0.0)
+  - Tabman (2.6.1):
+    - AutoInsetter (~> 1.8.0)
+    - Pageboy (~> 3.4.0)
   - TextFieldEffects (1.5.1)
 
 DEPENDENCIES:
@@ -157,15 +163,18 @@ DEPENDENCIES:
   - FirebaseFirestore
   - FirebaseStorage
   - OpalImagePicker
+  - Parchment
   - RxCocoa
   - RxSwift
   - SDWebImage
   - SnapKit (~> 4.0.0)
   - SwiftyJSON
+  - Tabman
   - TextFieldEffects
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AutoInsetter
     - BoringSSL-GRPC
     - BSGridCollectionViewLayout
     - BSImageView
@@ -189,6 +198,8 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - OpalImagePicker
+    - Pageboy
+    - Parchment
     - Protobuf
     - RxCocoa
     - RxRelay
@@ -196,9 +207,11 @@ SPEC REPOS:
     - SDWebImage
     - SnapKit
     - SwiftyJSON
+    - Tabman
     - TextFieldEffects
 
 SPEC CHECKSUMS:
+  AutoInsetter: 0b90ca74e36561c340129045a3722c51a0b15c58
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   BSGridCollectionViewLayout: 568273e113fbc815f868f1898ef0465aee68f955
   BSImageView: a149459433a2687157d034c78e059d30ac7f2544
@@ -222,6 +235,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   OpalImagePicker: 40e9d4c27018538a704d8da34b2ff3a2a54a3dc8
+  Pageboy: fd23a9b9e8156f4fac62731637f5d6f7d1e1c3aa
+  Parchment: d3a7b367c529fa6ef51aa43f5717a7ff36d4b1f5
   Protobuf: 3f617b9a6e73605565086864c9bc26b2bf2dd5a3
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
@@ -229,8 +244,9 @@ SPEC CHECKSUMS:
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Tabman: 2a8d767aa8c791617787f1567bdf081caf8835db
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: 107017c200a8a521f10e5ece3ea56610d89151fe
+PODFILE CHECKSUM: e1484fd6dca7c48c6f000b51570bd56977eef89e
 
 COCOAPODS: 1.7.5
