@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF05A919236BF2D80099FCA6 /* CustomAlertView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF05A918236BF2D80099FCA6 /* CustomAlertView2.swift */; };
 		AF189FFF22C0DA4F00AF287C /* CellContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF189FFE22C0DA4F00AF287C /* CellContentCell.swift */; };
 		AF1B0ABC227AE65F0022DE0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B0ABB227AE65F0022DE0E /* AppDelegate.swift */; };
 		AF1B0ABE227AE65F0022DE0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B0ABD227AE65F0022DE0E /* ViewController.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF05A918236BF2D80099FCA6 /* CustomAlertView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView2.swift; sourceTree = "<group>"; };
 		AF189FFE22C0DA4F00AF287C /* CellContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentCell.swift; sourceTree = "<group>"; };
 		AF1B0AB8227AE65F0022DE0E /* GanaanYouth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GanaanYouth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1B0ABB227AE65F0022DE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -200,8 +202,8 @@
 				AF1B0ACD227C09AB0022DE0E /* Storyboard */,
 				AF1B0ABB227AE65F0022DE0E /* AppDelegate.swift */,
 				AF1B0AC4227AE6610022DE0E /* LaunchScreen.storyboard */,
-				AFF6C47822D459BC001E2775 /* GoogleService-Info.plist */,
 				AF1B0ABD227AE65F0022DE0E /* ViewController.swift */,
+				AFF6C47822D459BC001E2775 /* GoogleService-Info.plist */,
 				AF1B0AC2227AE6610022DE0E /* Assets.xcassets */,
 				AF1B0AC7227AE6610022DE0E /* Info.plist */,
 				AF9C71882282BE85002D0DF3 /* Util.swift */,
@@ -231,6 +233,7 @@
 				AF1B0AD7227D4E810022DE0E /* CellCheckTableViewController.swift */,
 				AF372C7B22AE5F7B00749C17 /* CellCheckCell.swift */,
 				AF7505E422DD8B9700146091 /* CustomAlertView.swift */,
+				AF05A918236BF2D80099FCA6 /* CustomAlertView2.swift */,
 				AF9C717E2281166D002D0DF3 /* IntroViewController.swift */,
 				AF9C2C81233DEC1E0061C3AC /* slideCell.swift */,
 				AF9C718222817A91002D0DF3 /* SWRevealViewController.h */,
@@ -495,6 +498,7 @@
 				AF6AA454236802EB00763694 /* NoticeViewController.swift in Sources */,
 				AF72E5CF232F976100667B03 /* TableView+Extentions.swift in Sources */,
 				AF372C7422AA4CE000749C17 /* ScheduleViewController.swift in Sources */,
+				AF05A919236BF2D80099FCA6 /* CustomAlertView2.swift in Sources */,
 				AFA759BF2313CA9F00F73E53 /* ContentViewController.swift in Sources */,
 				AF6AA44E2367DA3B00763694 /* FirstViewController.swift in Sources */,
 				AF50A5472338B27600FACE3D /* AlbumCollectionViewController+Delegate.swift in Sources */,
@@ -681,8 +685,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
+=======
+				CODE_SIGN_ENTITLEMENTS = "";
+>>>>>>> 34bf189... #custom alertview2 add.
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFU5BM2782;
 				INFOPLIST_FILE = Project1/Info.plist;
@@ -693,7 +701,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth;
 				PRODUCT_NAME = GanaanYouth;
+<<<<<<< HEAD
 				PROVISIONING_PROFILE_SPECIFIER = "";
+=======
+>>>>>>> 34bf189... #custom alertview2 add.
 				SWIFT_OBJC_BRIDGING_HEADER = "Project1/View/Project1-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
