@@ -13,8 +13,7 @@ import SnapKit
 import Firebase
 
 
-class ViewController: UIViewController, TitleStackViewDataSource, CustomAlertView2Delegate {
-
+class ViewController: UIViewController, TitleStackViewDataSource {
     
     var disposeBag = DisposeBag()
     @IBOutlet weak var progressbar: UIActivityIndicatorView!
@@ -92,8 +91,8 @@ class ViewController: UIViewController, TitleStackViewDataSource, CustomAlertVie
     }
     
     func displayWelcome() {
-        
-        //        let color = RemoteConfig.remoteConfig().value(forKey: "splash_background")
+
+//        let color = RemoteConfig.remoteConfig().value(forKey: "splash_background")
         _ = RemoteConfig.remoteConfig().configValue(forKey: "splash_background").stringValue
         let caps = RemoteConfig.remoteConfig().configValue(forKey: "splash_message_caps").boolValue
         let message = RemoteConfig.remoteConfig().configValue(forKey: "splash_message").stringValue
@@ -105,8 +104,8 @@ class ViewController: UIViewController, TitleStackViewDataSource, CustomAlertVie
             }))
             self.present(alert, animated: true, completion: nil)
         }
-        //        self.view.backgroundColor = UIColor(hex: color!)
-        
+//        self.view.backgroundColor = UIColor(hex: color!)
+
     }
     
     func bindUI() {
@@ -144,14 +143,14 @@ class ViewController: UIViewController, TitleStackViewDataSource, CustomAlertVie
     }
     
     func checkPhoneNumValid(_ phoneNum: String) -> Bool {
-        return phoneNum.contains("@")
-        ////        return (phoneNumField.text?.contains("admin"))!
-        //        return true
+                return phoneNum.contains("@")
+////        return (phoneNumField.text?.contains("admin"))!
+//        return true
     }
-    //
+//
     func checkPasswordValid(_ password: String) -> Bool {
-        return password.count >= 6
-        //        return true
+                return password.count >= 6
+//        return true
     }
     
     
@@ -166,39 +165,12 @@ class ViewController: UIViewController, TitleStackViewDataSource, CustomAlertVie
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        self.userDefCheck()
-    }
-    
-    func userDefCheck() {
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        let value = UserDefaults.standard.object(forKey: userID) as? String ?? nil
-        print("value:: \(String(describing: value))")
-        
-        if value == nil {
-            let customAlert2 = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertView2") as! CustomAlertView2
-            customAlert2.providesPresentationContextTransitionStyle = true
-            customAlert2.definesPresentationContext = true
-            customAlert2.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-            customAlert2.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-            customAlert2.delegate = self
-            self.present(customAlert2, animated: true, completion: nil)
-        } else {
-            loginSuccess()
-        }
-    }
-    
-    func okButtonTapped(textFieldValue: String) {
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        print("userID :: \(userID)")
-        UserDefaults.standard.set(textFieldValue, forKey: userID)
-    }
-    
-    func cancelButtonTapped() {
-    
-    }
-    
-    func loginSuccess() {
         progressbar.startAnimating()
+//        callCurrentTime()
+//        jsonPost()
+        
+//        guard let email = phoneNumField.text, let password = pwField.text else { return }
+        
         Auth.auth().signIn(withEmail: phoneNumField.text!, password: pwField.text!) { (user, error) in
             print("🆖\(String(describing: error))")
             if error == nil { //로그인 성공
@@ -208,8 +180,8 @@ class ViewController: UIViewController, TitleStackViewDataSource, CustomAlertVie
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let introVC = storyboard.instantiateViewController(withIdentifier: "IntroViewController")
+                //        self.navigationController?.setViewControllers([introVC], animated: true)
                 self.navigationController?.pushViewController(introVC, animated: true)
-                
             } else { //로그인 실패
                 self.showAlert(message: "유효하지 않은 이메일 입니다.")
             }
@@ -218,6 +190,18 @@ class ViewController: UIViewController, TitleStackViewDataSource, CustomAlertVie
         
     }
     
+    func loginSuccess() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.changeRootVCToSWRevealVC()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let introVC = storyboard.instantiateViewController(withIdentifier: "IntroViewController")
+        self.navigationController?.pushViewController(introVC, animated: true)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -265,9 +249,9 @@ extension ViewController {
         return "Ganaan Youth 💕"
     }
     
-    //    func subtitle(for titleStackView: TitleStackView) -> String? {
-    //        return nil
-    //    }
+//    func subtitle(for titleStackView: TitleStackView) -> String? {
+//        return nil
+//    }
 }
 
 

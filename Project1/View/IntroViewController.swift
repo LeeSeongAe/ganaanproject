@@ -34,6 +34,7 @@ class IntroViewController: UIViewController, TitleStackViewDataSource {
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         }
+//        self.imageData = ["수빈.png","이삭.png","다은.png","아형.png"]
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
@@ -91,18 +92,20 @@ class IntroViewController: UIViewController, TitleStackViewDataSource {
         
     }
     
+//    @IBAction func albumClicked(_ sender: UIButton) {
+//        clickedInHome(photoButton)
+//    }
+    
+    
+//    @IBAction func scheduleClicked(_ sender: UIButton) {
+//        clickedInHome(scheduleButton)
+//    }
+    
+    
     @objc func clickedInHome(_ sender: UIImageView) {
         let btnTitle = "Album"
         
         self.revealViewController()?.rearViewController.performSegue(withIdentifier: btnTitle, sender: self.revealViewController()?.rearViewController)
-    }
-    
-    @IBAction func notifyButton(_ sender: Any) {
-        let alert = UIAlertController(title: "준비중입니다", message: "", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default))
-        
-        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -148,9 +151,6 @@ extension IntroViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
-    
-    
-    
 }
 
 
