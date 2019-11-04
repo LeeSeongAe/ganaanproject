@@ -26,6 +26,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
     var photoArray = [UIImage]()
     var selectedAssets = [PHAsset]()
     var selectedImageIndex = Int()
+    @IBOutlet weak var photoAddButton: UIBarButtonItem!
     
     @IBOutlet weak var titleStackView: TitleStackView!
     
@@ -44,6 +45,12 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
         
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
+        }
+        
+        if CurrentUser.shared.currentUserEmail(email: "ganaanadmin@gmail.com") {
+            photoAddButton.isEnabled = true
+        } else {
+            photoAddButton.isEnabled = false
         }
 
     }

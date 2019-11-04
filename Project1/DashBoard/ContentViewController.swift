@@ -35,12 +35,5 @@ class ContentViewController: UIViewController {
         
         contentImageView?.contentMode = .scaleAspectFit
     }
-
-    @IBAction func deleteHandler(_ sender: Any) {
-        activityIndicator.startAnimating()
-        ImageService.shared.delete(imageId: imageId){
-            self.navigationController?.popViewController(animated: true)
-        }
-    }
     
 }

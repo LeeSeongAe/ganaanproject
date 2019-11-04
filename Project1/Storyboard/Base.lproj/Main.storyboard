@@ -12,12 +12,12 @@
         <!--Data Source-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LogInView" id="BYZ-38-t0r" customClass="ViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInView" id="BYZ-38-t0r" customClass="ViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gTi-Oz-jI0" customClass="TitleStackView" customModule="Project1" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gTi-Oz-jI0" customClass="TitleStackView" customModule="GanaanYouth" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="54" width="375" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="9xN-UU-YHp"/>
@@ -73,7 +73,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCn-zl-eI2" customClass="customButton" customModule="Project1" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCn-zl-eI2" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
                                 <rect key="frame" x="16" y="265" width="343" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -94,7 +94,7 @@
                                     <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GKd-fv-HHV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVf-Sz-OZ8" customClass="customButton" customModule="Project1" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVf-Sz-OZ8" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
                                 <rect key="frame" x="16" y="325" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8Id-Mu-B50"/>
@@ -131,7 +131,7 @@
                                     <constraint firstAttribute="width" constant="10" id="PWm-oG-t8H"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYs-bP-23h" customClass="customButton" customModule="Project1" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYs-bP-23h" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
                                 <rect key="frame" x="16" y="607" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.95686274510000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -239,7 +239,7 @@
         <!--Data Source-->
         <scene sceneID="yHx-UH-R7c">
             <objects>
-                <viewController storyboardIdentifier="CellView" title="Cell" id="nah-hC-XFm" customClass="CellCollectionViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CellView" title="Cell" id="nah-hC-XFm" customClass="CellCollectionViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a0k-t4-PEB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,7 +254,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="Ac9-T3-Uxp" customClass="CellCollectionViewCell" customModule="Project1" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="Ac9-T3-Uxp" customClass="CellCollectionViewCell" customModule="GanaanYouth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="10" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -305,7 +305,7 @@
                                     <outlet property="delegate" destination="nah-hC-XFm" id="rmD-In-ZuJ"/>
                                 </connections>
                             </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1Ak-q2-rqn" customClass="TitleStackView" customModule="Project1" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1Ak-q2-rqn" customClass="TitleStackView" customModule="GanaanYouth" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="375" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="dCH-v2-Y3f"/>
@@ -346,7 +346,7 @@
         <!--Data Source-->
         <scene sceneID="v5I-kA-yVW">
             <objects>
-                <viewController storyboardIdentifier="CellCheckCell" id="a0y-Iu-FRf" customClass="CellCheckTableViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CellCheckCell" id="a0y-Iu-FRf" customClass="CellCheckTableViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vZE-UR-ecz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -365,7 +365,7 @@
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellCheckCell" rowHeight="170" id="QSy-Ld-HJ5" customClass="CellCheckCell" customModule="Project1" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellCheckCell" rowHeight="170" id="QSy-Ld-HJ5" customClass="CellCheckCell" customModule="GanaanYouth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QSy-Ld-HJ5" id="nHH-f4-xlB">
@@ -375,7 +375,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="040-bb-WiH">
                                                     <rect key="frame" x="115" y="10" width="255" height="136"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hN2-eI-qWS" customClass="customLabel" customModule="Project1" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hN2-eI-qWS" customClass="customLabel" customModule="GanaanYouth" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="5" width="80" height="30"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -478,7 +478,7 @@
                                     <outlet property="delegate" destination="a0y-Iu-FRf" id="oZX-Am-4DI"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uav-fM-j78" customClass="TitleStackView" customModule="Project1" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uav-fM-j78" customClass="TitleStackView" customModule="GanaanYouth" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="375" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="i7J-gZ-og8"/>
@@ -527,7 +527,7 @@
         <!--Custom Alert View-->
         <scene sceneID="eWC-JX-7PN">
             <objects>
-                <viewController storyboardIdentifier="CustomAlertID" id="SDH-to-jn0" customClass="CustomAlertView" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomAlertID" id="SDH-to-jn0" customClass="CustomAlertView" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Wn-Zo-pot">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -570,7 +570,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0D2-g2-gnF" customClass="customButton" customModule="Project1" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0D2-g2-gnF" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
                                         <rect key="frame" x="8" y="251" width="120" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="FiK-kc-DdT"/>
@@ -582,7 +582,7 @@
                                             <action selector="onTapCancelButton:" destination="SDH-to-jn0" eventType="touchUpInside" id="ZX5-hX-WHD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cl-AW-GXd" customClass="customButton" customModule="Project1" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cl-AW-GXd" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
                                         <rect key="frame" x="161" y="251" width="120" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="9ge-ee-tBn"/>
@@ -643,12 +643,12 @@
         <!--Data Source-->
         <scene sceneID="ns1-8X-mnJ">
             <objects>
-                <viewController storyboardIdentifier="IntroViewController" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aG9-em-KMe" customClass="IntroViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroViewController" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aG9-em-KMe" customClass="IntroViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ip2-Ix-3hT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cer-Rf-ZDM" customClass="customButton" customModule="Project1" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cer-Rf-ZDM" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
                                 <rect key="frame" x="10" y="597" width="355" height="50"/>
                                 <color key="backgroundColor" red="0.84663920690000005" green="1" blue="0.94636700110000005" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -667,7 +667,7 @@
                                 <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vxM-d2-ncY" customClass="TitleStackView" customModule="Project1" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vxM-d2-ncY" customClass="TitleStackView" customModule="GanaanYouth" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="375" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ggz-bq-5dr"/>
@@ -690,7 +690,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="C59-1t-uce" customClass="slideCell" customModule="Project1" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="C59-1t-uce" customClass="slideCell" customModule="GanaanYouth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="38" width="375" height="324"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Yq2-en-dhV">
@@ -783,7 +783,7 @@
         <!--Q&A-->
         <scene sceneID="vrs-VF-JjS">
             <objects>
-                <viewController storyboardIdentifier="MenuViewController" title="Q&amp;A" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ckr-BB-Ic9" customClass="MenuViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" title="Q&amp;A" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ckr-BB-Ic9" customClass="MenuViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZsB-At-4QI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -800,7 +800,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MenuTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableViewCell" rowHeight="50" id="bjl-of-Coa" customClass="MenuTableViewCell" customModule="Project1" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MenuTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableViewCell" rowHeight="50" id="bjl-of-Coa" customClass="MenuTableViewCell" customModule="GanaanYouth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="311" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bjl-of-Coa" id="25v-WF-dQV">
@@ -892,12 +892,12 @@
         <!--Data Source-->
         <scene sceneID="kBK-ni-Lhp">
             <objects>
-                <viewController storyboardIdentifier="IntroduceView" title="GANAAN" id="mP5-ag-JNz" customClass="IntroduceViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroduceView" title="GANAAN" id="mP5-ag-JNz" customClass="IntroduceViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xq0-Vu-Hbs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gda-dB-b5D" customClass="TitleStackView" customModule="Project1" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gda-dB-b5D" customClass="TitleStackView" customModule="GanaanYouth" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="375" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="cz5-fq-nmU"/>
@@ -911,7 +911,7 @@
                                 <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="introduceCell" rowHeight="130" id="o4n-za-i9t" customClass="IntroduceCell" customModule="Project1" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="introduceCell" rowHeight="130" id="o4n-za-i9t" customClass="IntroduceCell" customModule="GanaanYouth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o4n-za-i9t" id="Xgj-be-UJZ">
@@ -929,10 +929,9 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxJ-KI-7Jy">
-                                                            <rect key="frame" x="170" y="50" width="150" height="30"/>
+                                                            <rect key="frame" x="169" y="50" width="37" height="30"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="150" id="E1j-B5-dew"/>
-                                                                <constraint firstAttribute="height" constant="30" id="zEt-r4-BMn"/>
+                                                                <constraint firstAttribute="height" constant="30" id="5Kg-W2-OzK"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="NotoNastaliqUrdu" family="Noto Nastaliq Urdu" pointSize="15"/>
                                                             <nil key="textColor"/>
@@ -943,9 +942,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="1MJ-rK-fma"/>
                                                         <constraint firstAttribute="bottom" secondItem="Tbk-v3-miA" secondAttribute="bottom" id="C0l-ac-4sq"/>
-                                                        <constraint firstItem="CxJ-KI-7Jy" firstAttribute="top" secondItem="DV6-7H-Tad" secondAttribute="top" constant="50" id="NFl-kJ-qcT"/>
+                                                        <constraint firstItem="CxJ-KI-7Jy" firstAttribute="centerX" secondItem="DV6-7H-Tad" secondAttribute="centerX" id="FmM-Wf-tNg"/>
+                                                        <constraint firstItem="CxJ-KI-7Jy" firstAttribute="centerY" secondItem="DV6-7H-Tad" secondAttribute="centerY" id="SBh-ec-Wpt"/>
                                                         <constraint firstItem="Tbk-v3-miA" firstAttribute="top" secondItem="DV6-7H-Tad" secondAttribute="top" id="enF-2r-urX"/>
-                                                        <constraint firstItem="CxJ-KI-7Jy" firstAttribute="leading" secondItem="Tbk-v3-miA" secondAttribute="trailing" constant="30" id="jEA-iG-D3x"/>
                                                         <constraint firstItem="Tbk-v3-miA" firstAttribute="leading" secondItem="DV6-7H-Tad" secondAttribute="leading" constant="20" id="klN-Fz-nSb"/>
                                                     </constraints>
                                                 </view>
@@ -1025,7 +1024,7 @@
         <!--Schedule-->
         <scene sceneID="EAi-wr-Rxw">
             <objects>
-                <viewController storyboardIdentifier="NotifyAndSchedulesView" title="Schedule" id="rR7-j3-EWe" customClass="ScheduleViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotifyAndSchedulesView" title="Schedule" id="rR7-j3-EWe" customClass="ScheduleViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wwO-Uv-sTo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1048,12 +1047,12 @@
         <!--Data Source-->
         <scene sceneID="zgR-WX-C6D">
             <objects>
-                <viewController storyboardIdentifier="Photo" title="Photo" id="oTU-0Z-AXL" customClass="PhotoViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Photo" title="Photo" id="oTU-0Z-AXL" customClass="PhotoViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AG3-lB-hh0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AUb-oA-e0J" customClass="PhotoStackView" customModule="Project1" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AUb-oA-e0J" customClass="PhotoStackView" customModule="GanaanYouth" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1074,7 +1073,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="PhotoCell" id="JPp-YL-d0k" customClass="PhotoCell" customModule="Project1" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="PhotoCell" id="JPp-YL-d0k" customClass="PhotoCell" customModule="GanaanYouth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1180,7 +1179,7 @@
         <!--Data Source-->
         <scene sceneID="3Kj-Pa-YAa">
             <objects>
-                <viewController id="cHc-u2-7c1" customClass="AlbumCollectionViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cHc-u2-7c1" customClass="AlbumCollectionViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2gw-N4-0Uq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1195,7 +1194,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCell" id="wnL-FB-G66" customClass="AlbumCell" customModule="Project1" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCell" id="wnL-FB-G66" customClass="AlbumCell" customModule="GanaanYouth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="111"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1234,7 +1233,7 @@
                                     <outlet property="delegate" destination="cHc-u2-7c1" id="Q4x-Si-17K"/>
                                 </connections>
                             </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d3D-Is-lfk" customClass="TitleStackView" customModule="Project1" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d3D-Is-lfk" customClass="TitleStackView" customModule="GanaanYouth" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Xr2-tn-ucj"/>
@@ -1267,6 +1266,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="hf1-aU-POR" id="Udj-bJ-xMp"/>
+                        <outlet property="photoAddButton" destination="YEh-Nk-aZm" id="Rbu-Eu-Cmq"/>
                         <outlet property="titleStackView" destination="d3D-Is-lfk" id="w3R-w9-UiB"/>
                         <segue destination="B7a-xY-hdo" kind="show" identifier="ToDashBoard" id="vJk-oE-rG8"/>
                         <segue destination="AD2-EX-9fc" kind="show" identifier="PhotoDetailsSegue" id="1BE-zD-iKP"/>
@@ -1279,7 +1279,7 @@
         <!--Title-->
         <scene sceneID="Mhl-Ij-b5c">
             <objects>
-                <viewController id="AD2-EX-9fc" customClass="PhotoDetailsViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AD2-EX-9fc" customClass="PhotoDetailsViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IyP-An-snh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1322,38 +1322,45 @@
         <!--Dash Board View Controller-->
         <scene sceneID="Xuh-ZR-O8H">
             <objects>
-                <viewController id="B7a-xY-hdo" customClass="DashBoardViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="B7a-xY-hdo" customClass="DashBoardViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SpE-Zs-6YD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1XA-ci-ezK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="479"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1XA-ci-ezK" firstAttribute="leading" secondItem="9Tr-Xp-F2w" secondAttribute="leading" id="EqD-Lo-2h3"/>
-                            <constraint firstItem="1XA-ci-ezK" firstAttribute="bottom" secondItem="9Tr-Xp-F2w" secondAttribute="bottom" id="HrS-fV-MiW"/>
+                            <constraint firstItem="1XA-ci-ezK" firstAttribute="bottom" secondItem="9Tr-Xp-F2w" secondAttribute="bottom" constant="-88" id="HrS-fV-MiW"/>
                             <constraint firstItem="1XA-ci-ezK" firstAttribute="trailing" secondItem="9Tr-Xp-F2w" secondAttribute="trailing" id="RLb-Vl-SYn"/>
-                            <constraint firstItem="1XA-ci-ezK" firstAttribute="top" secondItem="9Tr-Xp-F2w" secondAttribute="top" id="XTH-81-MOs"/>
+                            <constraint firstItem="1XA-ci-ezK" firstAttribute="top" secondItem="9Tr-Xp-F2w" secondAttribute="top" constant="80" id="XTH-81-MOs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Tr-Xp-F2w"/>
                     </view>
-                    <navigationItem key="navigationItem" id="L9r-gm-D8m"/>
+                    <navigationItem key="navigationItem" id="L9r-gm-D8m">
+                        <barButtonItem key="rightBarButtonItem" image="trash" catalog="system" id="RSh-G0-vbk">
+                            <connections>
+                                <action selector="deleteHandler:" destination="B7a-xY-hdo" id="RBP-0Y-nKS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="deleteImageButton" destination="RSh-G0-vbk" id="sjj-he-x7Y"/>
                         <outlet property="pageView" destination="1XA-ci-ezK" id="lSJ-7Z-LJs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmU-19-3Df" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5482" y="2065"/>
+            <point key="canvasLocation" x="5480.8000000000002" y="2064.9175412293853"/>
         </scene>
         <!--Q&A-->
         <scene sceneID="PgW-R2-JIM">
             <objects>
-                <viewController storyboardIdentifier="QuestionsView" title="Q&amp;A" id="Ggm-bz-L1X" customClass="QuestionsViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionsView" title="Q&amp;A" id="Ggm-bz-L1X" customClass="QuestionsViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7dj-2i-k23">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1384,7 +1391,7 @@
         <!--Content View Controller-->
         <scene sceneID="FNp-Ml-nT8">
             <objects>
-                <viewController storyboardIdentifier="contentViewController" id="ZEO-eh-9Ot" customClass="ContentViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="contentViewController" id="ZEO-eh-9Ot" customClass="ContentViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9zC-cq-7K8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1398,34 +1405,18 @@
                                 <color key="color" red="1" green="0.72523416439999999" blue="0.89864153390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ado-JP-8Md">
-                                <rect key="frame" x="0.0" y="100" width="375" height="467"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ucy-mh-X4a">
-                                <rect key="frame" x="320" y="0.0" width="40" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9nv-Nb-Ve4"/>
-                                    <constraint firstAttribute="width" constant="40" id="dpy-QB-zNt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" image="trash" catalog="system">
-                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteHandler:" destination="ZEO-eh-9Ot" eventType="touchUpInside" id="OXe-ns-mAW"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ITU-ut-e2o" firstAttribute="centerY" secondItem="9zC-cq-7K8" secondAttribute="centerY" id="Cao-Nm-blz"/>
                             <constraint firstItem="ado-JP-8Md" firstAttribute="leading" secondItem="ZKP-hK-ESD" secondAttribute="leading" id="Kou-iV-bEH"/>
-                            <constraint firstItem="ado-JP-8Md" firstAttribute="top" secondItem="ZKP-hK-ESD" secondAttribute="top" constant="100" id="QPH-gl-lQe"/>
-                            <constraint firstItem="Ucy-mh-X4a" firstAttribute="top" secondItem="ZKP-hK-ESD" secondAttribute="top" id="fnX-Mn-plK"/>
+                            <constraint firstItem="ado-JP-8Md" firstAttribute="top" secondItem="ZKP-hK-ESD" secondAttribute="top" id="QPH-gl-lQe"/>
                             <constraint firstItem="ado-JP-8Md" firstAttribute="trailing" secondItem="ZKP-hK-ESD" secondAttribute="trailing" id="hCf-Ih-OkI"/>
-                            <constraint firstItem="ZKP-hK-ESD" firstAttribute="bottom" secondItem="ado-JP-8Md" secondAttribute="bottom" constant="100" id="ha6-6g-9fh"/>
+                            <constraint firstItem="ZKP-hK-ESD" firstAttribute="bottom" secondItem="ado-JP-8Md" secondAttribute="bottom" id="ha6-6g-9fh"/>
                             <constraint firstItem="ITU-ut-e2o" firstAttribute="centerX" secondItem="9zC-cq-7K8" secondAttribute="centerX" id="heW-VZ-FNM"/>
                             <constraint firstItem="ado-JP-8Md" firstAttribute="centerX" secondItem="9zC-cq-7K8" secondAttribute="centerX" id="sZB-X8-7HW"/>
-                            <constraint firstItem="ZKP-hK-ESD" firstAttribute="trailing" secondItem="Ucy-mh-X4a" secondAttribute="trailing" constant="15" id="xJt-yh-MEu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZKP-hK-ESD"/>
                     </view>
@@ -1507,7 +1498,7 @@
         <!--Page BulletinVC-->
         <scene sceneID="6cG-l4-Prv">
             <objects>
-                <pageViewController storyboardIdentifier="pageBulletinVC" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="2Dm-Z8-Yuz" customClass="PageBulletinVC" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="pageBulletinVC" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="2Dm-Z8-Yuz" customClass="PageBulletinVC" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CiA-Gz-xkl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2793" y="3711"/>
@@ -1582,7 +1573,7 @@
         <!--Custom Alert View2-->
         <scene sceneID="YVx-46-CLa">
             <objects>
-                <viewController storyboardIdentifier="CustomAlertView2" id="N5a-Bx-3Xb" customClass="CustomAlertView2" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomAlertView2" id="N5a-Bx-3Xb" customClass="CustomAlertView2" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AHN-14-evZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1600,7 +1591,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Lu-Wl-IrK" customClass="customButton" customModule="Project1" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Lu-Wl-IrK" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
                                         <rect key="frame" x="8" y="251" width="120" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="RXM-dq-mZM"/>
@@ -1612,7 +1603,7 @@
                                             <action selector="onTapCancelButton:" destination="N5a-Bx-3Xb" eventType="touchUpInside" id="OlT-yF-ivh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7G-QB-xDu" customClass="customButton" customModule="Project1" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7G-QB-xDu" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
                                         <rect key="frame" x="161" y="251" width="120" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="MEs-W1-05h"/>
@@ -1634,7 +1625,7 @@
                                             <outlet property="delegate" destination="N5a-Bx-3Xb" id="4yQ-gF-lip"/>
                                         </connections>
                                     </pickerView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lf-Tw-FXn" customClass="customLabel" customModule="Project1" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lf-Tw-FXn" customClass="customLabel" customModule="GanaanYouth" customModuleProvider="target">
                                         <rect key="frame" x="70" y="204" width="149" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6mI-Qg-WCD"/>

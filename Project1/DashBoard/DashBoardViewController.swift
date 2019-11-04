@@ -16,6 +16,8 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
     var selectedImageIndex = Int()
     var imageURLs: [URL]? = nil
     
+    @IBOutlet weak var deleteImageButton: UIBarButtonItem!
+    
     var imageId: String!
     
     var image: UIImage? {
@@ -46,6 +48,12 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
         pageVC.didMove(toParent: self)
         pageVC.dataSource = self
         pageVC.setViewControllers(viewController as? [UIViewController], direction: .forward, animated: true, completion: nil)
+        
+        if CurrentUser.shared.currentUserEmail(email: "ganaanadmin@gmail.com") {
+            deleteImageButton.isEnabled = true
+        } else {
+            deleteImageButton.isEnabled = false
+        }
     }
     
     

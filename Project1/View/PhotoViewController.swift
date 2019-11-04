@@ -152,7 +152,7 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
         }
     }
     
-    @objc func handleLongPressGesture(gesture: UIGestureRecognizer){
+    @objc func handleLongPressGesture(gesture: UIGestureRecognizer) {
         
         if CurrentUser.shared.currentUserEmail(email: "ganaanadmin@gmail.com") && CurrentUser.shared.loginCheck! == true {
             let location = gesture.location(in: self.collectionView)
