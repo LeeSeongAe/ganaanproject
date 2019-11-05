@@ -631,6 +631,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth;
 				PRODUCT_NAME = GanaanYouth;
 				SWIFT_OBJC_BRIDGING_HEADER = "Project1/View/Project1-Bridging-Header.h";
@@ -655,6 +656,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth;
 				PRODUCT_NAME = GanaanYouth;
 				SWIFT_OBJC_BRIDGING_HEADER = "Project1/View/Project1-Bridging-Header.h";
