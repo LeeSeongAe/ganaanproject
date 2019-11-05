@@ -6,23 +6,23 @@ target 'Project1' do
   use_frameworks!
 
   # Pods for Project1
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'SnapKit', '~> 4.0.0'
-  pod 'Firebase/Core'
-  pod 'Firebase/RemoteConfig'
-  pod 'FirebaseAnalytics'
-  pod 'Firebase/Database'
-  pod 'TextFieldEffects'
-  pod 'SwiftyJSON'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Storage'
-  pod 'CustomIOSAlertView', '~> 0.9.5'
-  pod 'SDWebImage'
-  pod 'BSImageView'
-  pod 'FirebaseStorage'
-  pod 'FirebaseFirestore'
-  pod 'FirebaseAuthInterop'
-  pod 'OpalImagePicker'
-  pod 'SDWebImage'
+  pod 'RxSwift', :inhibit_warnings => true
+  pod 'RxCocoa', :inhibit_warnings => true
+  pod 'SnapKit', '~> 4.0.0', :inhibit_warnings => true
+  pod 'Firebase/Core', :inhibit_warnings => true
+  pod 'Firebase/RemoteConfig', :inhibit_warnings => true
+  pod 'FirebaseAnalytics', :inhibit_warnings => true
+  pod 'Firebase/Database', :inhibit_warnings => true
+  pod 'TextFieldEffects', :inhibit_warnings => true
+  pod 'SwiftyJSON', :inhibit_warnings => true
+  pod 'Firebase/Auth', :inhibit_warnings => true
+  pod 'Firebase/Storage', :inhibit_warnings => true
+  pod 'CustomIOSAlertView', '~> 0.9.5', :inhibit_warnings => true
+  pod 'SDWebImage', :inhibit_warnings => true
+  pod 'BSImageView', :inhibit_warnings => true
+  pod 'FirebaseStorage', :inhibit_warnings => true
+  pod 'FirebaseFirestore', :inhibit_warnings => true
+  pod 'FirebaseAuthInterop', :inhibit_warnings => true
+  pod 'OpalImagePicker', :inhibit_warnings => true
+  pod 'SDWebImage', :inhibit_warnings => true
 end
