@@ -25,4 +25,5 @@ target 'Project1' do
   pod 'FirebaseAuthInterop', :inhibit_warnings => true
   pod 'OpalImagePicker', :inhibit_warnings => true
   pod 'SDWebImage', :inhibit_warnings => true
+  pod 'Parchment', :inhibit_warnings => true
 end

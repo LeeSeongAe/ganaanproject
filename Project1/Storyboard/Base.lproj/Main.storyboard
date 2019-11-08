@@ -17,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gTi-Oz-jI0" customClass="TitleStackView" customModule="GanaanYouth" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gTi-Oz-jI0" customClass="TitleStackView" customModule="GanaanYouth" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="54" width="375" height="54"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="9xN-UU-YHp"/>
+                                    <constraint firstAttribute="height" constant="54" id="9xN-UU-YHp"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="C76-0b-LoC"/>
@@ -152,7 +152,7 @@
                                     <segue destination="oTU-0Z-AXL" kind="presentation" id="JND-z7-ytM"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUL-Kp-GdQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUL-Kp-GdQ">
                                 <rect key="frame" x="305" y="380" width="50" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -192,7 +192,7 @@
                             <constraint firstItem="NCn-zl-eI2" firstAttribute="top" secondItem="ftR-Ur-B6Y" secondAttribute="bottom" constant="20" id="THO-J8-f8W"/>
                             <constraint firstItem="QYs-bP-23h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Tt4-pH-yh4"/>
                             <constraint firstItem="ka8-Jd-2oF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xoe-rW-caz"/>
-                            <constraint firstItem="gTi-Oz-jI0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="baD-h6-oAX"/>
+                            <constraint firstItem="gTi-Oz-jI0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="baD-h6-oAX"/>
                             <constraint firstItem="NUL-Kp-GdQ" firstAttribute="top" secondItem="KVf-Sz-OZ8" secondAttribute="bottom" constant="15" id="cam-gD-f2V"/>
                             <constraint firstItem="gTi-Oz-jI0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eag-un-DiZ"/>
                             <constraint firstItem="2cO-RA-t3b" firstAttribute="top" secondItem="ka8-Jd-2oF" secondAttribute="bottom" constant="17" id="f77-e4-54g"/>
@@ -861,6 +861,7 @@
                         <segue destination="Tpd-lp-NSp" kind="custom" identifier="Schedule" customClass="SWRevealViewControllerSeguePushController" id="CGB-9x-YoJ"/>
                         <segue destination="Vr5-Kh-vvr" kind="custom" identifier="Q&amp;A" customClass="SWRevealViewControllerSeguePushController" id="FWg-62-jBS"/>
                         <segue destination="Y4s-yK-GTn" kind="custom" identifier="Cell" customClass="SWRevealViewControllerSeguePushController" id="lok-6c-WjC"/>
+                        <segue destination="st0-29-kxD" kind="custom" identifier="Notice" customClass="SWRevealViewControllerSeguePushController" id="uFg-Dm-8r1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yff-ya-gIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1308,7 +1309,7 @@
                         <viewLayoutGuide key="safeArea" id="ixA-qV-fuF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="EaK-Ay-PiN">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="trash" catalog="system" id="ddd-yu-cCL"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="trash.fill" catalog="system" id="ddd-yu-cCL"/>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="zWp-pB-mth" id="zCe-rj-vBF"/>
@@ -1474,6 +1475,22 @@
             <point key="canvasLocation" x="2793" y="1030"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="nkc-6w-XAo">
+            <objects>
+                <navigationController id="st0-29-kxD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ey3-Ny-1Sd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oWb-Gd-cC7" kind="relationship" relationship="rootViewController" id="noa-Kp-lBa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ev0-te-JcQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1641" y="3665"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="o5o-8S-dcG">
             <objects>
                 <navigationController id="Vr5-Kh-vvr" sceneMemberID="viewController">
@@ -1501,12 +1518,33 @@
                 <pageViewController storyboardIdentifier="pageBulletinVC" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="2Dm-Z8-Yuz" customClass="PageBulletinVC" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CiA-Gz-xkl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2793" y="3711"/>
+            <point key="canvasLocation" x="740" y="3626"/>
         </scene>
-        <!--View Controller-->
+        <!--Notice View Controller-->
+        <scene sceneID="n9y-hF-bZH">
+            <objects>
+                <viewController storyboardIdentifier="NoticeVC" id="oWb-Gd-cC7" customClass="NoticeViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g7G-sE-Qot">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="KQK-sn-XGr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4lJ-lr-9RA">
+                        <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="fkS-Wv-Iky"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="fkS-Wv-Iky" id="0Ts-mE-s4h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VWv-O1-fTP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2399" y="3665"/>
+        </scene>
+        <!--First View Controller-->
         <scene sceneID="JJj-5r-pWQ">
             <objects>
-                <viewController restorationIdentifier="FirstVC" storyboardIdentifier="FirstVC" id="aVg-Uv-P1Y" sceneMemberID="viewController">
+                <viewController restorationIdentifier="FirstVC" storyboardIdentifier="FirstVC" id="aVg-Uv-P1Y" customClass="FirstViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LrF-x8-kdI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1516,7 +1554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZS-Lm-tRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3487" y="3710"/>
+            <point key="canvasLocation" x="3124" y="3666"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GdV-gE-cYX">
@@ -1540,10 +1578,10 @@
             </objects>
             <point key="canvasLocation" x="2071" y="-743"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="bbT-Va-Jeb">
             <objects>
-                <viewController restorationIdentifier="SecondVC" storyboardIdentifier="SecondVC" id="0JK-Fg-D57" sceneMemberID="viewController">
+                <viewController restorationIdentifier="SecondVC" storyboardIdentifier="SecondVC" id="0JK-Fg-D57" customClass="SecondViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wuU-ST-s4x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1553,12 +1591,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wj9-Rd-ghW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4180" y="3710"/>
+            <point key="canvasLocation" x="3818" y="3666"/>
         </scene>
-        <!--View Controller-->
+        <!--Third Table View Controller-->
         <scene sceneID="0U5-HL-STf">
             <objects>
-                <viewController restorationIdentifier="ThirdVC" storyboardIdentifier="ThirdVC" id="XGV-4m-ymT" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ThirdVC" storyboardIdentifier="ThirdVC" id="XGV-4m-ymT" customClass="ThirdTableViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z0E-r0-8eu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1568,7 +1606,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6k-0k-BZN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4870" y="3710"/>
+            <point key="canvasLocation" x="4508" y="3666"/>
         </scene>
         <!--Custom Alert View2-->
         <scene sceneID="YVx-46-CLa">
@@ -1686,6 +1724,7 @@
         <image name="icon" width="1065" height="1047"/>
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="trash" catalog="system" width="60" height="64"/>
+        <image name="trash.fill" catalog="system" width="60" height="64"/>
         <image name="주보마크2" width="1065" height="1047"/>
     </resources>
     <inferredMetricsTieBreakers>

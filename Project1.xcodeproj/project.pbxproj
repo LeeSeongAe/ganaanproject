@@ -43,6 +43,13 @@
 		AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E422DD8B9700146091 /* CustomAlertView.swift */; };
 		AF7505E722DDCDC900146091 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E622DDCDC900146091 /* UserDTO.swift */; };
 		AF8D40C8234EF1F500DC280A /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8D40C7234EF1F500DC280A /* PhotoDetailsViewController.swift */; };
+		AF964FA423726873001DE8F5 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF964FA323726873001DE8F5 /* NoticeViewController.swift */; };
+		AF964FA62372836C001DE8F5 /* UIView+contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF964FA52372836C001DE8F5 /* UIView+contraints.swift */; };
+		AF964FA823728550001DE8F5 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF964FA723728550001DE8F5 /* IndexViewController.swift */; };
+		AF964FAA237285F8001DE8F5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF964FA9237285F8001DE8F5 /* FirstViewController.swift */; };
+		AF964FAC23728604001DE8F5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF964FAB23728604001DE8F5 /* SecondViewController.swift */; };
+		AF964FAE23728612001DE8F5 /* ThirdTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF964FAD23728612001DE8F5 /* ThirdTableViewController.swift */; };
+		AF964FB023729CC8001DE8F5 /* FirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF964FAF23729CC8001DE8F5 /* FirstCell.swift */; };
 		AF9C2C82233DEC1E0061C3AC /* slideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C2C81233DEC1E0061C3AC /* slideCell.swift */; };
 		AF9C2C852341D4480061C3AC /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */; };
 		AF9C717F2281166D002D0DF3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C717E2281166D002D0DF3 /* IntroViewController.swift */; };
@@ -104,6 +111,13 @@
 		AF7505E422DD8B9700146091 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		AF7505E622DDCDC900146091 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		AF8D40C7234EF1F500DC280A /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
+		AF964FA323726873001DE8F5 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		AF964FA52372836C001DE8F5 /* UIView+contraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+contraints.swift"; sourceTree = "<group>"; };
+		AF964FA723728550001DE8F5 /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		AF964FA9237285F8001DE8F5 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		AF964FAB23728604001DE8F5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		AF964FAD23728612001DE8F5 /* ThirdTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewController.swift; sourceTree = "<group>"; };
+		AF964FAF23729CC8001DE8F5 /* FirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCell.swift; sourceTree = "<group>"; };
 		AF9C2C81233DEC1E0061C3AC /* slideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slideCell.swift; sourceTree = "<group>"; };
 		AF9C2C832341D4470061C3AC /* Project1Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Project1Release.entitlements; sourceTree = "<group>"; };
 		AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
@@ -296,6 +310,13 @@
 			isa = PBXGroup;
 			children = (
 				AFE3FC2E23613A2600F4A144 /* PageBulletinVC.swift */,
+				AF964FA323726873001DE8F5 /* NoticeViewController.swift */,
+				AF964FA52372836C001DE8F5 /* UIView+contraints.swift */,
+				AF964FA723728550001DE8F5 /* IndexViewController.swift */,
+				AF964FA9237285F8001DE8F5 /* FirstViewController.swift */,
+				AF964FAF23729CC8001DE8F5 /* FirstCell.swift */,
+				AF964FAB23728604001DE8F5 /* SecondViewController.swift */,
+				AF964FAD23728612001DE8F5 /* ThirdTableViewController.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -431,6 +452,7 @@
 			files = (
 				AF372C7222AA4CC400749C17 /* IntroduceViewController.swift in Sources */,
 				AFA759B7230FD7CC00F73E53 /* PhotoCell.swift in Sources */,
+				AF964FB023729CC8001DE8F5 /* FirstCell.swift in Sources */,
 				AFA5C53A23153A7A0003CA0F /* AlbumCollectionViewController.swift in Sources */,
 				AF72E5C7232F873400667B03 /* FireStore+Extensions.swift in Sources */,
 				AF1B0ABE227AE65F0022DE0E /* ViewController.swift in Sources */,
@@ -438,30 +460,36 @@
 				AF9C718B2282CFC9002D0DF3 /* MenuViewController.swift in Sources */,
 				AF7505E122DC692F00146091 /* customLabel.swift in Sources */,
 				AFEFC1AE22A627B6005766B1 /* MenuTableViewCell.swift in Sources */,
+				AF964FAA237285F8001DE8F5 /* FirstViewController.swift in Sources */,
 				AFEFC1AC22A54F48005766B1 /* JoinViewController.swift in Sources */,
 				AF9C71892282BE85002D0DF3 /* Util.swift in Sources */,
 				AF72E5C3232F83E400667B03 /* AlbumEntity.swift in Sources */,
+				AF964FA62372836C001DE8F5 /* UIView+contraints.swift in Sources */,
 				AF72E5D1232F9BF000667B03 /* UIView+Extensions.swift in Sources */,
 				AFE3FC2F23613A2600F4A144 /* PageBulletinVC.swift in Sources */,
 				AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */,
 				AF72E5C9232F8BD000667B03 /* ImageService.swift in Sources */,
 				AF6AA44C2366CD6C00763694 /* CurrentUser.swift in Sources */,
 				AF1B0ABC227AE65F0022DE0E /* AppDelegate.swift in Sources */,
+				AF964FA823728550001DE8F5 /* IndexViewController.swift in Sources */,
 				AFA759B5230F84A300F73E53 /* TitleStackView.swift in Sources */,
 				AF372C7C22AE5F7B00749C17 /* CellCheckCell.swift in Sources */,
 				AF72E5C5232F85A700667B03 /* AlbumService.swift in Sources */,
 				AF1B0AD4227D33A80022DE0E /* CellCollectionViewCell.swift in Sources */,
+				AF964FA423726873001DE8F5 /* NoticeViewController.swift in Sources */,
 				AF1B0AD8227D4E810022DE0E /* CellCheckTableViewController.swift in Sources */,
 				AF9C2C82233DEC1E0061C3AC /* slideCell.swift in Sources */,
 				AFA5C53C23153B650003CA0F /* AlbumCell.swift in Sources */,
 				AF72E5D4232FA0A100667B03 /* ImageTask.swift in Sources */,
 				AF372C7622AA4CF600749C17 /* PhotoViewController.swift in Sources */,
 				AF9C718322817A91002D0DF3 /* SWRevealViewController.m in Sources */,
+				AF964FAC23728604001DE8F5 /* SecondViewController.swift in Sources */,
 				AF72E5CB232F8E1F00667B03 /* ImageEntity.swift in Sources */,
 				AFA759BA2313C59900F73E53 /* DashBoardViewController.swift in Sources */,
 				AFE3FC0B23585BDA00F4A144 /* IntroduceCell.swift in Sources */,
 				AF50A5492338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift in Sources */,
 				AF72E5CF232F976100667B03 /* TableView+Extentions.swift in Sources */,
+				AF964FAE23728612001DE8F5 /* ThirdTableViewController.swift in Sources */,
 				AF372C7422AA4CE000749C17 /* ScheduleViewController.swift in Sources */,
 				AF05A919236BF2D80099FCA6 /* CustomAlertView2.swift in Sources */,
 				AFA759BF2313CA9F00F73E53 /* ContentViewController.swift in Sources */,
@@ -552,7 +580,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -607,7 +635,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

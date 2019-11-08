@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageBulletinVC: UIPageViewController {
+class PageBulletinVC: UIViewController {
     
 //
     override func viewDidLoad() {
