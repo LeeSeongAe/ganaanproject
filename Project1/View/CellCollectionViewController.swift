@@ -8,14 +8,19 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class CellCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, TitleStackViewDataSource {
- 
+    
     var navTitle = ""
+    var array : [AuthDTO] = []
+    var uidKey : [String] = []
+    let authDTO = AuthDTO()
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var titleStackView: TitleStackView!
     
-    let cellTotal = ["요셉1","요셉2","요셉3","요셉4","요셉5","요셉6","여호수아1","여호수아2","여호수아3","여호수아4","여호수아5","여호수아6","갈렙1","갈렙2", "갈렙3", "갈렙4"]
+    let cellTotal = ["요셉1셀","요셉2셀","요셉3셀","요셉4셀","요셉5셀","요셉6셀","여호수아1셀","여호수아2셀","여호수아3셀","여호수아4셀","여호수아5셀","여호수아6셀","갈렙1셀","갈렙2셀", "갈렙3셀", "갈렙4셀"]
     let cellReaders:Array = ["수빈.png","이삭.png","다은.png","아형.png","현지.png","예원.png","성애.png","경석.png","김지원.png","해리.png","김예슬.png","우지원.png","숙영.png","지애.png","민정.png","다함.png",]
     
     override func viewDidLoad() {
@@ -34,12 +39,29 @@ class CellCollectionViewController: UIViewController, UICollectionViewDelegate, 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
-
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         titleStackView.reloadData()
+        
+        let currentUid = CurrentUser.shared.currentUserUid()
+        
+        Database.database().reference().child("Auth").child(currentUid).observe(.childAdded, with: {(snapshot) in
+            print(snapshot.value!)
+            print(snapshot.key)
+            
+            self.authDTO.authName = (snapshot.value as! [String:String])["authName"]
+            self.authDTO.authEmail = (snapshot.value as! [String:String])["authEmail"]
+            self.authDTO.authPassword = (snapshot.value as! [String:String])["authPassword"]
+            self.authDTO.authMinistry = (snapshot.value as! [String:String])["authMinistry"]
+            self.authDTO.authPosition = (snapshot.value as! [String:String])["authPosition"]
+            
+            self.array.append(self.authDTO)
+            self.uidKey.append(snapshot.key)
+        })
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -51,14 +73,14 @@ class CellCollectionViewController: UIViewController, UICollectionViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-//        return josepe.count + joshua.count + caleb.count
+        //        return josepe.count + joshua.count + caleb.count
         return cellTotal.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CellCollectionViewCell
-
+        
         cell.cellName.text = cellTotal[indexPath.item]
         cell.readerImage.image = UIImage(named: cellReaders[indexPath.item])
         
@@ -66,32 +88,18 @@ class CellCollectionViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navTitle = cellTotal[indexPath.row]
-        
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        let value = UserDefaults.standard.object(forKey: userID) as! String
-        print("value:: \(String(describing: value))")
-        
-        let cellKey = navTitle + "셀장"
-        
-        if cellKey == value || value == "목사님" || value == "간사님" || value == "부장집사님" {
-            self.performSegue(withIdentifier: "CellCheckCell", sender: nil)
-        } else {
-            let alertController = UIAlertController(title: "접근권한이 없습니다.", message: nil, preferredStyle: .alert)
-            
-            let saveAction = UIAlertAction(title: "OK", style: .default) { _ in
-                alertController.dismiss(animated: true)
-            }
-            alertController.addAction(saveAction)
-            self.present(alertController, animated: true)
-        }
-        
+        self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
+//        if Auth.auth().currentUser?.email == self.authDTO.authEmail {
+//            self.performSegue(withIdentifier: "CellCheckCell", sender: nil)
+//        } else {
+//            print("TEST")
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
         if segue.identifier == "CellCheckCell" {
             let vc = segue.destination as! CellCheckTableViewController
-            vc.navTitle = navTitle
+            vc.navTitle = sender as! String
         }
     }
     
@@ -103,7 +111,7 @@ extension CellCollectionViewController {
         return "CELL 😘"
     }
     
-//    func subtitle(for titleStackView: TitleStackView) -> String? {
-//        return nil
-//    }
+    //    func subtitle(for titleStackView: TitleStackView) -> String? {
+    //        return nil
+    //    }
 }

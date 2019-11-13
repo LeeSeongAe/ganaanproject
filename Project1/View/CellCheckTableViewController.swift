@@ -55,7 +55,7 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
 
         self.array.removeAll()
         
-        Database.database().reference().child(self.navTitle).observe(.childAdded, with: {(snapshot) in
+        Database.database().reference().child("Cell").child(self.navTitle).observe(.childAdded, with: {(snapshot) in
             print(snapshot.value!)
             print(snapshot.key)
             
@@ -212,7 +212,7 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
             // Create a root reference
             let storageRef = Storage.storage().reference()
             
-            let reversRef = storageRef.child(self.navTitle).child(imageName)
+            let reversRef = storageRef.child("Cell").child(self.navTitle).child(imageName)
             
             reversRef.putData(selectedImage!, metadata: nil) { metadata, error in
                 if error != nil {
@@ -220,7 +220,7 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
                 } else {
                     reversRef.downloadURL{ url, error in
                         if let url = url?.absoluteString {
-                            Database.database().reference().child(self.navTitle).childByAutoId().setValue([
+                            Database.database().reference().child("Cell").child(self.navTitle).childByAutoId().setValue([
                                 "cellMemName" : newData,
                                 "imageUrl" : url,
                                 "pray" : "",
@@ -243,13 +243,13 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
             print("😣 \(indexPath.row)")
             
             let storageRef = Storage.storage().reference()
-            let reversRef = storageRef.child(self.navTitle).child(array[indexPath.row].imageName!)
+            let reversRef = storageRef.child("Cell").child(self.navTitle).child(array[indexPath.row].imageName!)
             reversRef.delete(completion: { (error) in
                 if error != nil {
                     print("삭제 에러")
                 } else {
                     print("database 삭제🍏 \(self.uidKey[indexPath.row]) , \(indexPath.section)")
-                    Database.database().reference().child(self.navTitle).child(self.uidKey[indexPath.row]).removeValue()
+                    Database.database().reference().child("Cell").child(self.navTitle).child(self.uidKey[indexPath.row]).removeValue()
                     self.array.remove(at: indexPath.row)
                     tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .automatic)
                     DispatchQueue.main.async {

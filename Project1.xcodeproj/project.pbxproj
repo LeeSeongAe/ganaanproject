@@ -43,6 +43,7 @@
 		AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E422DD8B9700146091 /* CustomAlertView.swift */; };
 		AF7505E722DDCDC900146091 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E622DDCDC900146091 /* UserDTO.swift */; };
 		AF8D40C8234EF1F500DC280A /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8D40C7234EF1F500DC280A /* PhotoDetailsViewController.swift */; };
+		AF971F98237A9B9400C54901 /* AuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF971F97237A9B9400C54901 /* AuthDTO.swift */; };
 		AF9C2C82233DEC1E0061C3AC /* slideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C2C81233DEC1E0061C3AC /* slideCell.swift */; };
 		AF9C2C852341D4480061C3AC /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */; };
 		AF9C717F2281166D002D0DF3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C717E2281166D002D0DF3 /* IntroViewController.swift */; };
@@ -104,6 +105,7 @@
 		AF7505E422DD8B9700146091 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		AF7505E622DDCDC900146091 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		AF8D40C7234EF1F500DC280A /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
+		AF971F97237A9B9400C54901 /* AuthDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDTO.swift; sourceTree = "<group>"; };
 		AF9C2C81233DEC1E0061C3AC /* slideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slideCell.swift; sourceTree = "<group>"; };
 		AF9C2C832341D4470061C3AC /* Project1Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Project1Release.entitlements; sourceTree = "<group>"; };
 		AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
@@ -209,6 +211,7 @@
 			children = (
 				AF72E5C1232F83AE00667B03 /* Album */,
 				AF7505E622DDCDC900146091 /* UserDTO.swift */,
+				AF971F97237A9B9400C54901 /* AuthDTO.swift */,
 				AFA5C53D232650850003CA0F /* AlbumDTO.swift */,
 				AF1B0AD5227D3CBC0022DE0E /* CellCollectionViewController.swift */,
 				AF1B0AD3227D33A80022DE0E /* CellCollectionViewCell.swift */,
@@ -462,6 +465,7 @@
 				AFE3FC0B23585BDA00F4A144 /* IntroduceCell.swift in Sources */,
 				AF50A5492338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift in Sources */,
 				AF72E5CF232F976100667B03 /* TableView+Extentions.swift in Sources */,
+				AF971F98237A9B9400C54901 /* AuthDTO.swift in Sources */,
 				AF372C7422AA4CE000749C17 /* ScheduleViewController.swift in Sources */,
 				AF05A919236BF2D80099FCA6 /* CustomAlertView2.swift in Sources */,
 				AFA759BF2313CA9F00F73E53 /* ContentViewController.swift in Sources */,

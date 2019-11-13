@@ -39,49 +39,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "81F2786A-6109-4956-8779-5540A87800A8"
-            shouldBeEnabled = "Yes"
+            uuid = "5437B2BD-ED41-4210-889D-269BD8199F3A"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Project1/DashBoard/DashBoardViewController.swift"
+            filePath = "Pods/FirebaseAuth/Firebase/Auth/Source/Auth/FIRAuth.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "deleteHandler(_:)"
+            startingLineNumber = "469"
+            endingLineNumber = "469"
+            landmarkName = "-currentUser"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B06ECCDC-C488-4485-9E3E-2743308EAD85"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/FirebaseAuth/Firebase/Auth/Source/Auth/FIRAuth.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "468"
+            endingLineNumber = "468"
+            landmarkName = "-currentUser"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "81F2786A-6109-4956-8779-5540A87800A8 - b1839470d157dc3f"
-                  shouldBeEnabled = "Yes"
+                  uuid = "B06ECCDC-C488-4485-9E3E-2743308EAD85 - b00e3189d61921ab"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "GanaanYouth.DashBoardViewController.deleteHandler(Any) -&gt; ()"
+                  symbolName = "-[FIRAuth currentUser]"
                   moduleName = "GanaanYouth"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yujinrobot/Study/iOS/Project1/Project1/DashBoard/DashBoardViewController.swift"
+                  urlString = "file:///Users/yujinrobot/Study/iOS/Project1/Pods/FirebaseAuth/Firebase/Auth/Source/Auth/FIRAuth.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "114"
-                  endingLineNumber = "114"
-                  offsetFromSymbolStart = "100">
+                  startingLineNumber = "468"
+                  endingLineNumber = "468"
+                  offsetFromSymbolStart = "76">
                </Location>
                <Location
-                  uuid = "81F2786A-6109-4956-8779-5540A87800A8 - 98fe1c341708f72b"
-                  shouldBeEnabled = "Yes"
+                  uuid = "B06ECCDC-C488-4485-9E3E-2743308EAD85 - 9f2c5adb2bd538ef"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in GanaanYouth.DashBoardViewController.deleteHandler(Any) -&gt; ()"
+                  symbolName = "__destroy_helper_block_e8_32s40r"
                   moduleName = "GanaanYouth"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yujinrobot/Study/iOS/Project1/Project1/DashBoard/DashBoardViewController.swift"
+                  urlString = "file:///Users/yujinrobot/Study/iOS/Project1/Pods/FirebaseAuth/Firebase/Auth/Source/Auth/FIRAuth.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "48">
+                  startingLineNumber = "468"
+                  endingLineNumber = "468"
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C4CA3A7-6C89-4255-978D-0AC78B2E8F12"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/FirebaseAuth/Firebase/Auth/Source/Auth/FIRAuth.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "471"
+            endingLineNumber = "471"
+            landmarkName = "-currentUser"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

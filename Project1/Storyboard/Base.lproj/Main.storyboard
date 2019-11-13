@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -329,12 +329,12 @@
                         <viewLayoutGuide key="safeArea" id="joK-Zg-Axp"/>
                     </view>
                     <navigationItem key="navigationItem" id="EbE-vO-EHB">
-                        <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="b12-bB-VO8">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="b12-bB-VO8">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="menuButton" destination="b12-bB-VO8" id="rHa-1D-BfQ"/>
+                        <outlet property="menuButton" destination="b12-bB-VO8" id="C5g-R1-cBh"/>
                         <outlet property="titleStackView" destination="1Ak-q2-rqn" id="Xfo-do-aWj"/>
                         <segue destination="a0y-Iu-FRf" kind="show" identifier="CellCheckCell" id="S9k-w3-Fzl"/>
                     </connections>

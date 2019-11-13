@@ -13,9 +13,10 @@ import SnapKit
 import Firebase
 
 
-class ViewController: UIViewController, TitleStackViewDataSource, CustomAlertView2Delegate {
+class ViewController: UIViewController, TitleStackViewDataSource {
 
-    
+    var array : [AuthDTO] = []
+    var uidKey : [String] = []
     var disposeBag = DisposeBag()
     @IBOutlet weak var progressbar: UIActivityIndicatorView!
     
@@ -166,38 +167,7 @@ class ViewController: UIViewController, TitleStackViewDataSource, CustomAlertVie
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        self.userDefCheck()
-    }
-    
-    func userDefCheck() {
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        let value = UserDefaults.standard.object(forKey: userID) as? String ?? nil
-        print("value:: \(String(describing: value))")
         
-        if value == nil {
-            let customAlert2 = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertView2") as! CustomAlertView2
-            customAlert2.providesPresentationContextTransitionStyle = true
-            customAlert2.definesPresentationContext = true
-            customAlert2.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-            customAlert2.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-            customAlert2.delegate = self
-            self.present(customAlert2, animated: true, completion: nil)
-        } else {
-            loginSuccess()
-        }
-    }
-    
-    func okButtonTapped(textFieldValue: String) {
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        print("userID :: \(userID)")
-        UserDefaults.standard.set(textFieldValue, forKey: userID)
-    }
-    
-    func cancelButtonTapped() {
-    
-    }
-    
-    func loginSuccess() {
         progressbar.startAnimating()
         Auth.auth().signIn(withEmail: phoneNumField.text!, password: pwField.text!) { (user, error) in
             print("🆖\(String(describing: error))")
@@ -216,8 +186,10 @@ class ViewController: UIViewController, TitleStackViewDataSource, CustomAlertVie
             
         }
         
+        
+        
     }
-    
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
