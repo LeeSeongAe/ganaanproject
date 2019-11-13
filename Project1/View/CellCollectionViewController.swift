@@ -53,15 +53,15 @@ class CellCollectionViewController: UIViewController, UICollectionViewDelegate, 
         let currentUid = CurrentUser.shared.currentUserUid()
         DispatchQueue.main.async {
             Database.database().reference().child("Auth").child(currentUid).observe(.childAdded, with: {(snapshot) in
-//                print(snapshot.value!)
-//                print(snapshot.key)
-//                self.authDTO.authMinistry = (snapshot.value as! [String:String])["authMinistry"]
-//                self.authDTO.authPosition = (snapshot.value as! [String:String])["authPosition"]
+                //                print(snapshot.value!)
+                //                print(snapshot.key)
+                //                self.authDTO.authMinistry = (snapshot.value as! [String:String])["authMinistry"]
+                //                self.authDTO.authPosition = (snapshot.value as! [String:String])["authPosition"]
                 
                 self.authMinistry = (snapshot.value as! [String:String])["authMinistry"]!
                 self.authPosition = (snapshot.value as! [String:String])["authPosition"]!
-//                self.array.append(self.authDTO)
-//                self.uidKey.append(snapshot.key)
+                //                self.array.append(self.authDTO)
+                //                self.uidKey.append(snapshot.key)
             })
         }
         
@@ -94,14 +94,13 @@ class CellCollectionViewController: UIViewController, UICollectionViewDelegate, 
         
         if cellTotal[indexPath.row] == self.authMinistry && self.authPosition == "셀장" {
             self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
+        } else if self.authMinistry == "목사님" || self.authMinistry == "간사님" || self.authMinistry == "부장집사님" {
+            self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
         } else {
             let alert = UIAlertController(title: "접근 권한이 없습니다.", message: "", preferredStyle: .alert)
-            
             alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default))
-            
             self.present(alert, animated: true, completion: nil)
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
