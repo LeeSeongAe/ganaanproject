@@ -23,7 +23,6 @@ target 'Project1' do
   pod 'FirebaseStorage'
   pod 'FirebaseFirestore'
   pod 'FirebaseAuthInterop'
-  pod 'BSGridCollectionViewLayout'
   pod 'OpalImagePicker'
   pod 'SDWebImage'
   pod 'CryptoSwift'

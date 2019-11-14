@@ -50,6 +50,17 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         pickerView.tag = 1
         pickerView2.tag = 2
         
+        let toolBarKeyboard = UIToolbar()
+        toolBarKeyboard.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        toolBarKeyboard.items = [doneButton]
+        toolBarKeyboard.tintColor = .blue
+        
+        joinPW.inputAccessoryView = toolBarKeyboard
+    }
+    
+    @objc func doneButtonAction() {
+        self.view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
