@@ -3,167 +3,11 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Join-->
-        <scene sceneID="3nz-0J-A8g">
-            <objects>
-                <viewController title="Join" id="8Xt-rk-zNj" customClass="JoinViewController" customModule="GanaanYouth" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LRM-sF-ZPg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1Q-2s-iwi" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
-                                <rect key="frame" x="16" y="752" width="343" height="40"/>
-                                <color key="backgroundColor" red="0.78147772120000003" green="0.5747148326" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="EZj-98-uMM"/>
-                                    <constraint firstAttribute="width" constant="343" id="oiN-sc-9NA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="가입하기">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <state key="disabled" title="Fill the Fields"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="joinAction:" destination="8Xt-rk-zNj" eventType="touchUpInside" id="LvS-j3-9e1"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zC2-oj-al8" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="15" y="124" width="345" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="NOy-7v-Y3F"/>
-                                </constraints>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                        <color key="value" red="0.78147772120000003" green="0.5747148326" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                        <color key="value" red="1" green="0.3912392884" blue="0.33084460760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" red="0.12549019610000001" green="0.13725490200000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5j1-zC-UlK" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="15" y="188" width="345" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="gcA-lW-1ic"/>
-                                </constraints>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                        <color key="value" red="0.78147772120000003" green="0.5747148326" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" red="0.12549019610000001" green="0.13725490200000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                        <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fpr-5b-e0R">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <navigationItem title="JOIN" id="2Ne-tZ-OAf">
-                                        <barButtonItem key="leftBarButtonItem" title="cancel" id="G4V-4H-4HZ">
-                                            <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <action selector="joinCancel:" destination="8Xt-rk-zNj" id="dLH-7g-smw"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jsT-3j-HxY">
-                                <rect key="frame" x="0.0" y="346" width="375" height="120"/>
-                                <color key="backgroundColor" red="0.89727638050000003" green="0.82994993120000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="ZG4-Uk-05p"/>
-                                    <constraint firstAttribute="height" constant="120" id="wlw-yM-Fcw"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="8Xt-rk-zNj" id="lOC-pZ-j8T"/>
-                                    <outlet property="delegate" destination="8Xt-rk-zNj" id="eiA-6f-bLK"/>
-                                </connections>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해당하는 사역 및 담당을 선택해주세요. " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEn-gJ-ydS">
-                                <rect key="frame" x="0.0" y="306" width="375" height="40"/>
-                                <color key="backgroundColor" red="0.48051604050000002" green="0.30673473350000002" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Hl6-wS-O5d"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYy-Yr-K1u">
-                                <rect key="frame" x="0.0" y="466" width="375" height="40"/>
-                                <color key="backgroundColor" red="0.48051604054219388" green="0.30673473349080871" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="b9a-xI-YNZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Fpr-5b-e0R" firstAttribute="top" secondItem="mRe-W1-40T" secondAttribute="top" id="8dp-1K-GBB"/>
-                            <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="uYy-Yr-K1u" secondAttribute="trailing" id="BTK-oT-IRT"/>
-                            <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="T1Q-2s-iwi" secondAttribute="trailing" constant="16" id="CI1-vO-V9d"/>
-                            <constraint firstItem="5j1-zC-UlK" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" constant="15" id="FMd-ba-G8u"/>
-                            <constraint firstItem="T1Q-2s-iwi" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" constant="16" id="Iu6-FT-lWr"/>
-                            <constraint firstItem="jsT-3j-HxY" firstAttribute="centerY" secondItem="LRM-sF-ZPg" secondAttribute="centerY" id="SQ3-6R-T2P"/>
-                            <constraint firstItem="zC2-oj-al8" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" constant="15" id="W5g-Ea-hzh"/>
-                            <constraint firstItem="uYy-Yr-K1u" firstAttribute="top" secondItem="jsT-3j-HxY" secondAttribute="bottom" id="XeV-vP-Kdx"/>
-                            <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="zC2-oj-al8" secondAttribute="trailing" constant="15" id="ZHd-Bu-li2"/>
-                            <constraint firstItem="jsT-3j-HxY" firstAttribute="top" secondItem="aEn-gJ-ydS" secondAttribute="bottom" id="evI-uD-KJE"/>
-                            <constraint firstItem="Fpr-5b-e0R" firstAttribute="trailing" secondItem="mRe-W1-40T" secondAttribute="trailing" id="fOK-ln-2t7"/>
-                            <constraint firstItem="aEn-gJ-ydS" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" id="fTk-fT-i5x"/>
-                            <constraint firstItem="jsT-3j-HxY" firstAttribute="centerX" secondItem="LRM-sF-ZPg" secondAttribute="centerX" id="gub-UT-QmS"/>
-                            <constraint firstAttribute="bottom" secondItem="T1Q-2s-iwi" secondAttribute="bottom" constant="20" id="hHV-3C-LAC"/>
-                            <constraint firstItem="Fpr-5b-e0R" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" id="iVC-VX-MXg"/>
-                            <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="aEn-gJ-ydS" secondAttribute="trailing" id="mcS-Zl-VET"/>
-                            <constraint firstItem="5j1-zC-UlK" firstAttribute="top" secondItem="zC2-oj-al8" secondAttribute="bottom" constant="20" id="pST-4C-4Aa"/>
-                            <constraint firstItem="T1Q-2s-iwi" firstAttribute="centerX" secondItem="LRM-sF-ZPg" secondAttribute="centerX" id="sC4-3J-Vao"/>
-                            <constraint firstItem="mRe-W1-40T" firstAttribute="trailing" secondItem="5j1-zC-UlK" secondAttribute="trailing" constant="15" id="sFD-UV-Qva"/>
-                            <constraint firstItem="uYy-Yr-K1u" firstAttribute="leading" secondItem="mRe-W1-40T" secondAttribute="leading" id="shI-fl-7Cs"/>
-                            <constraint firstItem="zC2-oj-al8" firstAttribute="top" secondItem="mRe-W1-40T" secondAttribute="top" constant="80" id="waA-XK-ddG"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="mRe-W1-40T"/>
-                    </view>
-                    <connections>
-                        <outlet property="joinCancelBtn" destination="G4V-4H-4HZ" id="qBH-zt-1Gi"/>
-                        <outlet property="joinEmail" destination="zC2-oj-al8" id="YYb-Oy-cp4"/>
-                        <outlet property="joinPW" destination="5j1-zC-UlK" id="lyD-jb-4WS"/>
-                        <outlet property="pickerView" destination="jsT-3j-HxY" id="Bfh-bj-c8W"/>
-                        <outlet property="selectedRoll" destination="uYy-Yr-K1u" id="gDT-pa-jfF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t36-l0-0m6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="212" y="-37.684729064039409"/>
-        </scene>
         <!--Join-->
         <scene sceneID="gvr-tF-uvh">
             <objects>
@@ -173,12 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1At-Ar-ki1" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
-                                <rect key="frame" x="15" y="732" width="345" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="15" y="742" width="345" height="40"/>
+                                <color key="backgroundColor" red="0.48051604050000002" green="0.30673473350000002" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3Te-th-D4v"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="tintColor" red="0.48051604050000002" green="0.30673473350000002" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="가입하기">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -206,7 +51,7 @@
                                         <color key="value" red="0.78147772120000003" green="0.5747148326" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                        <color key="value" red="1" green="0.3912392884" blue="0.33084460760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.48051604050000002" green="0.30673473350000002" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                         <color key="value" red="0.12549019610000001" green="0.13725490200000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -226,7 +71,7 @@
                                         <color key="value" red="0.78147772120000003" green="0.5747148326" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                        <color key="value" red="1" green="0.3912392884" blue="0.33084460760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.48051604050000002" green="0.30673473350000002" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                         <color key="value" red="0.12549019610000001" green="0.13725490200000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -240,7 +85,7 @@
                                 </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                         <color key="value" red="0.78147772120000003" green="0.5747148326" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -249,18 +94,18 @@
                                         <color key="value" red="0.12549019610000001" green="0.13725490200000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                        <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.48051604050000002" green="0.30673473350000002" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B2W-dc-Wz0" customClass="HoshiTextField" customModule="TextFieldEffects">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password check" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B2W-dc-Wz0" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="15" y="288" width="345" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="N7z-Ow-GOL"/>
                                 </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                         <color key="value" red="0.78147772120000003" green="0.5747148326" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -269,7 +114,7 @@
                                         <color key="value" red="0.12549019610000001" green="0.13725490200000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                        <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.48051604050000002" green="0.30673473350000002" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
@@ -323,17 +168,26 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="asi-nl-nGc"/>
+                                    <constraint firstAttribute="width" constant="155" id="fo3-Or-PGN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKs-aZ-U3X">
-                                <rect key="frame" x="15" y="478" width="180" height="85"/>
+                                <rect key="frame" x="15" y="478" width="180" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="Bsx-jW-VG5"/>
-                                    <constraint firstAttribute="height" constant="85" id="m1w-Y3-mMw"/>
+                                    <constraint firstAttribute="height" constant="80" id="m1w-Y3-mMw"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="WJM-B2-EAc" id="hYe-De-U0n"/>
                                     <outlet property="delegate" destination="WJM-B2-EAc" id="7LB-x0-QQn"/>
@@ -356,7 +210,7 @@
                             <constraint firstItem="rLl-Sz-YY4" firstAttribute="leading" secondItem="fVX-on-rnn" secondAttribute="leading" constant="15" id="2mQ-Qu-3gg"/>
                             <constraint firstItem="tKs-aZ-U3X" firstAttribute="leading" secondItem="fVX-on-rnn" secondAttribute="leading" constant="15" id="406-1l-Yf2"/>
                             <constraint firstItem="fVX-on-rnn" firstAttribute="trailing" secondItem="o26-M7-Pbv" secondAttribute="trailing" constant="15" id="5mF-Jg-mY0"/>
-                            <constraint firstAttribute="bottom" secondItem="1At-Ar-ki1" secondAttribute="bottom" constant="40" id="5q9-jt-j2A"/>
+                            <constraint firstAttribute="bottom" secondItem="1At-Ar-ki1" secondAttribute="bottom" constant="30" id="5q9-jt-j2A"/>
                             <constraint firstItem="wL6-Z6-b1H" firstAttribute="top" secondItem="yDj-CH-ptp" secondAttribute="bottom" constant="20" id="6l6-iA-cwf"/>
                             <constraint firstItem="e0R-tJ-L7B" firstAttribute="leading" secondItem="rLl-Sz-YY4" secondAttribute="trailing" constant="10" id="78I-M9-rmq"/>
                             <constraint firstItem="YJq-Gk-aeM" firstAttribute="top" secondItem="GNZ-MU-gtk" secondAttribute="top" constant="108" id="Abu-sM-nTI"/>
@@ -377,6 +231,7 @@
                             <constraint firstItem="e0R-tJ-L7B" firstAttribute="top" secondItem="o26-M7-Pbv" secondAttribute="bottom" constant="10" id="cSb-7q-0D9"/>
                             <constraint firstItem="YJq-Gk-aeM" firstAttribute="top" secondItem="oIK-Xy-Xl8" secondAttribute="bottom" constant="20" id="diJ-Qh-EpH"/>
                             <constraint firstItem="yDj-CH-ptp" firstAttribute="top" secondItem="YJq-Gk-aeM" secondAttribute="bottom" constant="20" id="eDU-9d-wTM"/>
+                            <constraint firstItem="LHG-dh-s5V" firstAttribute="leading" secondItem="tKs-aZ-U3X" secondAttribute="trailing" constant="10" id="g3c-pm-wxe"/>
                             <constraint firstItem="fVX-on-rnn" firstAttribute="trailing" secondItem="B2W-dc-Wz0" secondAttribute="trailing" constant="15" id="j77-q6-9QJ"/>
                             <constraint firstItem="1At-Ar-ki1" firstAttribute="leading" secondItem="fVX-on-rnn" secondAttribute="leading" constant="15" id="pR9-XR-nlr"/>
                             <constraint firstItem="YJq-Gk-aeM" firstAttribute="trailing" secondItem="yDj-CH-ptp" secondAttribute="trailing" id="sRh-LO-Ezf"/>
@@ -391,8 +246,13 @@
                         <outlet property="joinEmail" destination="yDj-CH-ptp" id="a2A-Iu-y3P"/>
                         <outlet property="joinName" destination="YJq-Gk-aeM" id="f44-gM-Pcu"/>
                         <outlet property="joinPW" destination="wL6-Z6-b1H" id="KJg-ZI-0Q2"/>
+                        <outlet property="joinPwCheck" destination="B2W-dc-Wz0" id="s6V-Qg-eWJ"/>
                         <outlet property="pickerView" destination="rLl-Sz-YY4" id="jBT-Fv-nsP"/>
+                        <outlet property="pickerView1Width" destination="3Xr-OL-Y8k" id="Cyw-m9-XP5"/>
                         <outlet property="pickerView2" destination="tKs-aZ-U3X" id="QnO-mT-JCw"/>
+                        <outlet property="pickerView2Width" destination="Bsx-jW-VG5" id="Qhp-XI-LF2"/>
+                        <outlet property="selectedLabel1" destination="fo3-Or-PGN" id="Au0-UV-cmA"/>
+                        <outlet property="selectedLabel2" destination="xSg-aI-KMU" id="deF-Du-z4N"/>
                         <outlet property="selectedRoll" destination="e0R-tJ-L7B" id="zvj-yk-SFY"/>
                         <outlet property="selectedRoll2" destination="LHG-dh-s5V" id="UB6-bv-p6a"/>
                         <segue destination="DlF-ne-Ej7" kind="show" identifier="JoinEnd" id="Nvo-6u-QMN"/>

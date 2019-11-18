@@ -18,6 +18,7 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var joinName: HoshiTextField!
     @IBOutlet weak var joinEmail: HoshiTextField!
     @IBOutlet weak var joinPW: HoshiTextField!
+    @IBOutlet weak var joinPwCheck: HoshiTextField!
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var pickerView2: UIPickerView!
@@ -28,6 +29,12 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var joinNav: UINavigationBar!
     @IBOutlet weak var joinCancelBtn: UIBarButtonItem!
+    
+    @IBOutlet weak var pickerView1Width: NSLayoutConstraint!
+    @IBOutlet weak var pickerView2Width: NSLayoutConstraint!
+    
+    @IBOutlet weak var selectedLabel1: NSLayoutConstraint!
+    @IBOutlet weak var selectedLabel2: NSLayoutConstraint!
     
     var ministryFlag = Int()
     
@@ -56,7 +63,14 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         toolBarKeyboard.items = [doneButton]
         toolBarKeyboard.tintColor = .blue
         
-        joinPW.inputAccessoryView = toolBarKeyboard
+        joinPwCheck.inputAccessoryView = toolBarKeyboard
+        
+        let setWidth = (UIScreen.main.bounds.width - 40) / 2
+        
+        pickerView1Width.constant = setWidth
+        pickerView2Width.constant = setWidth
+        selectedLabel1.constant = setWidth
+        selectedLabel2.constant = setWidth
     }
     
     @objc func doneButtonAction() {
@@ -101,6 +115,18 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         if selectedRoll.text == "" {
             self.showAlert(message: "담당사역을 선택해주세요!")
             return
+        }
+        
+        if joinPwCheck.text == "" {
+            self.showAlert(message: "비밀번호를 확인하세요!")
+            return
+        }
+        
+        if joinPW.text != "" && joinPwCheck.text != "" {
+            if joinPW.text != joinPwCheck.text {
+                self.showAlert(message: "비밀번호가 맞지 않습니다!")
+                return
+            }
         }
         
         signUp(email: joinEmail.text!, password: joinPW.text!)
@@ -175,7 +201,7 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         if pickerView.tag == 1 {
             selectedRoll.text = rollMember[row]
         } else {
-          selectedRoll2.text = cellPosition[row]
+            selectedRoll2.text = cellPosition[row]
         }
     }
     

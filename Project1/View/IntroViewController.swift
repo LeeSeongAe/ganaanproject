@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class IntroViewController: UIViewController, TitleStackViewDataSource {
     
@@ -83,12 +84,15 @@ class IntroViewController: UIViewController, TitleStackViewDataSource {
     }
     
     @IBAction func refreshAction(_ sender: UIBarButtonItem) {
+        
+        try! Auth.auth().signOut()
+        
         self.navigationController?.dismiss(animated: true, completion: nil)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "LogInView")
         self.navigationController?.setViewControllers([vc], animated: false)
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     @objc func clickedInHome(_ sender: UIImageView) {

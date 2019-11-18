@@ -14,7 +14,7 @@ import Firebase
 
 
 class ViewController: UIViewController, TitleStackViewDataSource {
-
+    
     var array : [AuthDTO] = []
     var uidKey : [String] = []
     var disposeBag = DisposeBag()
@@ -63,8 +63,7 @@ class ViewController: UIViewController, TitleStackViewDataSource {
         
         bindUI()
         bindOutput()
-        self.navigationController?.isNavigationBarHidden = true
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         currentUserCheck()
     }
     
@@ -106,8 +105,6 @@ class ViewController: UIViewController, TitleStackViewDataSource {
             }))
             self.present(alert, animated: true, completion: nil)
         }
-        //        self.view.backgroundColor = UIColor(hex: color!)
-        
     }
     
     func bindUI() {
@@ -139,9 +136,9 @@ class ViewController: UIViewController, TitleStackViewDataSource {
             .subscribe(onNext: { b in self.pwValidView.isHidden = b })
             .disposed(by: disposeBag)
         
-        Observable.combineLatest(phoneNumValid, pwValid, resultSelector: { $0 && $1 })
-            .subscribe(onNext: { b in self.loginBtn.isEnabled = b })
-            .disposed(by: disposeBag)
+//        Observable.combineLatest(phoneNumValid, pwValid, resultSelector: { $0 && $1 })
+//            .subscribe(onNext: { /* b in self.loginBtn.isEnabled = b*/ })
+//            .disposed(by: disposeBag)
     }
     
     func checkPhoneNumValid(_ phoneNum: String) -> Bool {
@@ -158,8 +155,12 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     
     @IBAction func joinAction(_ sender: Any) {
         performSegue(withIdentifier: "joinVC", sender: nil)
+        
     }
     
+    @IBAction func aroundApp(_ sender: Any) {
+        performSegue(withIdentifier: "aroundAppSegue", sender: nil)
+    }
     
     @IBAction func testInput(_ sender: Any) {
         phoneNumField.text = "ganaanAdmin@gmail.com"
@@ -168,9 +169,24 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     
     @IBAction func loginAction(_ sender: Any) {
         
-        progressbar.startAnimating()
+        if phoneNumField.text == "" {
+            self.showAlert(message: "이메일을 입력하세요!")
+            return
+        }
+        
+        if pwField.text == "" {
+            self.showAlert(message: "비밀번호를 입력하세요!")
+            return
+        }
+        
+        userLogin()
+    }
+    
+    func userLogin() {
+        self.progressbar.startAnimating()
         Auth.auth().signIn(withEmail: phoneNumField.text!, password: pwField.text!) { (user, error) in
             print("🆖\(String(describing: error))")
+            
             if error == nil { //로그인 성공
                 CurrentUser.shared.loginCheck = true
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -181,15 +197,13 @@ class ViewController: UIViewController, TitleStackViewDataSource {
                 self.navigationController?.pushViewController(introVC, animated: true)
                 
             } else { //로그인 실패
+                self.progressbar.stopAnimating()
                 self.showAlert(message: "유효하지 않은 이메일 입니다.")
             }
-            
+            self.progressbar.stopAnimating()
         }
-        
-        
-        
     }
-
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -204,6 +218,13 @@ class ViewController: UIViewController, TitleStackViewDataSource {
         
         self.present(alert, animated: true, completion: nil)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "aroundAppSegue" {
+            let vc = segue.destination as! PhotoViewController
+            vc.flag = true
+        }
     }
     
 }

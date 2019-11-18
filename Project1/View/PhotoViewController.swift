@@ -23,6 +23,14 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
     var albumNameArr = [AlbumDTO]()
     var uidKey : [String] = []
     
+    var flag = false
+    
+    enum AlBumViewBarType {
+        case around, album
+    }
+    
+    var albumViewBarType: AlBumViewBarType = .album
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var albumAddButton: UIBarButtonItem!
     //    @IBOutlet weak var photoStackView: PhotoStackView!
@@ -63,11 +71,15 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
             albumAddButton.isEnabled = false
         }
         
+        if flag == true {
+            self.navigationItem.setHidesBackButton(false, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         titleStackView.reloadData()
 
+        setNavigationItem(for: getNavigationType())
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -92,6 +104,38 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
         queryListener.remove()
     }
     
+    private func getNavigationType() -> AlBumViewBarType {
+        
+        if flag {
+            return .around
+        }
+        
+        return .album
+    }
+    
+    
+    private func setNavigationItem(for albumViewBarType: AlBumViewBarType) {
+        
+        switch albumViewBarType {
+        case .album:
+            break
+        case .around:
+            let navView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
+            navView.backgroundColor = .white
+            
+            let backButton = UIButton(frame: CGRect(x: 15, y: 15, width: 30, height: 30))
+            backButton.setImage(UIImage(named: "지애"), for: .normal)
+            backButton.setTitle("Back", for: .normal)
+            backButton.addTarget(self, action: #selector(backIntroView), for: .touchUpInside)
+            self.view.addSubview(navView)
+            navView.addSubview(backButton)
+            break
+        }
+    }
+    
+    @objc func backIntroView() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        return albumNameArr.count
