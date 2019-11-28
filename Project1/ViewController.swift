@@ -65,6 +65,22 @@ class ViewController: UIViewController, TitleStackViewDataSource {
         bindOutput()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         currentUserCheck()
+        
+        setupIntentsForSiri()
+    }
+    
+    func setupIntentsForSiri() {
+        let actionIdentifier = "dev.seongae.siri"
+       let activity = NSUserActivity(activityType: actionIdentifier)
+       activity.title = "Start App"
+       activity.userInfo = ["speech" : "Start App"]
+       activity.isEligibleForSearch = true
+       if #available(iOS 12.0, *) {
+           activity.isEligibleForPrediction = true
+           activity.persistentIdentifier = NSUserActivityPersistentIdentifier(actionIdentifier)
+       }
+       view.userActivity = activity
+       activity.becomeCurrent()
     }
     
     override func viewWillAppear(_ animated: Bool) {

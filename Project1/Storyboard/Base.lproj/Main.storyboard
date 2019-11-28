@@ -927,7 +927,7 @@
                                                                 <constraint firstAttribute="width" constant="120" id="NdM-Lr-yAP"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxJ-KI-7Jy">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxJ-KI-7Jy">
                                                             <rect key="frame" x="170" y="34.5" width="179" height="61"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="61" id="5Kg-W2-OzK"/>
