@@ -26,4 +26,5 @@ target 'Project1' do
   pod 'OpalImagePicker'
   pod 'SDWebImage'
   pod 'CryptoSwift'
+  pod 'Parchment'
 end

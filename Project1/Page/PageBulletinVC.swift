@@ -10,7 +10,7 @@ import UIKit
 
 class PageBulletinVC: UIPageViewController {
     
-//
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
