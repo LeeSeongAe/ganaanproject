@@ -8,92 +8,199 @@
 
 import UIKit
 import Photos
-import BSImagePicker
+import FirebaseFirestore
+import OpalImagePicker
+import SDWebImage
 
-class AlbumCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AlbumCollectionViewController: UIViewController, UICollectionViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageTaskDownloadedDelegate, TitleStackViewDataSource {
     
-//    var cellReaders:Array = ["교회마크.png","수빈.png","이삭.png","다은.png","아형.png","현지.png","예원.png","성애.png","경석.png","김지원.png","해리.png","김예슬.png","우지원.png","숙영.png","지애.png","민정.png","다함.png"]
+    var album: AlbumEntity!
+    var imageEntities: [ImageEntity]?
+    var imageTasks = [String: ImageTask]()
+    var queryListener: ListenerRegistration!
+    
+    let urlSession = URLSession(configuration: URLSessionConfiguration.default)
+    
+    var images = [UIImage]()
+    var imageURLs: [URL] = []
     var photoArray = [UIImage]()
     var selectedAssets = [PHAsset]()
     var selectedImageIndex = Int()
+    @IBOutlet weak var photoAddButton: UIBarButtonItem!
+    
+    @IBOutlet weak var titleStackView: TitleStackView!
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var selectedPhoto: (index: Int, dashBoardViewController: DashBoardViewController)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        photoArray = [UIImage(named: "교회마크.png")] as! [UIImage]
+        selectedPhoto = nil
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        
+        if CurrentUser.shared.currentUserEmail(email: "ganaanadmin@gmail.com") {
+            photoAddButton.isEnabled = true
+        } else {
+            photoAddButton.isEnabled = false
+        }
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        titleStackView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        selectedPhoto = nil
+        print(album.albumId)
+        
+        queryListener = ImageService.shared.getAllImagesFor(albumId: album.albumId) { [weak self] images in
+            guard let strongSelf = self else { return }
+            strongSelf.imageEntities = images
+            
+            var urls: [URL] = []
+            for imageEntity in images {
+                if let urlString = imageEntity.url {
+                    urls.append(URL(string: urlString)!)
+                }
+            }
+            strongSelf.imageURLs = urls
+            //self!.imageURLs = images.map{ URL(string: $0.url)! }
+//            strongSelf.updateImageTasks()
+            
+            if images.isEmpty {
+                strongSelf.collectionView.addNoDataLabel(text: "No Photos added yet.\n\nPlease press the + button to begin")
+            } else {
+                strongSelf.collectionView.removeNoDataLabel()
+            }
+            
+            strongSelf.collectionView.reloadData()
+            //            strongSelf.activityIndicator.stopAnimating()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if self.isMovingFromParent {
+            queryListener.remove()
+        }
+    }
+
+    
+    func imageDownloaded(id: String) {
+        if let index = imageEntities?.firstIndex(where: { $0.imageId == id }) {
+            
+            collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
+            
+            let imageTask = imageTasks[(imageEntities?[index].imageId)!]
+            _ = imageTask?.image
+            //            photoArray.append(image!)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photoArray.count
+        return imageEntities?.count ?? 0
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let albumCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCell", for: indexPath) as! AlbumCell
         
-//        albumCell.ganaanImage.image = UIImage(named: photoArray[indexPath.item])
-
-        albumCell.ganaanImage.image = photoArray[indexPath.item]
-        
-        albumCell.ganaanImage.tag = indexPath.item
+        if let imageEntities = imageEntities, imageEntities.count > indexPath.row {
+            let imageEntity = imageEntities[indexPath.item]
+            if let urlString = imageEntity.url {
+                albumCell.ganaanImage?.sd_setImage(with: URL(string: urlString), completed: nil)
+            }
+        }
+        albumCell.ganaanImage?.tag = indexPath.item
         
         return albumCell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let senderTag = indexPath.item
-        
-        if senderTag == 0 {
-            getImageFromLibrary()
-        } else {
-            self.performSegue(withIdentifier: "ToDashBoard", sender: senderTag)
-        }
+    @IBAction func photoAddAction(_ sender: Any) {
+        getImageFromLibrary()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let viewController = segue.destination as? DashBoardViewController {
-            viewController.contentImageData = photoArray as NSArray
-            viewController.selectedImageIndex = sender as! Int
+        
+        if segue.identifier == "ToDashBoard", let dashBoardViewController = segue.destination as? DashBoardViewController, let index = sender as? Int, imageEntities?.count ?? 0 > index, let imageEntity = imageEntities?[index] {
+            selectedPhoto = (index, dashBoardViewController)
+            dashBoardViewController.imageId = imageEntity.imageId
+            dashBoardViewController.image = imageTasks[imageEntity.imageId]?.image
+            dashBoardViewController.contentImageData = photoArray as NSArray
+            dashBoardViewController.imageURLs = imageURLs
+            dashBoardViewController.selectedImageIndex = sender as! Int
         }
+        
     }
     
     func getImageFromLibrary() {
-        let vc = BSImagePickerViewController()
-        self.bs_presentImagePickerController(vc, animated: true,
-                                             select: {(asset: PHAsset) -> Void in },
-                                             deselect: {(asset: PHAsset) -> Void in },
-                                             cancel: {(asset: [PHAsset]) -> Void in },
-                                             finish: {(asset: [PHAsset]) -> Void in
-                                                for i in 0..<asset.count {
-                                                    self.selectedAssets.append(asset[i])
-                                                }
-                                                self.convertAssetToImages()         },
-                                             completion: nil)
+        
+        let imagePicker = OpalImagePickerController()
+        presentOpalImagePickerController(imagePicker, animated: true,
+                                         select: { (assets) in
+                                            //Select Assets
+                                            let images = self.getImages(fromAssets: assets)
+                                            let imagesDataToUpload = images.map{ return $0.jpegData(compressionQuality: 0.5) }
+                                            
+                                            ImageService.shared.upload(images: imagesDataToUpload as! [Data], albumId: self.album.albumId) {
+                                                self.dismiss(animated: true, completion: nil)
+                                            }
+        }, cancel: {
+            //Cancel
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     
-    func convertAssetToImages() {
-        if selectedAssets.count != 0 {
-            for i in 0..<selectedAssets.count {
-                let manager = PHImageManager.default()
-                let option = PHImageRequestOptions()
+    func getImages(fromAssets assets: [PHAsset]) -> [UIImage] {
+        let requestOptions = PHImageRequestOptions()
+        requestOptions.resizeMode = PHImageRequestOptionsResizeMode.exact
+        requestOptions.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
+        // this one is key
+        requestOptions.isSynchronous = true
+        
+        var images:[UIImage] = []
+        
+        for asset in assets
+        {
+            if (asset.mediaType == PHAssetMediaType.image)
+            {
                 
-                var thumbnail = UIImage()
-                
-                option.isSynchronous = true
-                
-                manager.requestImage(for: selectedAssets[i], targetSize: CGSize(width: 200, height: 200), contentMode: .aspectFit, options: option, resultHandler: {(result, info) -> Void in
-                    thumbnail = result!
+                PHImageManager.default().requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .default, options: requestOptions, resultHandler: { (pickedImage, info) in
+                    if let image = pickedImage {
+                        images.append(image)
+                    }
                 })
                 
-                let data = thumbnail.pngData()
-                let newImage = UIImage(data: data!)
-                self.photoArray.append(newImage! as UIImage)
             }
         }
-        self.collectionView.reloadData()
-        self.selectedAssets.removeAll()
+        return images
     }
     
+}
+
+
+extension AlbumCollectionViewController {
+    
+    func title(for titleStackView: TitleStackView) -> String? {
+        return album?.name
+    }
+    
+    //    func subtitle(for titleStackView: TitleStackView) -> String? {
+    //        return nil
+    //    }
 }

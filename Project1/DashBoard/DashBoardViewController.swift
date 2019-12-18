@@ -9,16 +9,33 @@
 import UIKit
 
 class DashBoardViewController: UIViewController, UIPageViewControllerDataSource {
-//  MARK: - variable
+    //  MARK: - variable
     @IBOutlet weak var pageView: UIView!
     
     var contentImageData = NSArray()
     var selectedImageIndex = Int()
+    var imageURLs: [URL]? = nil
+    
+    @IBOutlet weak var deleteImageButton: UIBarButtonItem!
+    
+    var imageId: String!
+    
+    var image: UIImage? {
+        didSet {
+            print("⭕️")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        
         //DATA
         print("contentImageData : \(contentImageData),, \(selectedImageIndex)")
+        
         //Layout
         let initialView = ContentVCIndex(index: selectedImageIndex) as ContentViewController
         let viewController = NSArray(object: initialView)
@@ -31,22 +48,30 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
         pageVC.didMove(toParent: self)
         pageVC.dataSource = self
         pageVC.setViewControllers(viewController as? [UIViewController], direction: .forward, animated: true, completion: nil)
+        
+        if CurrentUser.shared.currentUserEmail(email: "ganaanadmin@gmail.com") {
+            deleteImageButton.isEnabled = true
+        } else {
+            deleteImageButton.isEnabled = false
+        }
     }
     
     
     //MARK: - Page view
     
     func ContentVCIndex(index: Int) -> ContentViewController {
-        print("index : \(index)")
-        if contentImageData.count == 0 || index >= contentImageData.count {
+        print("index : \(index), contentImageData.count : \(contentImageData.count)")
+        if imageURLs!.count == 0 || index >= imageURLs!.count {
             return ContentViewController()
         }
         
         let ContentVC = self.storyboard?.instantiateViewController(withIdentifier: "contentViewController") as! ContentViewController
         
         ContentVC.pageIndex = index
-        ContentVC.contentImage = contentImageData[index] as! UIImage
         
+        //ContentVC.contentImage = contentImageData[index] as! UIImage
+        ContentVC.imageUrl = imageURLs![index]
+        ContentVC.imageId = imageId
         return ContentVC
     }
     
@@ -55,7 +80,7 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
         let contentVC = viewController as! ContentViewController
         var pageIndex = contentVC.pageIndex as Int
         
-        if pageIndex == 1 || pageIndex == NSNotFound {
+        if pageIndex == 0 || pageIndex == NSNotFound {
             return nil
         }
         
@@ -72,16 +97,23 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
         if pageIndex == NSNotFound {
             return nil
         }
-            
+        
         pageIndex += 1
         
-        if pageIndex == contentImageData.count {
+        if pageIndex == imageURLs!.count {
             return nil
         }
         
         return ContentVCIndex(index: pageIndex)
     }
     //MARK: -
-
-
+    
+    @IBAction func deleteHandler(_ sender: Any) {
+        //        activityIndicator.startAnimating()
+        
+        ImageService.shared.delete(imageId: imageId) {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
 }

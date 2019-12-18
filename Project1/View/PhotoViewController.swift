@@ -8,19 +8,28 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
-class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStackViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, CustomAlertViewDelegate
-{
-    
-    
-    func titleStackView(_ titleStackView: TitleStackView, longPressedTitleLabel titleLabel: UILabel) {
-        
-    }
+class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var albums: [AlbumEntity]?
+    var queryListener: ListenerRegistration!
+//    var imageEntities: [ImageEntity]?
+//    var imageTasks = [String: ImageTask]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     var albumNameArr = [AlbumDTO]()
     var uidKey : [String] = []
+    
+    var flag = false
+    
+    enum AlBumViewBarType {
+        case around, album
+    }
+    
+    var albumViewBarType: AlBumViewBarType = .album
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var albumAddButton: UIBarButtonItem!
@@ -33,6 +42,10 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
         
         screenSize = UIScreen.main.bounds
         screenWidth = screenSize.width - 10
@@ -47,32 +60,86 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
-        titleStackView.backgroundColor = .yellow
         
         self.albumNameArr.removeAll()
         
-        Database.database().reference().child("Photo").observe(.childAdded, with: {(snapshot) in
-            print(snapshot.value!)
-            print(snapshot.key)
-            
-            let albumDTO = AlbumDTO()
-            albumDTO.albumName = (snapshot.value as! [String:String])["AlbumName"]
-            
-            self.albumNameArr.append(albumDTO)
-            self.uidKey.append(snapshot.key)
-            print("albumNameArr : \(self.albumNameArr)")
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        })
+        collectionView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture(gesture:))))
+
+        if CurrentUser.shared.currentUserEmail(email: "ganaanadmin@gmail.com") {
+            albumAddButton.isEnabled = true
+        } else {
+            albumAddButton.isEnabled = false
+        }
+        
+        if flag == true {
+            self.navigationItem.setHidesBackButton(false, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         titleStackView.reloadData()
+
+        setNavigationItem(for: getNavigationType())
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        queryListener = AlbumService.shared.getAll { albums in
+            self.albums = albums
+            
+            if albums.isEmpty {
+                self.collectionView.addNoDataLabel(text: "No Albums added\n\nPlease press the + button above to start")
+            } else {
+                self.collectionView.removeNoDataLabel()
+            }
+            
+            self.collectionView.reloadData()
+//            self.activityIndicator.stopAnimating()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        queryListener.remove()
+    }
+    
+    private func getNavigationType() -> AlBumViewBarType {
+        
+        if flag {
+            return .around
+        }
+        
+        return .album
+    }
+    
+    
+    private func setNavigationItem(for albumViewBarType: AlBumViewBarType) {
+        
+        switch albumViewBarType {
+        case .album:
+            break
+        case .around:
+            let navView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
+            navView.backgroundColor = .white
+            
+            let backButton = UIButton(frame: CGRect(x: 15, y: 15, width: 30, height: 30))
+            backButton.setImage(UIImage(named: "지애"), for: .normal)
+            backButton.setTitle("Back", for: .normal)
+            backButton.addTarget(self, action: #selector(backIntroView), for: .touchUpInside)
+            self.view.addSubview(navView)
+            navView.addSubview(backButton)
+            break
+        }
+    }
+    
+    @objc func backIntroView() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return albumNameArr.count
+//        return albumNameArr.count
+        return albums?.count ?? 0
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -85,77 +152,79 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, TitleStac
         photoCell.layer.borderColor = UIColor.black.cgColor
         photoCell.layer.borderWidth = 0.5
         photoCell.layer.cornerRadius = 10
-        photoCell.albumName.text = albumNameArr[indexPath.item].albumName
+//        photoCell.albumName.text = albumNameArr[indexPath.item].albumName
+        if let album = albums?[indexPath.item] {
+            photoCell.configure(albumName: album.name, createdOn: album.dateCreated, numberOfPhotos: album.numberOfPhotos)
+        }
+        
         return photoCell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "ToAlbumStory", sender: self)
+        self.performSegue(withIdentifier: "ToAlbumStory", sender: indexPath.item)
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
+    
     
     
     @IBAction func albumAdd(_ sender: Any) {
+        let alertController = UIAlertController(title: "Add new album", message: nil, preferredStyle: .alert)
         
-        let customAlert = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertID") as! CustomAlertView
-        customAlert.providesPresentationContextTransitionStyle = true
-        customAlert.definesPresentationContext = true
-        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        customAlert.delegate = self
-        self.present(customAlert, animated: true, completion: nil)
+        alertController.addTextField { textField in
+            textField.placeholder = "Album name"
+        }
+        
+        let textField = alertController.textFields![0] as UITextField
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+//            self.activityIndicator.startAnimating()
+            AlbumService.shared.addAlbumWith(name: textField.text ?? "No Name")
+            alertController.dismiss(animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        
+        self.present(alertController, animated: true)
     }
     
-    func okButtonTapped(textFieldValue: String, profileImage: UIImage) {
-        
-        DispatchQueue.main.async {
-            CATransaction.begin()
-            CATransaction.setDisableActions(true)
-            
-            if let newData = textFieldValue as? String, newData != "" {
-                
-                // Create a root reference
-                let storageRef = Database.database().reference()
-                
-                let reversRef = storageRef.child("Photo").childByAutoId()
-                
-                let now = NSDate()
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR") as Locale
-//                let currDate = dateFormatter.string(from: now as Date)
-                
-                reversRef.setValue([
-                    "AlbumName" : textFieldValue
-                    ])
-            }
-            
-//            self.albumNameArr.append(textFieldValue)
-            
-//            let indexPath = IndexPath(row: self.albumNameArr.count - 1, section: 0)
-//            self.collectionView.insertItems(at: [indexPath])
-//
-//            CATransaction.commit()
-//
-//            self.collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
-            self.collectionView.reloadData()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToAlbumStory", let index = sender as? Int, let albumCollectionViewController = segue.destination as? AlbumCollectionViewController, let album = albums?[index] {
+            albumCollectionViewController.album = album
         }
     }
     
-    func cancelButtonTapped() {
+    @objc func handleLongPressGesture(gesture: UIGestureRecognizer) {
         
+        if CurrentUser.shared.currentUserEmail(email: "ganaanadmin@gmail.com") && CurrentUser.shared.loginCheck! == true {
+            let location = gesture.location(in: self.collectionView)
+            guard let indexPath = collectionView.indexPathForItem(at: location) else {return}
+            let item = albums![indexPath.row]
+            
+            let alert = UIAlertController(title: nil, message: "Remove \(item)", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (_) in
+                if let albumId = self.albums?[indexPath.row].albumId {
+                    AlbumService.shared.deleteAlbumWith(albumId: albumId)
+                }
+                self.collectionView.deleteItems(at: [indexPath])
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
     }
-
+    
 }
-
 
 //Datasource
 extension PhotoViewController {
     
     func title(for titleStackView: TitleStackView) -> String? {
-        return "송가청 앨범"
+        return "GanaanYouth Album 📸"
     }
     
-    func subtitle(for titleStackView: TitleStackView) -> String? {
-        return nil
-    }
+//    func subtitle(for titleStackView: TitleStackView) -> String? {
+//        return nil
+//    }
 }

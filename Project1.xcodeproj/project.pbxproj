@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF05A919236BF2D80099FCA6 /* CustomAlertView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF05A918236BF2D80099FCA6 /* CustomAlertView2.swift */; };
 		AF189FFF22C0DA4F00AF287C /* CellContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF189FFE22C0DA4F00AF287C /* CellContentCell.swift */; };
 		AF1B0ABC227AE65F0022DE0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B0ABB227AE65F0022DE0E /* AppDelegate.swift */; };
 		AF1B0ABE227AE65F0022DE0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B0ABD227AE65F0022DE0E /* ViewController.swift */; };
@@ -16,6 +17,13 @@
 		AF1B0AD4227D33A80022DE0E /* CellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B0AD3227D33A80022DE0E /* CellCollectionViewCell.swift */; };
 		AF1B0AD6227D3CBC0022DE0E /* CellCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B0AD5227D3CBC0022DE0E /* CellCollectionViewController.swift */; };
 		AF1B0AD8227D4E810022DE0E /* CellCheckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B0AD7227D4E810022DE0E /* CellCheckTableViewController.swift */; };
+		AF2487682384FCDC002708B1 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2487672384FCDC002708B1 /* IntentHandler.swift */; };
+		AF24876F2384FCDC002708B1 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2487482384F7EF002708B1 /* IntentsUI.framework */; };
+		AF2487722384FCDC002708B1 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2487712384FCDC002708B1 /* IntentViewController.swift */; };
+		AF2487752384FCDC002708B1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2487732384FCDC002708B1 /* MainInterface.storyboard */; };
+		AF2487792384FCDC002708B1 /* SiriStartUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF24876E2384FCDC002708B1 /* SiriStartUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AF24877C2384FCDC002708B1 /* SiriStart.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF2487652384FCDC002708B1 /* SiriStart.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AF2487842384FE4E002708B1 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = AF2487832384FE4E002708B1 /* Intents.intentdefinition */; };
 		AF372C7222AA4CC400749C17 /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF372C7122AA4CC400749C17 /* IntroduceViewController.swift */; };
 		AF372C7422AA4CE000749C17 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF372C7322AA4CE000749C17 /* ScheduleViewController.swift */; };
 		AF372C7622AA4CF600749C17 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF372C7522AA4CF600749C17 /* PhotoViewController.swift */; };
@@ -23,12 +31,28 @@
 		AF372C7A22AE18D100749C17 /* Join.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF372C7922AE18D100749C17 /* Join.storyboard */; };
 		AF372C7C22AE5F7B00749C17 /* CellCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF372C7B22AE5F7B00749C17 /* CellCheckCell.swift */; };
 		AF477B0822BB6F5B00CF7A79 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF477B0722BB6F5B00CF7A79 /* RemoteConfigDefaults.plist */; };
+		AF50A5472338B27600FACE3D /* AlbumCollectionViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50A5462338B27600FACE3D /* AlbumCollectionViewController+Delegate.swift */; };
+		AF50A5492338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50A5482338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift */; };
 		AF62AB5F22A657AD009BF162 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62AB5E22A657AD009BF162 /* NavigationView.swift */; };
 		AF62AB6122A657CB009BF162 /* PhotoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62AB6022A657CB009BF162 /* PhotoStackView.swift */; };
+		AF6AA44C2366CD6C00763694 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA44B2366CD6C00763694 /* CurrentUser.swift */; };
+		AF72E5C3232F83E400667B03 /* AlbumEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C2232F83E400667B03 /* AlbumEntity.swift */; };
+		AF72E5C5232F85A700667B03 /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C4232F85A700667B03 /* AlbumService.swift */; };
+		AF72E5C7232F873400667B03 /* FireStore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C6232F873400667B03 /* FireStore+Extensions.swift */; };
+		AF72E5C9232F8BD000667B03 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C8232F8BD000667B03 /* ImageService.swift */; };
+		AF72E5CB232F8E1F00667B03 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5CA232F8E1F00667B03 /* ImageEntity.swift */; };
+		AF72E5CD232F91CB00667B03 /* Storage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5CC232F91CB00667B03 /* Storage+Extensions.swift */; };
+		AF72E5CF232F976100667B03 /* TableView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5CE232F976100667B03 /* TableView+Extentions.swift */; };
+		AF72E5D1232F9BF000667B03 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5D0232F9BF000667B03 /* UIView+Extensions.swift */; };
+		AF72E5D4232FA0A100667B03 /* ImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5D3232FA0A100667B03 /* ImageTask.swift */; };
 		AF7505E122DC692F00146091 /* customLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E022DC692F00146091 /* customLabel.swift */; };
 		AF7505E322DC75E400146091 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E222DC75E400146091 /* customButton.swift */; };
 		AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E422DD8B9700146091 /* CustomAlertView.swift */; };
 		AF7505E722DDCDC900146091 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E622DDCDC900146091 /* UserDTO.swift */; };
+		AF8D40C8234EF1F500DC280A /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8D40C7234EF1F500DC280A /* PhotoDetailsViewController.swift */; };
+		AF971F98237A9B9400C54901 /* AuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF971F97237A9B9400C54901 /* AuthDTO.swift */; };
+		AF9C2C82233DEC1E0061C3AC /* slideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C2C81233DEC1E0061C3AC /* slideCell.swift */; };
+		AF9C2C852341D4480061C3AC /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */; };
 		AF9C717F2281166D002D0DF3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C717E2281166D002D0DF3 /* IntroViewController.swift */; };
 		AF9C718322817A91002D0DF3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9C718122817A91002D0DF3 /* SWRevealViewController.m */; };
 		AF9C718722827123002D0DF3 /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9C718622827122002D0DF3 /* SlideMenu.storyboard */; };
@@ -41,15 +65,50 @@
 		AFA759B7230FD7CC00F73E53 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA759B6230FD7CC00F73E53 /* PhotoCell.swift */; };
 		AFA759BA2313C59900F73E53 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA759B92313C59900F73E53 /* DashBoardViewController.swift */; };
 		AFA759BF2313CA9F00F73E53 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA759BE2313CA9F00F73E53 /* ContentViewController.swift */; };
+		AFE3FC0B23585BDA00F4A144 /* IntroduceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE3FC0A23585BDA00F4A144 /* IntroduceCell.swift */; };
+		AFE3FC2F23613A2600F4A144 /* PageBulletinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE3FC2E23613A2600F4A144 /* PageBulletinVC.swift */; };
 		AFEFC1AC22A54F48005766B1 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFC1AB22A54F48005766B1 /* JoinViewController.swift */; };
 		AFEFC1AE22A627B6005766B1 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFC1AD22A627B6005766B1 /* MenuTableViewCell.swift */; };
 		AFF6C47922D459BC001E2775 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFF6C47822D459BC001E2775 /* GoogleService-Info.plist */; };
 		B7DD234406ED28DAA9200388 /* Pods_Project1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD7A8538E5CCBC7C1AF04C3 /* Pods_Project1.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AF2487772384FCDC002708B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF1B0AB0227AE65F0022DE0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF24876D2384FCDC002708B1;
+			remoteInfo = SiriStartUI;
+		};
+		AF24877A2384FCDC002708B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF1B0AB0227AE65F0022DE0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF2487642384FCDC002708B1;
+			remoteInfo = SiriStart;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AF2487572384F7EF002708B1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AF24877C2384FCDC002708B1 /* SiriStart.appex in Embed App Extensions */,
+				AF2487792384FCDC002708B1 /* SiriStartUI.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		AF05A918236BF2D80099FCA6 /* CustomAlertView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView2.swift; sourceTree = "<group>"; };
 		AF189FFE22C0DA4F00AF287C /* CellContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentCell.swift; sourceTree = "<group>"; };
-		AF1B0AB8227AE65F0022DE0E /* Project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1B0AB8227AE65F0022DE0E /* GanaanYouth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GanaanYouth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1B0ABB227AE65F0022DE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF1B0ABD227AE65F0022DE0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF1B0AC0227AE65F0022DE0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +118,22 @@
 		AF1B0AD3227D33A80022DE0E /* CellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF1B0AD5227D3CBC0022DE0E /* CellCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionViewController.swift; sourceTree = "<group>"; };
 		AF1B0AD7227D4E810022DE0E /* CellCheckTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCheckTableViewController.swift; sourceTree = "<group>"; };
+		AF2487402384F7EF002708B1 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		AF2487422384F7EF002708B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF2487482384F7EF002708B1 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		AF24874B2384F7EF002708B1 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		AF24874E2384F7EF002708B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		AF2487502384F7EF002708B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF24875E2384F85D002708B1 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		AF2487602384F877002708B1 /* GanaanYouthRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GanaanYouthRelease.entitlements; sourceTree = "<group>"; };
+		AF2487652384FCDC002708B1 /* SiriStart.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriStart.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2487672384FCDC002708B1 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		AF2487692384FCDC002708B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF24876E2384FCDC002708B1 /* SiriStartUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriStartUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2487712384FCDC002708B1 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		AF2487742384FCDC002708B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		AF2487762384FCDC002708B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF2487832384FE4E002708B1 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		AF372C7122AA4CC400749C17 /* IntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
 		AF372C7322AA4CE000749C17 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		AF372C7522AA4CF600749C17 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -66,12 +141,29 @@
 		AF372C7922AE18D100749C17 /* Join.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Join.storyboard; sourceTree = "<group>"; };
 		AF372C7B22AE5F7B00749C17 /* CellCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCheckCell.swift; sourceTree = "<group>"; };
 		AF477B0722BB6F5B00CF7A79 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		AF50A5462338B27600FACE3D /* AlbumCollectionViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumCollectionViewController+Delegate.swift"; sourceTree = "<group>"; };
+		AF50A5482338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumCollectionViewController+FlowLayoutDelegate.swift"; sourceTree = "<group>"; };
 		AF62AB5E22A657AD009BF162 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		AF62AB6022A657CB009BF162 /* PhotoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStackView.swift; sourceTree = "<group>"; };
+		AF6AA44B2366CD6C00763694 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		AF72E5C2232F83E400667B03 /* AlbumEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntity.swift; sourceTree = "<group>"; };
+		AF72E5C4232F85A700667B03 /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
+		AF72E5C6232F873400667B03 /* FireStore+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FireStore+Extensions.swift"; sourceTree = "<group>"; };
+		AF72E5C8232F8BD000667B03 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		AF72E5CA232F8E1F00667B03 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
+		AF72E5CC232F91CB00667B03 /* Storage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+Extensions.swift"; sourceTree = "<group>"; };
+		AF72E5CE232F976100667B03 /* TableView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extentions.swift"; sourceTree = "<group>"; };
+		AF72E5D0232F9BF000667B03 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		AF72E5D3232FA0A100667B03 /* ImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTask.swift; sourceTree = "<group>"; };
 		AF7505E022DC692F00146091 /* customLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customLabel.swift; sourceTree = "<group>"; };
 		AF7505E222DC75E400146091 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
 		AF7505E422DD8B9700146091 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		AF7505E622DDCDC900146091 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		AF8D40C7234EF1F500DC280A /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
+		AF971F97237A9B9400C54901 /* AuthDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDTO.swift; sourceTree = "<group>"; };
+		AF9C2C81233DEC1E0061C3AC /* slideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slideCell.swift; sourceTree = "<group>"; };
+		AF9C2C832341D4470061C3AC /* Project1Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Project1Release.entitlements; sourceTree = "<group>"; };
+		AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		AF9C717E2281166D002D0DF3 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		AF9C718022817A90002D0DF3 /* Project1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project1-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF9C718122817A91002D0DF3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -86,6 +178,8 @@
 		AFA759B6230FD7CC00F73E53 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		AFA759B92313C59900F73E53 /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
 		AFA759BE2313CA9F00F73E53 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		AFE3FC0A23585BDA00F4A144 /* IntroduceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceCell.swift; sourceTree = "<group>"; };
+		AFE3FC2E23613A2600F4A144 /* PageBulletinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBulletinVC.swift; sourceTree = "<group>"; };
 		AFEFC1AB22A54F48005766B1 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		AFEFC1AD22A627B6005766B1 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		AFF6C47822D459BC001E2775 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -99,7 +193,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9C2C852341D4480061C3AC /* ExternalAccessory.framework in Frameworks */,
 				B7DD234406ED28DAA9200388 /* Pods_Project1.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF2487622384FCDC002708B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF24876B2384FCDC002708B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF24876F2384FCDC002708B1 /* IntentsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +228,12 @@
 		AF1B0AAF227AE65F0022DE0E = {
 			isa = PBXGroup;
 			children = (
+				AF2487832384FE4E002708B1 /* Intents.intentdefinition */,
 				AF1B0ABA227AE65F0022DE0E /* Project1 */,
+				AF24873F2384F7EF002708B1 /* Intents */,
+				AF24874A2384F7EF002708B1 /* IntentsUI */,
+				AF2487662384FCDC002708B1 /* SiriStart */,
+				AF2487702384FCDC002708B1 /* SiriStartUI */,
 				AF1B0AB9227AE65F0022DE0E /* Products */,
 				942D5A27B7AF3EEE94F5505E /* Pods */,
 				BCD5E697934DEFAEFF3AC7FB /* Frameworks */,
@@ -128,7 +243,9 @@
 		AF1B0AB9227AE65F0022DE0E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF1B0AB8227AE65F0022DE0E /* Project1.app */,
+				AF1B0AB8227AE65F0022DE0E /* GanaanYouth.app */,
+				AF2487652384FCDC002708B1 /* SiriStart.appex */,
+				AF24876E2384FCDC002708B1 /* SiriStartUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +253,9 @@
 		AF1B0ABA227AE65F0022DE0E /* Project1 */ = {
 			isa = PBXGroup;
 			children = (
+				AF2487602384F877002708B1 /* GanaanYouthRelease.entitlements */,
+				AF9C2C832341D4470061C3AC /* Project1Release.entitlements */,
+				AF72E5D2232FA08700667B03 /* Task */,
 				AFA759BB2313C6A000F73E53 /* Page */,
 				AFA759B82313C56A00F73E53 /* DashBoard */,
 				AF7505DF22DC690500146091 /* Util */,
@@ -144,8 +264,8 @@
 				AF1B0ACD227C09AB0022DE0E /* Storyboard */,
 				AF1B0ABB227AE65F0022DE0E /* AppDelegate.swift */,
 				AF1B0AC4227AE6610022DE0E /* LaunchScreen.storyboard */,
-				AFF6C47822D459BC001E2775 /* GoogleService-Info.plist */,
 				AF1B0ABD227AE65F0022DE0E /* ViewController.swift */,
+				AFF6C47822D459BC001E2775 /* GoogleService-Info.plist */,
 				AF1B0AC2227AE6610022DE0E /* Assets.xcassets */,
 				AF1B0AC7227AE6610022DE0E /* Info.plist */,
 				AF9C71882282BE85002D0DF3 /* Util.swift */,
@@ -167,14 +287,18 @@
 		AF1B0AD0227D33510022DE0E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AF72E5C1232F83AE00667B03 /* Album */,
 				AF7505E622DDCDC900146091 /* UserDTO.swift */,
+				AF971F97237A9B9400C54901 /* AuthDTO.swift */,
 				AFA5C53D232650850003CA0F /* AlbumDTO.swift */,
 				AF1B0AD5227D3CBC0022DE0E /* CellCollectionViewController.swift */,
 				AF1B0AD3227D33A80022DE0E /* CellCollectionViewCell.swift */,
 				AF1B0AD7227D4E810022DE0E /* CellCheckTableViewController.swift */,
 				AF372C7B22AE5F7B00749C17 /* CellCheckCell.swift */,
 				AF7505E422DD8B9700146091 /* CustomAlertView.swift */,
+				AF05A918236BF2D80099FCA6 /* CustomAlertView2.swift */,
 				AF9C717E2281166D002D0DF3 /* IntroViewController.swift */,
+				AF9C2C81233DEC1E0061C3AC /* slideCell.swift */,
 				AF9C718222817A91002D0DF3 /* SWRevealViewController.h */,
 				AF9C718122817A91002D0DF3 /* SWRevealViewController.m */,
 				AF9C718022817A90002D0DF3 /* Project1-Bridging-Header.h */,
@@ -182,6 +306,7 @@
 				AFEFC1AD22A627B6005766B1 /* MenuTableViewCell.swift */,
 				AFEFC1AB22A54F48005766B1 /* JoinViewController.swift */,
 				AF372C7122AA4CC400749C17 /* IntroduceViewController.swift */,
+				AFE3FC0A23585BDA00F4A144 /* IntroduceCell.swift */,
 				AF372C7322AA4CE000749C17 /* ScheduleViewController.swift */,
 				AF372C7522AA4CF600749C17 /* PhotoViewController.swift */,
 				AFA759B6230FD7CC00F73E53 /* PhotoCell.swift */,
@@ -189,6 +314,44 @@
 				AF189FFE22C0DA4F00AF287C /* CellContentCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AF24873F2384F7EF002708B1 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				AF2487402384F7EF002708B1 /* IntentHandler.swift */,
+				AF2487422384F7EF002708B1 /* Info.plist */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		AF24874A2384F7EF002708B1 /* IntentsUI */ = {
+			isa = PBXGroup;
+			children = (
+				AF24874B2384F7EF002708B1 /* IntentViewController.swift */,
+				AF24874D2384F7EF002708B1 /* MainInterface.storyboard */,
+				AF2487502384F7EF002708B1 /* Info.plist */,
+			);
+			path = IntentsUI;
+			sourceTree = "<group>";
+		};
+		AF2487662384FCDC002708B1 /* SiriStart */ = {
+			isa = PBXGroup;
+			children = (
+				AF2487672384FCDC002708B1 /* IntentHandler.swift */,
+				AF2487692384FCDC002708B1 /* Info.plist */,
+			);
+			path = SiriStart;
+			sourceTree = "<group>";
+		};
+		AF2487702384FCDC002708B1 /* SiriStartUI */ = {
+			isa = PBXGroup;
+			children = (
+				AF2487712384FCDC002708B1 /* IntentViewController.swift */,
+				AF2487732384FCDC002708B1 /* MainInterface.storyboard */,
+				AF2487762384FCDC002708B1 /* Info.plist */,
+			);
+			path = SiriStartUI;
 			sourceTree = "<group>";
 		};
 		AF62AB5D22A65784009BF162 /* UI */ = {
@@ -199,6 +362,30 @@
 				AFA759B4230F84A300F73E53 /* TitleStackView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		AF72E5C1232F83AE00667B03 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				AF72E5C2232F83E400667B03 /* AlbumEntity.swift */,
+				AF72E5C4232F85A700667B03 /* AlbumService.swift */,
+				AF72E5C6232F873400667B03 /* FireStore+Extensions.swift */,
+				AF72E5C8232F8BD000667B03 /* ImageService.swift */,
+				AF72E5CA232F8E1F00667B03 /* ImageEntity.swift */,
+				AF72E5CC232F91CB00667B03 /* Storage+Extensions.swift */,
+				AF72E5CE232F976100667B03 /* TableView+Extentions.swift */,
+				AF72E5D0232F9BF000667B03 /* UIView+Extensions.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		AF72E5D2232FA08700667B03 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				AF72E5D3232FA0A100667B03 /* ImageTask.swift */,
+				AF6AA44B2366CD6C00763694 /* CurrentUser.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 		AF7505DF22DC690500146091 /* Util */ = {
@@ -216,7 +403,10 @@
 				AFA759B92313C59900F73E53 /* DashBoardViewController.swift */,
 				AFA759BE2313CA9F00F73E53 /* ContentViewController.swift */,
 				AFA5C53923153A7A0003CA0F /* AlbumCollectionViewController.swift */,
+				AF50A5462338B27600FACE3D /* AlbumCollectionViewController+Delegate.swift */,
+				AF50A5482338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift */,
 				AFA5C53B23153B650003CA0F /* AlbumCell.swift */,
+				AF8D40C7234EF1F500DC280A /* PhotoDetailsViewController.swift */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -224,6 +414,7 @@
 		AFA759BB2313C6A000F73E53 /* Page */ = {
 			isa = PBXGroup;
 			children = (
+				AFE3FC2E23613A2600F4A144 /* PageBulletinVC.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -231,7 +422,10 @@
 		BCD5E697934DEFAEFF3AC7FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF24875E2384F85D002708B1 /* Intents.framework */,
+				AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */,
 				FCD7A8538E5CCBC7C1AF04C3 /* Pods_Project1.framework */,
+				AF2487482384F7EF002708B1 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -248,15 +442,52 @@
 				AF1B0AB5227AE65F0022DE0E /* Frameworks */,
 				AF1B0AB6227AE65F0022DE0E /* Resources */,
 				C9233590B3A4F82E16511169 /* [CP] Embed Pods Frameworks */,
+				AF2487572384F7EF002708B1 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF2487782384FCDC002708B1 /* PBXTargetDependency */,
+				AF24877B2384FCDC002708B1 /* PBXTargetDependency */,
+			);
+			name = Project1;
+			productName = Project1;
+			productReference = AF1B0AB8227AE65F0022DE0E /* GanaanYouth.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF2487642384FCDC002708B1 /* SiriStart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF2487802384FCDC002708B1 /* Build configuration list for PBXNativeTarget "SiriStart" */;
+			buildPhases = (
+				AF2487612384FCDC002708B1 /* Sources */,
+				AF2487622384FCDC002708B1 /* Frameworks */,
+				AF2487632384FCDC002708B1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Project1;
-			productName = Project1;
-			productReference = AF1B0AB8227AE65F0022DE0E /* Project1.app */;
-			productType = "com.apple.product-type.application";
+			name = SiriStart;
+			productName = SiriStart;
+			productReference = AF2487652384FCDC002708B1 /* SiriStart.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		AF24876D2384FCDC002708B1 /* SiriStartUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF24877D2384FCDC002708B1 /* Build configuration list for PBXNativeTarget "SiriStartUI" */;
+			buildPhases = (
+				AF24876A2384FCDC002708B1 /* Sources */,
+				AF24876B2384FCDC002708B1 /* Frameworks */,
+				AF24876C2384FCDC002708B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiriStartUI;
+			productName = SiriStartUI;
+			productReference = AF24876E2384FCDC002708B1 /* SiriStartUI.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -264,13 +495,19 @@
 		AF1B0AB0227AE65F0022DE0E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Yujinrobot;
 				TargetAttributes = {
 					AF1B0AB7227AE65F0022DE0E = {
 						CreatedOnToolsVersion = 10.2;
 						LastSwiftMigration = 1020;
+					};
+					AF2487642384FCDC002708B1 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					AF24876D2384FCDC002708B1 = {
+						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
 			};
@@ -288,6 +525,8 @@
 			projectRoot = "";
 			targets = (
 				AF1B0AB7227AE65F0022DE0E /* Project1 */,
+				AF2487642384FCDC002708B1 /* SiriStart */,
+				AF24876D2384FCDC002708B1 /* SiriStartUI */,
 			);
 		};
 /* End PBXProject section */
@@ -304,6 +543,21 @@
 				AF1B0AC1227AE65F0022DE0E /* Main.storyboard in Resources */,
 				AF372C7A22AE18D100749C17 /* Join.storyboard in Resources */,
 				AFF6C47922D459BC001E2775 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF2487632384FCDC002708B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF24876C2384FCDC002708B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF2487752384FCDC002708B1 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,46 +592,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Project1/Pods-Project1-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BSGridCollectionViewLayout/BSGridCollectionViewLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
-				"${BUILT_PRODUCTS_DIR}/BSImageView/BSImageView.framework",
-				"${BUILT_PRODUCTS_DIR}/CustomIOSAlertView/CustomIOSAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Project1/Pods-Project1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImageView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CustomIOSAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Project1/Pods-Project1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -394,37 +613,85 @@
 				AF372C7222AA4CC400749C17 /* IntroduceViewController.swift in Sources */,
 				AFA759B7230FD7CC00F73E53 /* PhotoCell.swift in Sources */,
 				AFA5C53A23153A7A0003CA0F /* AlbumCollectionViewController.swift in Sources */,
+				AF72E5C7232F873400667B03 /* FireStore+Extensions.swift in Sources */,
 				AF1B0ABE227AE65F0022DE0E /* ViewController.swift in Sources */,
 				AF62AB6122A657CB009BF162 /* PhotoStackView.swift in Sources */,
 				AF9C718B2282CFC9002D0DF3 /* MenuViewController.swift in Sources */,
+				AF2487842384FE4E002708B1 /* Intents.intentdefinition in Sources */,
 				AF7505E122DC692F00146091 /* customLabel.swift in Sources */,
 				AFEFC1AE22A627B6005766B1 /* MenuTableViewCell.swift in Sources */,
 				AFEFC1AC22A54F48005766B1 /* JoinViewController.swift in Sources */,
 				AF9C71892282BE85002D0DF3 /* Util.swift in Sources */,
+				AF72E5C3232F83E400667B03 /* AlbumEntity.swift in Sources */,
+				AF72E5D1232F9BF000667B03 /* UIView+Extensions.swift in Sources */,
+				AFE3FC2F23613A2600F4A144 /* PageBulletinVC.swift in Sources */,
 				AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */,
+				AF72E5C9232F8BD000667B03 /* ImageService.swift in Sources */,
+				AF6AA44C2366CD6C00763694 /* CurrentUser.swift in Sources */,
 				AF1B0ABC227AE65F0022DE0E /* AppDelegate.swift in Sources */,
 				AFA759B5230F84A300F73E53 /* TitleStackView.swift in Sources */,
 				AF372C7C22AE5F7B00749C17 /* CellCheckCell.swift in Sources */,
+				AF72E5C5232F85A700667B03 /* AlbumService.swift in Sources */,
 				AF1B0AD4227D33A80022DE0E /* CellCollectionViewCell.swift in Sources */,
 				AF1B0AD8227D4E810022DE0E /* CellCheckTableViewController.swift in Sources */,
+				AF9C2C82233DEC1E0061C3AC /* slideCell.swift in Sources */,
 				AFA5C53C23153B650003CA0F /* AlbumCell.swift in Sources */,
+				AF72E5D4232FA0A100667B03 /* ImageTask.swift in Sources */,
 				AF372C7622AA4CF600749C17 /* PhotoViewController.swift in Sources */,
 				AF9C718322817A91002D0DF3 /* SWRevealViewController.m in Sources */,
+				AF72E5CB232F8E1F00667B03 /* ImageEntity.swift in Sources */,
 				AFA759BA2313C59900F73E53 /* DashBoardViewController.swift in Sources */,
+				AFE3FC0B23585BDA00F4A144 /* IntroduceCell.swift in Sources */,
+				AF50A5492338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift in Sources */,
+				AF72E5CF232F976100667B03 /* TableView+Extentions.swift in Sources */,
+				AF971F98237A9B9400C54901 /* AuthDTO.swift in Sources */,
 				AF372C7422AA4CE000749C17 /* ScheduleViewController.swift in Sources */,
+				AF05A919236BF2D80099FCA6 /* CustomAlertView2.swift in Sources */,
 				AFA759BF2313CA9F00F73E53 /* ContentViewController.swift in Sources */,
+				AF50A5472338B27600FACE3D /* AlbumCollectionViewController+Delegate.swift in Sources */,
 				AF372C7822AA4D0800749C17 /* QuestionsViewController.swift in Sources */,
 				AF189FFF22C0DA4F00AF287C /* CellContentCell.swift in Sources */,
 				AF7505E722DDCDC900146091 /* UserDTO.swift in Sources */,
+				AF8D40C8234EF1F500DC280A /* PhotoDetailsViewController.swift in Sources */,
 				AFA5C53E232650860003CA0F /* AlbumDTO.swift in Sources */,
 				AF1B0AD6227D3CBC0022DE0E /* CellCollectionViewController.swift in Sources */,
 				AF62AB5F22A657AD009BF162 /* NavigationView.swift in Sources */,
 				AF9C717F2281166D002D0DF3 /* IntroViewController.swift in Sources */,
 				AF7505E322DC75E400146091 /* customButton.swift in Sources */,
+				AF72E5CD232F91CB00667B03 /* Storage+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF2487612384FCDC002708B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF2487682384FCDC002708B1 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF24876A2384FCDC002708B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF2487722384FCDC002708B1 /* IntentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF2487782384FCDC002708B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF24876D2384FCDC002708B1 /* SiriStartUI */;
+			targetProxy = AF2487772384FCDC002708B1 /* PBXContainerItemProxy */;
+		};
+		AF24877B2384FCDC002708B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF2487642384FCDC002708B1 /* SiriStart */;
+			targetProxy = AF24877A2384FCDC002708B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AF1B0ABF227AE65F0022DE0E /* Main.storyboard */ = {
@@ -441,6 +708,22 @@
 				AF1B0AC5227AE6610022DE0E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AF24874D2384F7EF002708B1 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF24874E2384F7EF002708B1 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		AF2487732384FCDC002708B1 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF2487742384FCDC002708B1 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -566,18 +849,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DFE1247FF91ECAD58C4863A7 /* Pods-Project1.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KZLCK4RV4K;
+				CURRENT_PROJECT_VERSION = 1.5;
+				DEVELOPMENT_TEAM = DFU5BM2782;
 				INFOPLIST_FILE = Project1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seongae.Project1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth;
+				PRODUCT_NAME = GanaanYouth;
 				SWIFT_OBJC_BRIDGING_HEADER = "Project1/View/Project1-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -589,21 +874,112 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC7C6DE0F65943ACF04A892F /* Pods-Project1.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Project1/GanaanYouthRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KZLCK4RV4K;
+				CURRENT_PROJECT_VERSION = 1.5;
+				DEVELOPMENT_TEAM = DFU5BM2782;
 				INFOPLIST_FILE = Project1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seongae.Project1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth;
+				PRODUCT_NAME = GanaanYouth;
 				SWIFT_OBJC_BRIDGING_HEADER = "Project1/View/Project1-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		AF24877E2384FCDC002708B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.5;
+				DEVELOPMENT_TEAM = DFU5BM2782;
+				INFOPLIST_FILE = SiriStartUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth.SiriStartUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF24877F2384FCDC002708B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.5;
+				DEVELOPMENT_TEAM = DFU5BM2782;
+				INFOPLIST_FILE = SiriStartUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth.SiriStartUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AF2487812384FCDC002708B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.5;
+				DEVELOPMENT_TEAM = DFU5BM2782;
+				INFOPLIST_FILE = SiriStart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth.SiriStart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF2487822384FCDC002708B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.5;
+				DEVELOPMENT_TEAM = DFU5BM2782;
+				INFOPLIST_FILE = SiriStart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth.SiriStart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -617,7 +993,7 @@
 				AF1B0AC9227AE6610022DE0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		AF1B0ACA227AE6610022DE0E /* Build configuration list for PBXNativeTarget "Project1" */ = {
 			isa = XCConfigurationList;
@@ -626,7 +1002,25 @@
 				AF1B0ACC227AE6610022DE0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
+		};
+		AF24877D2384FCDC002708B1 /* Build configuration list for PBXNativeTarget "SiriStartUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF24877E2384FCDC002708B1 /* Debug */,
+				AF24877F2384FCDC002708B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AF2487802384FCDC002708B1 /* Build configuration list for PBXNativeTarget "SiriStart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF2487812384FCDC002708B1 /* Debug */,
+				AF2487822384FCDC002708B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

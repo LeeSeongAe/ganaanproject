@@ -1,9 +1,12 @@
 PODS:
-  - BSGridCollectionViewLayout (1.2.3)
-  - BSImagePicker (2.10.0):
-    - BSGridCollectionViewLayout (= 1.2.3)
-    - BSImageView (= 1.0.3)
+  - BoringSSL-GRPC (0.0.3):
+    - BoringSSL-GRPC/Implementation (= 0.0.3)
+    - BoringSSL-GRPC/Interface (= 0.0.3)
+  - BoringSSL-GRPC/Implementation (0.0.3):
+    - BoringSSL-GRPC/Interface (= 0.0.3)
+  - BoringSSL-GRPC/Interface (0.0.3)
   - BSImageView (1.0.3)
+  - CryptoSwift (1.1.3)
   - CustomIOSAlertView (0.9.5)
   - Firebase/Auth (6.3.0):
     - Firebase/CoreOnly
@@ -48,6 +51,21 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.0)
     - leveldb-library (~> 1.18)
+  - FirebaseFirestore (1.4.0):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.0)
+    - FirebaseFirestore/abseil-cpp (= 1.4.0)
+    - "gRPC-C++ (= 0.0.9)"
+    - leveldb-library (~> 1.20)
+    - nanopb (~> 0.3.901)
+    - Protobuf (~> 3.1)
+  - FirebaseFirestore/abseil-cpp (1.4.0):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.0)
+    - "gRPC-C++ (= 0.0.9)"
+    - leveldb-library (~> 1.20)
+    - nanopb (~> 0.3.901)
+    - Protobuf (~> 3.1)
   - FirebaseInstanceID (4.2.0):
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
@@ -87,6 +105,22 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.2.0):
     - GoogleUtilities/Logger
+  - "gRPC-C++ (0.0.9)":
+    - "gRPC-C++/Implementation (= 0.0.9)"
+    - "gRPC-C++/Interface (= 0.0.9)"
+  - "gRPC-C++/Implementation (0.0.9)":
+    - "gRPC-C++/Interface (= 0.0.9)"
+    - gRPC-Core (= 1.21.0)
+    - nanopb (~> 0.3)
+  - "gRPC-C++/Interface (0.0.9)"
+  - gRPC-Core (1.21.0):
+    - gRPC-Core/Implementation (= 1.21.0)
+    - gRPC-Core/Interface (= 1.21.0)
+  - gRPC-Core/Implementation (1.21.0):
+    - BoringSSL-GRPC (= 0.0.3)
+    - gRPC-Core/Interface (= 1.21.0)
+    - nanopb (~> 0.3)
+  - gRPC-Core/Interface (1.21.0)
   - GTMSessionFetcher/Core (1.2.2)
   - leveldb-library (1.20)
   - nanopb (0.3.901):
@@ -94,6 +128,8 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - OpalImagePicker (2.1.0)
+  - Parchment (1.7.0)
   - Protobuf (3.8.0)
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
@@ -109,7 +145,8 @@ PODS:
   - TextFieldEffects (1.5.1)
 
 DEPENDENCIES:
-  - BSImagePicker
+  - BSImageView
+  - CryptoSwift
   - CustomIOSAlertView (~> 0.9.5)
   - Firebase/Auth
   - Firebase/Core
@@ -117,6 +154,11 @@ DEPENDENCIES:
   - Firebase/RemoteConfig
   - Firebase/Storage
   - FirebaseAnalytics
+  - FirebaseAuthInterop
+  - FirebaseFirestore
+  - FirebaseStorage
+  - OpalImagePicker
+  - Parchment
   - RxCocoa
   - RxSwift
   - SDWebImage
@@ -125,10 +167,10 @@ DEPENDENCIES:
   - TextFieldEffects
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - BSGridCollectionViewLayout
-    - BSImagePicker
+  https://github.com/CocoaPods/Specs.git:
+    - BoringSSL-GRPC
     - BSImageView
+    - CryptoSwift
     - CustomIOSAlertView
     - Firebase
     - FirebaseABTesting
@@ -137,14 +179,18 @@ SPEC REPOS:
     - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseDatabase
+    - FirebaseFirestore
     - FirebaseInstanceID
     - FirebaseRemoteConfig
     - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleUtilities
+    - "gRPC-C++"
+    - gRPC-Core
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - OpalImagePicker
     - Protobuf
     - RxCocoa
     - RxRelay
@@ -153,11 +199,13 @@ SPEC REPOS:
     - SnapKit
     - SwiftyJSON
     - TextFieldEffects
+  trunk:
+    - Parchment
 
 SPEC CHECKSUMS:
-  BSGridCollectionViewLayout: 568273e113fbc815f868f1898ef0465aee68f955
-  BSImagePicker: fa0c15b6740e8aa7a7b7f0fe38a71ad4cfa0ec4a
+  BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   BSImageView: a149459433a2687157d034c78e059d30ac7f2544
+  CryptoSwift: 6b6e488df0598b3e9fa49254ed1a65e8c1b1e10b
   CustomIOSAlertView: cc4fa8e36219be3fd5ebcd40789f5b4aaae0f38e
   Firebase: 8432d732974498afd5987e9001a05f90f1a3d625
   FirebaseABTesting: a32c488eb75089a61eb3d86db061dfb909d765db
@@ -166,14 +214,19 @@ SPEC CHECKSUMS:
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: 68f8a7f50cdae542715d4e86afa37c4067217dcb
   FirebaseDatabase: f48e067716864be2b855cf716b927ef375d6cfa0
+  FirebaseFirestore: 75768d91aad491eccdc02202b8161cff9872300e
   FirebaseInstanceID: f20243a1d828e0e9a3798b995174dedc16f1b32a
   FirebaseRemoteConfig: 7c64ecec5ca63d7c6b304509c3a6f9a036d403d4
   FirebaseStorage: 926d41552072b9fee67aa645760f05f87b7ce604
   GoogleAppMeasurement: a35a645835bae31b6bdc0576396bc23908f12a22
   GoogleUtilities: 996e0db07153674fd1b54b220fda3a3dc3547cba
+  "gRPC-C++": 9dfe7b44821e7b3e44aacad2af29d2c21f7cde83
+  gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  OpalImagePicker: 40e9d4c27018538a704d8da34b2ff3a2a54a3dc8
+  Parchment: cae686f73685d16742cec9c19239b7578a15f0f5
   Protobuf: 3f617b9a6e73605565086864c9bc26b2bf2dd5a3
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
@@ -183,6 +236,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: 247f83bc6d5846f738952a045720b36a20cbcc7d
+PODFILE CHECKSUM: a15c94baf965c888beaa51489a5d16f828054ad3
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4

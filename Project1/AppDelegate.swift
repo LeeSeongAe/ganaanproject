@@ -18,17 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         // Override point for customization after application launch.
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//
-//        // 스토리보드 인스턴스
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        // 뷰 컨트롤러 인스턴스
-//        let viewController = storyboard.instantiateViewController(withIdentifier: "LogInView")
-//        // 윈도우의 루트 뷰 컨트롤러 설정
-//        self.window?.rootViewController = viewController
-//        // 이제 화면에 보여주자.
-//        self.window?.makeKeyAndVisible()
-    
+        //        self.window = UIWindow(frame: UIScreen.main.bounds)
+        //
+        //        // 스토리보드 인스턴스
+        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //        // 뷰 컨트롤러 인스턴스
+        //        let viewController = storyboard.instantiateViewController(withIdentifier: "LogInView")
+        //        // 윈도우의 루트 뷰 컨트롤러 설정
+        //        self.window?.rootViewController = viewController
+        //        // 이제 화면에 보여주자.
+        //        self.window?.makeKeyAndVisible()
+        
         
         return true
     }
@@ -71,6 +71,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nvc.setNavigationBarHidden(true, animated: false)
         self.window?.rootViewController = nvc
         window?.makeKeyAndVisible()
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        
+        
+    }
+    
+    
+    internal func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping
+        ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        
+        if userActivity.activityType == "com.yujin.scout.siriStart" {
+            print("⭕️")
+        } else if userActivity.activityType == "SiriStartIntent" {
+            print("✅")
+        } else if userActivity.activityType == "com.yujin.scout.ent.SiriShortcutExtension" {
+            print("🛑")
+        }
+        return true
     }
     
 }

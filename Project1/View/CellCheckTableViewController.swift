@@ -19,10 +19,12 @@ struct cellDataModel {
     var isExpandable: Bool = false
 }
 
-class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CellCheckCellDelegate, CustomAlertViewDelegate {
+class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CellCheckCellDelegate, CustomAlertViewDelegate, TitleStackViewDataSource {
 
+    @IBOutlet weak var titleStackView: TitleStackView!
     var ref : DatabaseReference!
     
+    @IBOutlet weak var progressbar: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cellNav: UINavigationItem!
     
@@ -39,14 +41,21 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = navTitle
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        progressbar.hidesWhenStopped = true
+        self.view.bringSubviewToFront(progressbar)
+        
+//        self.navigationItem.title = navTitle
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
 
         self.array.removeAll()
         
-        Database.database().reference().child(self.navTitle).observe(.childAdded, with: {(snapshot) in
+        Database.database().reference().child("Cell").child(self.navTitle).observe(.childAdded, with: {(snapshot) in
             print(snapshot.value!)
             print(snapshot.key)
             
@@ -74,7 +83,7 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
     
     
     override func viewDidAppear(_ animated: Bool) {
-//        self.tableView.reloadData()
+        self.titleStackView.reloadData()
     }
     
     
@@ -132,6 +141,8 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
         }
         
         cell.saveBtn.addTarget(self, action: #selector(addCellMemStatus), for: .touchUpInside)
+        
+        progressbar.stopAnimating()
         
         return cell
     }
@@ -201,7 +212,7 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
             // Create a root reference
             let storageRef = Storage.storage().reference()
             
-            let reversRef = storageRef.child(self.navTitle).child(imageName)
+            let reversRef = storageRef.child("Cell").child(self.navTitle).child(imageName)
             
             reversRef.putData(selectedImage!, metadata: nil) { metadata, error in
                 if error != nil {
@@ -209,7 +220,7 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
                 } else {
                     reversRef.downloadURL{ url, error in
                         if let url = url?.absoluteString {
-                            Database.database().reference().child(self.navTitle).childByAutoId().setValue([
+                            Database.database().reference().child("Cell").child(self.navTitle).childByAutoId().setValue([
                                 "cellMemName" : newData,
                                 "imageUrl" : url,
                                 "pray" : "",
@@ -220,6 +231,7 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
                 }
             }
         }
+        progressbar.startAnimating()
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -231,13 +243,13 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
             print("😣 \(indexPath.row)")
             
             let storageRef = Storage.storage().reference()
-            let reversRef = storageRef.child(self.navTitle).child(array[indexPath.row].imageName!)
+            let reversRef = storageRef.child("Cell").child(self.navTitle).child(array[indexPath.row].imageName!)
             reversRef.delete(completion: { (error) in
                 if error != nil {
                     print("삭제 에러")
                 } else {
                     print("database 삭제🍏 \(self.uidKey[indexPath.row]) , \(indexPath.section)")
-                    Database.database().reference().child(self.navTitle).child(self.uidKey[indexPath.row]).removeValue()
+                    Database.database().reference().child("Cell").child(self.navTitle).child(self.uidKey[indexPath.row]).removeValue()
                     self.array.remove(at: indexPath.row)
                     tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .automatic)
                     DispatchQueue.main.async {
@@ -249,11 +261,20 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
     
     }
     
-    
     func cancelButtonTapped() {
         print("cancelButtonTapped-->>")
     }
     
 }
 
+extension CellCheckTableViewController {
+    
+    func title(for titleStackView: TitleStackView) -> String? {
+        return "[" + navTitle + "]"
+    }
+    
+//    func subtitle(for titleStackView: TitleStackView) -> String? {
+//        return nil
+//    }
+}
 
