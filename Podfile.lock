@@ -167,7 +167,7 @@ DEPENDENCIES:
   - TextFieldEffects
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - BoringSSL-GRPC
     - BSImageView
     - CryptoSwift
@@ -191,6 +191,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - OpalImagePicker
+    - Parchment
     - Protobuf
     - RxCocoa
     - RxRelay
@@ -199,8 +200,6 @@ SPEC REPOS:
     - SnapKit
     - SwiftyJSON
     - TextFieldEffects
-  trunk:
-    - Parchment
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -236,6 +235,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: a15c94baf965c888beaa51489a5d16f828054ad3
+PODFILE CHECKSUM: ca8ef69bcf3777673570e6312dd5b72a78fff67c
 
 COCOAPODS: 1.8.4

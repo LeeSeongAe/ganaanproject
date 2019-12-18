@@ -85,7 +85,7 @@ class TitleStackView: UIStackView {
     func addTitleLabel(withTitle title: String) {
         let label = UILabel()
         label.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
-        label.font = UIFont(name: "Chalkduster", size: 22)
+        label.font = UIFont(name: "Courier", size: 22)
         label.textColor = .black
         label.backgroundColor = .white
         label.textAlignment = .center

@@ -24,8 +24,8 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     @IBOutlet weak var phoneNumField: UITextField!
     @IBOutlet weak var pwField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var phoneNumValidView: UIView!
-    @IBOutlet weak var pwValidView: UIView!
+//    @IBOutlet weak var phoneNumValidView: UIView!
+//    @IBOutlet weak var pwValidView: UIView!
     
     @IBOutlet weak var joinButton: customButton!
     
@@ -62,7 +62,7 @@ class ViewController: UIViewController, TitleStackViewDataSource {
         }
         
         bindUI()
-        bindOutput()
+//        bindOutput()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         currentUserCheck()
         
@@ -144,13 +144,13 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     }
     
     private func bindOutput() {
-        phoneNumValid
-            .subscribe(onNext: { b in self.phoneNumValidView.isHidden = b })
-            .disposed(by: disposeBag)
-        
-        pwValid
-            .subscribe(onNext: { b in self.pwValidView.isHidden = b })
-            .disposed(by: disposeBag)
+//        phoneNumValid
+//            .subscribe(onNext: { b in self.phoneNumValidView.isHidden = b })
+//            .disposed(by: disposeBag)
+//
+//        pwValid
+//            .subscribe(onNext: { b in self.pwValidView.isHidden = b })
+//            .disposed(by: disposeBag)
         
 //        Observable.combineLatest(phoneNumValid, pwValid, resultSelector: { $0 && $1 })
 //            .subscribe(onNext: { /* b in self.loginBtn.isEnabled = b*/ })
