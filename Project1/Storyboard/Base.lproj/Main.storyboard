@@ -36,7 +36,7 @@
                                 <color key="color" red="1" green="0.72523416443268585" blue="0.89864153389466406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ka8-Jd-2oF" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="87.5" y="180" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="190" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="C2K-kz-j2L"/>
                                     <constraint firstAttribute="height" constant="40" id="QZB-4c-G5B"/>
@@ -54,7 +54,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ftR-Ur-B6Y" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="87.5" y="240" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="250" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dNJ-i9-D5W"/>
                                     <constraint firstAttribute="width" constant="200" id="eZZ-6h-T5k"/>
@@ -75,7 +75,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCn-zl-eI2" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="310" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="320" width="200" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="tfA-DL-EpN"/>
@@ -107,14 +107,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="교회마크" translatesAutoresizingMaskIntoConstraints="NO" id="3gF-je-I1Y">
-                                <rect key="frame" x="112.5" y="457" width="150" height="150"/>
+                                <rect key="frame" x="112.5" y="467" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="gr3-ot-3Cq"/>
                                     <constraint firstAttribute="height" constant="150" id="zim-RK-PAQ"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQZ-Yi-cfB" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="370" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="380" width="200" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="YW9-zZ-MUV"/>
@@ -133,7 +133,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sk1-1D-BPg"/>
+                                    <action selector="joinAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Cv-tm-IZw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -147,13 +147,13 @@
                             <constraint firstItem="NCn-zl-eI2" firstAttribute="top" secondItem="ftR-Ur-B6Y" secondAttribute="bottom" constant="30" id="DwD-nB-d19"/>
                             <constraint firstItem="NCn-zl-eI2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HLS-aE-faz"/>
                             <constraint firstItem="d4M-1v-SXx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nh4-wy-j1o"/>
-                            <constraint firstItem="ka8-Jd-2oF" firstAttribute="top" secondItem="gTi-Oz-jI0" secondAttribute="bottom" constant="60" id="OuX-Fh-0JG"/>
+                            <constraint firstItem="ka8-Jd-2oF" firstAttribute="top" secondItem="gTi-Oz-jI0" secondAttribute="bottom" constant="70" id="OuX-Fh-0JG"/>
                             <constraint firstItem="IQZ-Yi-cfB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fj9-Fg-gkV"/>
                             <constraint firstItem="ftR-Ur-B6Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rg9-dU-SO2"/>
                             <constraint firstItem="3gF-je-I1Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tKK-10-kv5"/>
                             <constraint firstItem="gTi-Oz-jI0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tia-Cc-TsB"/>
                             <constraint firstItem="d4M-1v-SXx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="w2J-xq-fN3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3gF-je-I1Y" secondAttribute="bottom" constant="60" id="yT0-na-K8s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3gF-je-I1Y" secondAttribute="bottom" constant="50" id="yT0-na-K8s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -213,7 +213,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="V4j-9c-MjI"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="13"/>
                                                     <color key="textColor" red="0.16862745100000001" green="0.1843137255" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -327,12 +327,12 @@
                                                     <rect key="frame" x="115" y="10" width="255" height="136"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hN2-eI-qWS" customClass="customLabel" customModule="GanaanYouth" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="5" width="55" height="30"/>
+                                                            <rect key="frame" x="0.0" y="5" width="41" height="30"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="egp-ff-Dya"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -342,12 +342,12 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="556-MW-wdW">
-                                                            <rect key="frame" x="215" y="5" width="35" height="25"/>
+                                                            <rect key="frame" x="218" y="5" width="32" height="25"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="bhQ-ps-InP"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="13"/>
                                                             <state key="normal" title="SAVE">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -362,7 +362,7 @@
                                                                 <constraint firstAttribute="height" constant="100" id="8U6-6y-dHd"/>
                                                             </constraints>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="13"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -490,7 +490,7 @@
                                             <constraint firstAttribute="height" constant="20" id="bFw-k5-fu9"/>
                                             <constraint firstAttribute="width" constant="180" id="qGZ-mJ-5GV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -500,7 +500,7 @@
                                             <constraint firstAttribute="height" constant="30" id="9pO-JC-OYB"/>
                                             <constraint firstAttribute="width" constant="100" id="wEu-bj-sRR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="OAR-jc-Cik">
@@ -525,7 +525,7 @@
                                             <constraint firstAttribute="height" constant="30" id="FiK-kc-DdT"/>
                                             <constraint firstAttribute="width" constant="120" id="Kyj-WT-YL0"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
                                             <action selector="onTapCancelButton:" destination="SDH-to-jn0" eventType="touchUpInside" id="ZX5-hX-WHD"/>
@@ -537,7 +537,7 @@
                                             <constraint firstAttribute="width" constant="120" id="9ge-ee-tBn"/>
                                             <constraint firstAttribute="height" constant="30" id="FtW-6P-V8t"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                         <state key="normal" title="OK"/>
                                         <connections>
                                             <action selector="onTapOkButton:" destination="SDH-to-jn0" eventType="touchUpInside" id="sKq-EJ-HwU"/>
@@ -603,7 +603,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vk4-5y-SSK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <state key="normal" title="Notify">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -762,7 +762,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="X83-79-6XF"/>
                                                         <constraint firstAttribute="width" constant="100" id="rBW-bi-fag"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="16"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -881,7 +881,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="61" id="5Kg-W2-OzK"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="NotoNastaliqUrdu" family="Noto Nastaliq Urdu" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1012,7 +1012,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="70t-I1-I7m"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="13"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1022,7 +1022,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="pza-Id-SOt"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="12"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1032,7 +1032,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="a33-ex-Plb"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="11"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

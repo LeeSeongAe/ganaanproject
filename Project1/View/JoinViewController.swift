@@ -205,14 +205,14 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         if pickerView.tag == 1 {
             var label = UILabel()
             if let v = view as? UILabel { label = v }
-            label.font = UIFont(name: "Helvetica Nene", size: 15)
+            label.font = UIFont(name: "Courier", size: 15)
             label.text = rollMember[row]
             label.textAlignment = .center
             return label
         } else {
             var label = UILabel()
             if let v = view as? UILabel { label = v }
-            label.font = UIFont(name: "Helvetica Nene", size: 15)
+            label.font = UIFont(name: "Courier", size: 15)
             label.text = cellPosition[row]
             label.textAlignment = .center
             return label
