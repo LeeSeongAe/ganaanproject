@@ -24,10 +24,6 @@ class ContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
-        
         if let url = imageUrl {
             contentImageView?.sd_setImage(with: url, completed: nil)
             activityIndicator.stopAnimating()

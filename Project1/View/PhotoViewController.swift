@@ -43,10 +43,6 @@ class PhotoViewController: UIViewController, TitleStackViewDataSource, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
-        
         screenSize = UIScreen.main.bounds
         screenWidth = screenSize.width - 10
         screenHeight = screenSize.height

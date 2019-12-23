@@ -43,10 +43,6 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
-        
         if CurrentUser.shared.currentUserEmail(email: "ganaanadmin@gmail.com") {
             photoAddButton.isEnabled = true
         } else {

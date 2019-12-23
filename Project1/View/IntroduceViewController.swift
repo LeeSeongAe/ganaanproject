@@ -19,10 +19,6 @@ class IntroduceViewController: UIViewController, TitleStackViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
-        
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))

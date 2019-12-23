@@ -45,10 +45,6 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
-        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         

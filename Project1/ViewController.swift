@@ -41,10 +41,6 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("userID💒 :: \(userID)")
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
-        
         
         progressbar.hidesWhenStopped = true
         self.view.bringSubviewToFront(progressbar)

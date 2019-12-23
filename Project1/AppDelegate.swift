@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        self.window?.rootViewController = viewController
         //        // 이제 화면에 보여주자.
         //        self.window?.makeKeyAndVisible()
-        
+        if #available(iOS 13.0, *) {
+            self.window?.overrideUserInterfaceStyle = .light
+        }
         
         return true
     }

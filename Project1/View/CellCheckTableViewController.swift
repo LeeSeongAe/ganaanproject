@@ -42,9 +42,6 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
         progressbar.hidesWhenStopped = true
         self.view.bringSubviewToFront(progressbar)
         

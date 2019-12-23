@@ -16,10 +16,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
-        
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.width - 70
         
     }

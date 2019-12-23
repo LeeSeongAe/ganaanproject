@@ -27,10 +27,6 @@ class CustomAlertView2: UIViewController, UIPickerViewDelegate, UIPickerViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
-        
         selecteLabel.text = ""
         selecteLabel.becomeFirstResponder()
         selecteLabel.backgroundColor = .white

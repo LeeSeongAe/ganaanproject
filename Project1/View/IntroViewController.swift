@@ -24,17 +24,13 @@ class IntroViewController: UIViewController, TitleStackViewDataSource {
     @IBOutlet weak var scheduleButton: UIButton!
     
     @IBOutlet weak var sliderCollectionView: UICollectionView!
-    var imageData:Array = [UIImage(named: "수련회"), UIImage(named: "토요기도회"), UIImage(named: "인사팀"),UIImage(named: "노방전도")]
+    var imageData:Array = [UIImage(named: "수련회"), UIImage(named: "비전워십5"), UIImage(named: "토요기도회"), UIImage(named: "인사팀"),UIImage(named: "노방전도")]
     
     var timer = Timer()
     var counter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
