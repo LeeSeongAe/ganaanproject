@@ -267,7 +267,7 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
 extension CellCheckTableViewController {
     
     func title(for titleStackView: TitleStackView) -> String? {
-        return "[" + navTitle + "]"
+        return navTitle
     }
     
 //    func subtitle(for titleStackView: TitleStackView) -> String? {

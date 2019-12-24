@@ -23,8 +23,8 @@ class CellCollectionViewController: UIViewController, UICollectionViewDelegate, 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var titleStackView: TitleStackView!
     
-    let cellTotal = ["요셉1셀","요셉2셀","요셉3셀","요셉4셀","요셉5셀","요셉6셀","여호수아1셀","여호수아2셀","여호수아3셀","여호수아4셀","여호수아5셀","여호수아6셀","갈렙1셀","갈렙2셀", "갈렙3셀", "갈렙4셀"]
-    let cellReaders:Array = ["수빈.png","이삭.png","다은.png","아형.png","현지.png","예원.png","성애.png","경석.png","김지원.png","해리.png","김예슬.png","우지원.png","숙영.png","지애.png","민정.png","다함.png",]
+    let cellTotal = ["요셉1셀","요셉2셀","요셉3셀","요셉4셀","요셉5셀","요셉6셀","요셉7", "여호수아1셀","여호수아2셀","여호수아3셀","여호수아4셀","여호수아5셀","여호수아6셀","여호수아7셀","갈렙1셀","갈렙2셀", "갈렙3셀", "갈렙4셀", "갈렙5셀"]
+    let cellReaders:Array = ["수빈.png","이삭.png","아형.png","현지.png","예원.png", "대현.png","성철.png","성애.png","경석.png","한제.png","해리.png","김예슬.png","봄이.png","다은.png","숙영.png","지애.png","민정.png","다함.png","성찬.png"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
