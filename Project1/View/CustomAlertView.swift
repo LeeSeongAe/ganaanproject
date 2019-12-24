@@ -31,7 +31,15 @@ class CustomAlertView: UIViewController, UIImagePickerControllerDelegate, UINavi
         
         picture.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openAlbum)))
         picture.isUserInteractionEnabled = true
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
     }
+    
+    @objc func dismissKeyboard() {
+           view.endEditing(true)
+       }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
