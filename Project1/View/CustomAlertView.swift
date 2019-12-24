@@ -15,6 +15,9 @@ class CustomAlertView: UIViewController, UIImagePickerControllerDelegate, UINavi
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var alertTextField: UITextField!
     @IBOutlet weak var picture: UIImageView!
+    @IBOutlet var birthInfoField: [UITextField]!
+    @IBOutlet weak var phoneNumberField: UITextField!
+    @IBOutlet weak var departmentField: UITextField!
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var okButton: UIButton!

@@ -20,6 +20,11 @@ class CellCheckCell: UITableViewCell, UITextViewDelegate {
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var saveBtn: UIButton!
     
+    @IBOutlet weak var worshipComeCheckButton: UIButton!
+    @IBOutlet weak var cellComeCheckButton: UIButton!
+    @IBOutlet weak var noComeCheckButton: UIButton!
+    @IBOutlet weak var departmentLabel: UILabel!
+    
     var delegate: CellCheckCellDelegate?
     var textFieldIndexPath = Int()
 

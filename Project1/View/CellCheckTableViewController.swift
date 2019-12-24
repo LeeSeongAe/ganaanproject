@@ -28,6 +28,8 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cellNav: UINavigationItem!
     
+    
+    
     var navTitle = ""
     var addPray = false
     var currentCellIndex:Int? = nil
