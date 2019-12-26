@@ -596,7 +596,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5Q-sh-M0P">
-                                <rect key="frame" x="43" y="78" width="289" height="439"/>
+                                <rect key="frame" x="43" y="78" width="289" height="450"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Member" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2b-y7-Yps">
                                         <rect key="frame" x="55" y="15" width="180" height="20"/>
@@ -616,6 +616,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldFillStart:" destination="SDH-to-jn0" eventType="touchUpInside" id="1Oi-cK-Kju"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="생년월일 ex)910306" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJa-55-DNu">
                                         <rect key="frame" x="54.5" y="245" width="180" height="30"/>
@@ -627,7 +630,8 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0D2-g2-gnF" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="401" width="120" height="30"/>
+                                        <rect key="frame" x="8" y="412" width="120" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="FiK-kc-DdT"/>
                                             <constraint firstAttribute="width" constant="120" id="Kyj-WT-YL0"/>
@@ -639,7 +643,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cl-AW-GXd" customClass="customButton" customModule="GanaanYouth" customModuleProvider="target">
-                                        <rect key="frame" x="161" y="401" width="120" height="30"/>
+                                        <rect key="frame" x="161" y="412" width="120" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="9ge-ee-tBn"/>
                                             <constraint firstAttribute="height" constant="30" id="FtW-6P-V8t"/>
@@ -695,6 +700,7 @@
                                     <constraint firstAttribute="bottom" secondItem="0Cl-AW-GXd" secondAttribute="bottom" constant="8" id="Udj-vy-ebz"/>
                                     <constraint firstItem="lJa-55-DNu" firstAttribute="top" secondItem="TT1-fY-CYs" secondAttribute="bottom" constant="20" id="WDh-7j-ZmJ"/>
                                     <constraint firstItem="lJa-55-DNu" firstAttribute="centerX" secondItem="S5Q-sh-M0P" secondAttribute="centerX" id="ai6-xG-hSf"/>
+                                    <constraint firstAttribute="height" constant="450" id="coM-17-pNG"/>
                                     <constraint firstItem="TT1-fY-CYs" firstAttribute="centerX" secondItem="S5Q-sh-M0P" secondAttribute="centerX" id="d24-tp-cl2"/>
                                     <constraint firstAttribute="trailing" secondItem="T2b-y7-Yps" secondAttribute="trailing" constant="54" id="fSm-TL-s0Y"/>
                                     <constraint firstItem="cMd-1Z-ZfV" firstAttribute="centerX" secondItem="S5Q-sh-M0P" secondAttribute="centerX" id="gwQ-Em-ihA"/>
@@ -714,7 +720,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YVo-Cl-qOQ" firstAttribute="bottom" secondItem="S5Q-sh-M0P" secondAttribute="bottom" constant="150" id="A9o-cf-sqU"/>
                             <constraint firstItem="S5Q-sh-M0P" firstAttribute="top" secondItem="YVo-Cl-qOQ" secondAttribute="top" constant="78" id="mo0-Dx-0bF"/>
                             <constraint firstItem="S5Q-sh-M0P" firstAttribute="leading" secondItem="YVo-Cl-qOQ" secondAttribute="leading" constant="43" id="nYX-e8-IZ0"/>
                             <constraint firstItem="S5Q-sh-M0P" firstAttribute="centerX" secondItem="7Wn-Zo-pot" secondAttribute="centerX" id="vJu-R7-Ger"/>

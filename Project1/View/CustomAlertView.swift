@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomAlertView: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CustomAlertView: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var alerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -37,9 +37,26 @@ class CustomAlertView: UIViewController, UIImagePickerControllerDelegate, UINavi
         
     }
     
+    @IBAction func textFieldFillStart(_ sender: Any) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIWindow.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:
+            #selector(keyboardWillShow(_:)), name: UIWindow.keyboardWillShowNotification,
+            object: nil)
+    }
+    
     @objc func dismissKeyboard() {
            view.endEditing(true)
        }
+    
+    @objc func keyboardWillShow(_ sender:Notification){
+        self.view.frame.origin.y = -150
+    }
+        
+    @objc func keyboardWillHide(_ sender:Notification){
+        self.view.frame.origin.y = 0
+    }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
