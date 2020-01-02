@@ -87,16 +87,16 @@ class CellCollectionViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if cellTotal[indexPath.row] == self.authMinistry && self.authPosition == "셀장" {
-            self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
-        } else if self.authMinistry == "목사님" || self.authMinistry == "간사님" || self.authMinistry == "부장집사님" {
-            self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
-        } else {
-            let alert = UIAlertController(title: "접근 권한이 없습니다.", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default))
-            self.present(alert, animated: true, completion: nil)
-        }
+        self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
+//        if cellTotal[indexPath.row] == self.authMinistry && self.authPosition == "셀장" {
+//            self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
+//        } else if self.authMinistry == "목사님" || self.authMinistry == "간사님" || self.authMinistry == "부장집사님" {
+//            self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
+//        } else {
+//            let alert = UIAlertController(title: "접근 권한이 없습니다.", message: "", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default))
+//            self.present(alert, animated: true, completion: nil)
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any? ) {

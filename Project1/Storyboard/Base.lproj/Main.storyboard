@@ -616,9 +616,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="textFieldFillStart:" destination="SDH-to-jn0" eventType="touchUpInside" id="1Oi-cK-Kju"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="생년월일 ex)910306" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJa-55-DNu">
                                         <rect key="frame" x="54.5" y="245" width="180" height="30"/>
@@ -729,13 +726,13 @@
                     <connections>
                         <outlet property="alerView" destination="S5Q-sh-M0P" id="dtV-cu-S66"/>
                         <outlet property="alertTextField" destination="TT1-fY-CYs" id="a3T-qe-8kT"/>
+                        <outlet property="birthInfoField" destination="lJa-55-DNu" id="jR6-le-MQB"/>
                         <outlet property="cancelButton" destination="0D2-g2-gnF" id="VzQ-7z-yuD"/>
                         <outlet property="departmentField" destination="cMd-1Z-ZfV" id="bZa-Nk-cu6"/>
                         <outlet property="okButton" destination="0Cl-AW-GXd" id="JXM-iy-SUq"/>
                         <outlet property="phoneNumberField" destination="eSh-et-tA8" id="29g-iz-paT"/>
                         <outlet property="picture" destination="OAR-jc-Cik" id="LCL-KB-0Aa"/>
                         <outlet property="titleLabel" destination="T2b-y7-Yps" id="CF9-WD-Rs1"/>
-                        <outletCollection property="birthInfoField" destination="lJa-55-DNu" collectionClass="NSMutableArray" id="Ubp-g3-Bzi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MWS-bR-ZTt" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -175,7 +175,7 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     }
     
     @IBAction func testInput(_ sender: Any) {
-        phoneNumField.text = "ganaanAdmin@gmail.com"
+        phoneNumField.text = "ganaanadmin@gmail.com"
         pwField.text = "12345678"
     }
     

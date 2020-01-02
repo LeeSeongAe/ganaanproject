@@ -12,6 +12,9 @@ class UserDTO: NSString {
     
     var cellMemName :String?
     var imageUrl :String?
+    var birth :String?
+    var phoneNumber :String?
+    var department :String?
     var pray :String?
     var imageName :String?
     

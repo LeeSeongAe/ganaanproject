@@ -20,6 +20,7 @@ struct cellDataModel {
 }
 
 class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CellCheckCellDelegate, CustomAlertViewDelegate, TitleStackViewDataSource {
+    
 
     @IBOutlet weak var titleStackView: TitleStackView!
     var ref : DatabaseReference!
@@ -61,6 +62,9 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
             let userDTO = UserDTO()
             userDTO.cellMemName = (snapshot.value as! [String:String])["cellMemName"]
             userDTO.imageUrl = (snapshot.value as! [String:String])["imageUrl"]
+            userDTO.birth = (snapshot.value as! [String:String])["birth"]
+            userDTO.phoneNumber = (snapshot.value as! [String:String])["phoneNumber"]
+            userDTO.department = (snapshot.value as! [String:String])["department"]
             userDTO.pray = (snapshot.value as! [String:String])["pray"]
             userDTO.imageName = (snapshot.value as! [String:String])["imageName"]
             
@@ -120,7 +124,7 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
         
         cell.cellMemList.text = user.cellMemName
         cell.cellMemStatus.text = user.pray
-    
+        cell.departmentLabel.text = user.department
         
         URLSession.shared.dataTask(with: URL(string:array[indexPath.row].imageUrl!)!) { (data, response, err) in
             
@@ -181,7 +185,7 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
         
         if let newData = textView.text, newData != "" {
             
-            ref.child(self.navTitle).observeSingleEvent(of: .value, with: {(snapshot) in
+            ref.child("Cell").child(self.navTitle).observeSingleEvent(of: .value, with: {(snapshot) in
                 self.uidKey.removeAll()
                 if let result = snapshot.children.allObjects as? [DataSnapshot] {
                     
@@ -192,15 +196,15 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
                     
                     let currentChildId = self.uidKey[indexPathRow]
                     print("currentChildId : \(currentChildId)")
-                    ref.child(self.navTitle).child(currentChildId).child("pray").setValue(newData)
+                    ref.child("Cell").child(self.navTitle).child(currentChildId).child("pray").setValue(newData)
                 }
             })
         }
     }
     
     
-    func okButtonTapped(textFieldValue: String, profileImage: UIImage) {
-        print("okButtonTapped-->>",textFieldValue)
+    func okButtonTapped(textFieldValue: String, profileImage: UIImage, birth: String, phoneNumber: String, department: String) {
+        print("####, \(birth),\(phoneNumber),\(department)")
         
         let selectedImage = profileImage.pngData()
         
@@ -222,6 +226,9 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
                             Database.database().reference().child("Cell").child(self.navTitle).childByAutoId().setValue([
                                 "cellMemName" : newData,
                                 "imageUrl" : url,
+                                "birth": birth,
+                                "phoneNumber": phoneNumber,
+                                "department": department,
                                 "pray" : "",
                                 "imageName" : imageName
                                 ])
@@ -247,7 +254,7 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
                 if error != nil {
                     print("삭제 에러")
                 } else {
-                    print("database 삭제🍏 \(self.uidKey[indexPath.row]) , \(indexPath.section)")
+                    print("database 삭제🍏 \(self.uidKey[indexPath.row]), \(indexPath.section)")
                     Database.database().reference().child("Cell").child(self.navTitle).child(self.uidKey[indexPath.row]).removeValue()
                     self.array.remove(at: indexPath.row)
                     tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .automatic)

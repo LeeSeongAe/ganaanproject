@@ -15,7 +15,7 @@ class CustomAlertView: UIViewController, UIImagePickerControllerDelegate, UINavi
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var alertTextField: UITextField!
     @IBOutlet weak var picture: UIImageView!
-    @IBOutlet var birthInfoField: [UITextField]!
+    @IBOutlet var birthInfoField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var departmentField: UITextField!
     
@@ -37,13 +37,6 @@ class CustomAlertView: UIViewController, UIImagePickerControllerDelegate, UINavi
         
     }
     
-    @IBAction func textFieldFillStart(_ sender: Any) {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIWindow.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector:
-            #selector(keyboardWillShow(_:)), name: UIWindow.keyboardWillShowNotification,
-            object: nil)
-    }
-    
     @objc func dismissKeyboard() {
            view.endEditing(true)
        }
@@ -57,11 +50,17 @@ class CustomAlertView: UIViewController, UIImagePickerControllerDelegate, UINavi
     }
     
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
         setupView()
         animateView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIWindow.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:
+            #selector(keyboardWillShow(_:)), name: UIWindow.keyboardWillShowNotification,
+            object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -92,7 +91,7 @@ class CustomAlertView: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     @IBAction func onTapOkButton(_ sender: Any) {
         alertTextField.resignFirstResponder()
-        delegate?.okButtonTapped(textFieldValue: alertTextField.text!, profileImage: picture.image!)
+        delegate?.okButtonTapped(textFieldValue: alertTextField.text!, profileImage: picture.image!, birth: birthInfoField.text!, phoneNumber: phoneNumberField.text!, department: departmentField.text!)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -115,6 +114,6 @@ class CustomAlertView: UIViewController, UIImagePickerControllerDelegate, UINavi
 
 
 protocol CustomAlertViewDelegate {
-    func okButtonTapped(textFieldValue: String, profileImage: UIImage)
+    func okButtonTapped(textFieldValue: String, profileImage: UIImage, birth: String, phoneNumber: String, department: String)
     func cancelButtonTapped()
 }
