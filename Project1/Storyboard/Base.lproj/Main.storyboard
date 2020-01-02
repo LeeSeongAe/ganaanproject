@@ -401,6 +401,10 @@
                                                                                     <state key="normal" title="예배" image="app" catalog="system">
                                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     </state>
+                                                                                    <state key="selected" image="checkmark.square" catalog="system"/>
+                                                                                    <connections>
+                                                                                        <action selector="worshipAction:" destination="a0y-Iu-FRf" eventType="touchUpInside" id="nbd-q9-n0O"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdH-Zo-eEt">
                                                                                     <rect key="frame" x="85" y="0.0" width="90" height="35"/>
@@ -409,6 +413,10 @@
                                                                                     <state key="normal" title="셀" image="app" catalog="system">
                                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     </state>
+                                                                                    <state key="selected" image="checkmark.square" catalog="system"/>
+                                                                                    <connections>
+                                                                                        <action selector="cellAction:" destination="a0y-Iu-FRf" eventType="touchUpInside" id="t3b-jG-VvH"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tr0-hJ-1A4">
                                                                                     <rect key="frame" x="175" y="0.0" width="85" height="35"/>
@@ -420,6 +428,10 @@
                                                                                     <state key="normal" title="불참" image="app" catalog="system">
                                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     </state>
+                                                                                    <state key="selected" image="checkmark.square" catalog="system"/>
+                                                                                    <connections>
+                                                                                        <action selector="noshowAction:" destination="a0y-Iu-FRf" eventType="touchUpInside" id="j6X-ur-SJY"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                         </stackView>
@@ -1634,6 +1646,7 @@
     </scenes>
     <resources>
         <image name="app" catalog="system" width="64" height="56"/>
+        <image name="checkmark.square" catalog="system" width="64" height="56"/>
         <image name="icon" width="1065" height="1047"/>
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="person.badge.plus" catalog="system" width="64" height="58"/>

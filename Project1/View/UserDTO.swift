@@ -16,6 +16,9 @@ class UserDTO: NSString {
     var phoneNumber :String?
     var department :String?
     var pray :String?
+    var worship :String?
+    var cell :String?
+    var noShow :String?
     var imageName :String?
     
 }

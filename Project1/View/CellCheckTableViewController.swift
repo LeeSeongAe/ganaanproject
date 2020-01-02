@@ -20,7 +20,7 @@ struct cellDataModel {
 }
 
 class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CellCheckCellDelegate, CustomAlertViewDelegate, TitleStackViewDataSource {
-    
+
 
     @IBOutlet weak var titleStackView: TitleStackView!
     var ref : DatabaseReference!
@@ -66,6 +66,9 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
             userDTO.phoneNumber = (snapshot.value as! [String:String])["phoneNumber"]
             userDTO.department = (snapshot.value as! [String:String])["department"]
             userDTO.pray = (snapshot.value as! [String:String])["pray"]
+            userDTO.worship = (snapshot.value as! [String:String])["worship"]
+            userDTO.cell = (snapshot.value as! [String:String])["cell"]
+            userDTO.noShow = (snapshot.value as! [String:String])["noShow"]
             userDTO.imageName = (snapshot.value as! [String:String])["imageName"]
             
             self.array.append(userDTO)
@@ -125,6 +128,21 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
         cell.cellMemList.text = user.cellMemName
         cell.cellMemStatus.text = user.pray
         cell.departmentLabel.text = user.department
+        cell.noComeCheckButton.isSelected = false
+        cell.worshipComeCheckButton.isSelected = false
+        cell.cellComeCheckButton.isSelected = false
+        
+        if user.noShow == "1" {
+            cell.noComeCheckButton.isSelected = true
+        }
+        
+        if user.worship == "1" {
+            cell.worshipComeCheckButton.isSelected = true
+        }
+        
+        if user.cell == "1" {
+            cell.cellComeCheckButton.isSelected = true
+        }
         
         URLSession.shared.dataTask(with: URL(string:array[indexPath.row].imageUrl!)!) { (data, response, err) in
             
@@ -177,12 +195,11 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
         
         return true
     }
-    
-    
-    func cellCheckCell(_ cell: CellCheckCell, didBeginEditingFor textView: UITextView, tag indexPathRow: Int) {
+
+    func cellCheckCell(_ cell: CellCheckCell, didBeginEditingFor textView: UITextView, tag indexPathRow: Int, worship worshipButton: UIButton, cell cellButton: UIButton, noShow noShowButton: UIButton) {
         
         let ref = Database.database().reference()
-        
+
         if let newData = textView.text, newData != "" {
             
             ref.child("Cell").child(self.navTitle).observeSingleEvent(of: .value, with: {(snapshot) in
@@ -195,8 +212,17 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
                     }
                     
                     let currentChildId = self.uidKey[indexPathRow]
-                    print("currentChildId : \(currentChildId)")
                     ref.child("Cell").child(self.navTitle).child(currentChildId).child("pray").setValue(newData)
+
+                    #warning("TODO")
+                    if worshipButton.isSelected { ref.child("Cell").child(self.navTitle).child(currentChildId).child("worship").setValue("1")
+                    }
+                    if cellButton.isSelected {
+                        ref.child("Cell").child(self.navTitle).child(currentChildId).child("cell").setValue("1")
+                    }
+                    if noShowButton.isSelected {
+                        ref.child("Cell").child(self.navTitle).child(currentChildId).child("noShow").setValue("1")
+                    }
                 }
             })
         }
@@ -204,7 +230,6 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
     
     
     func okButtonTapped(textFieldValue: String, profileImage: UIImage, birth: String, phoneNumber: String, department: String) {
-        print("####, \(birth),\(phoneNumber),\(department)")
         
         let selectedImage = profileImage.pngData()
         
@@ -230,6 +255,9 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
                                 "phoneNumber": phoneNumber,
                                 "department": department,
                                 "pray" : "",
+                                "worship" : "0",
+                                "cell" : "0",
+                                "noShow" : "0",
                                 "imageName" : imageName
                                 ])
                         }
@@ -269,6 +297,30 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
     
     func cancelButtonTapped() {
         print("cancelButtonTapped-->>")
+    }
+    
+    @IBAction func worshipAction(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+        } else {
+            sender.isSelected = true
+        }
+    }
+    
+    @IBAction func cellAction(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+        } else {
+            sender.isSelected = true
+        }
+    }
+    
+    @IBAction func noshowAction(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+        } else {
+            sender.isSelected = true
+        }
     }
     
 }

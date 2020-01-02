@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol CellCheckCellDelegate {
-    func cellCheckCell(_ cell: CellCheckCell, didBeginEditingFor textView: UITextView, tag indexPathRow: Int)
+    func cellCheckCell(_ cell: CellCheckCell, didBeginEditingFor textView: UITextView, tag indexPathRow: Int, worship button: UIButton, cell button: UIButton, noShow button: UIButton)
 }
 
 class CellCheckCell: UITableViewCell, UITextViewDelegate {
@@ -49,7 +49,7 @@ class CellCheckCell: UITableViewCell, UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         print("textViewDidBeginEditing🥰 \(textView.tag)")
         textFieldIndexPath = textView.tag
-        delegate?.cellCheckCell(self, didBeginEditingFor: textView, tag: textFieldIndexPath)
+        delegate?.cellCheckCell(self, didBeginEditingFor: textView, tag: textFieldIndexPath, worship: worshipComeCheckButton, cell: cellComeCheckButton, noShow: noComeCheckButton)
     }
     
 }
