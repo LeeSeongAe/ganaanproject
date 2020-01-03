@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -15,8 +16,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.width - 70
+        
         
     }
     

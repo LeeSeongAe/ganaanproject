@@ -38,6 +38,10 @@ class ViewController: UIViewController, TitleStackViewDataSource {
     var remoteConfig : RemoteConfig!
     var userID: String = ""
     
+    var userRoll: String?
+    var authMinistry:String = ""
+    var authPosition:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("userID💒 :: \(userID)")
@@ -179,6 +183,11 @@ class ViewController: UIViewController, TitleStackViewDataSource {
         pwField.text = "12345678"
     }
     
+    @IBAction func test2Input(_ sender: Any) {
+        phoneNumField.text = "love_ae91@naver.com"
+        pwField.text = "00000000"
+    }
+    
     @IBAction func loginAction(_ sender: Any) {
         
         if phoneNumField.text == "" {
@@ -200,6 +209,7 @@ class ViewController: UIViewController, TitleStackViewDataSource {
             print("🆖\(String(describing: error))")
             
             if error == nil { //로그인 성공
+
                 CurrentUser.shared.loginCheck = true
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.changeRootVCToSWRevealVC()
@@ -207,7 +217,6 @@ class ViewController: UIViewController, TitleStackViewDataSource {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let introVC = storyboard.instantiateViewController(withIdentifier: "IntroViewController")
                 self.navigationController?.pushViewController(introVC, animated: true)
-                
             } else { //로그인 실패
                 self.progressbar.stopAnimating()
                 self.showAlert(message: "유효하지 않은 이메일 입니다.")

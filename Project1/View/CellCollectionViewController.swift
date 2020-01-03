@@ -39,40 +39,27 @@ class CellCollectionViewController: UIViewController, UICollectionViewDelegate, 
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
         
+        let currentUid = CurrentUser.shared.currentUserUid()
+        Database.database().reference().child("Auth").child(currentUid)
+            .observe(.childAdded, with: {(snapshot) in
+                self.authMinistry = (snapshot.value as! [String:String])["authMinistry"]!
+                self.authPosition = (snapshot.value as! [String:String])["authPosition"]!
+            })
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         titleStackView.reloadData()
-        
-        let currentUid = CurrentUser.shared.currentUserUid()
-        DispatchQueue.main.async {
-            Database.database().reference().child("Auth").child(currentUid).observe(.childAdded, with: {(snapshot) in
-                //                print(snapshot.value!)
-                //                print(snapshot.key)
-                //                self.authDTO.authMinistry = (snapshot.value as! [String:String])["authMinistry"]
-                //                self.authDTO.authPosition = (snapshot.value as! [String:String])["authPosition"]
-                
-                self.authMinistry = (snapshot.value as! [String:String])["authMinistry"]!
-                self.authPosition = (snapshot.value as! [String:String])["authPosition"]!
-                //                self.array.append(self.authDTO)
-                //                self.uidKey.append(snapshot.key)
-            })
-        }
-        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
         
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        //        return josepe.count + joshua.count + caleb.count
         return cellTotal.count
     }
     
@@ -80,23 +67,25 @@ class CellCollectionViewController: UIViewController, UICollectionViewDelegate, 
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CellCollectionViewCell
         
-        cell.cellName.text = cellTotal[indexPath.item]
-        cell.readerImage.image = UIImage(named: cellReaders[indexPath.item])
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            cell.cellName.text = self.cellTotal[indexPath.item]
+            cell.readerImage.image = UIImage(named: self.cellReaders[indexPath.item])
+        })
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
-//        if cellTotal[indexPath.row] == self.authMinistry && self.authPosition == "셀장" {
-//            self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
-//        } else if self.authMinistry == "목사님" || self.authMinistry == "간사님" || self.authMinistry == "부장집사님" {
-//            self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
-//        } else {
-//            let alert = UIAlertController(title: "접근 권한이 없습니다.", message: "", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default))
-//            self.present(alert, animated: true, completion: nil)
-//        }
+
+            if cellTotal[indexPath.row] == self.authMinistry && self.authPosition == "셀장" {
+                self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
+            } else if self.authMinistry == "목사님" || self.authMinistry == "간사님" || self.authMinistry == "부장집사님" {
+                self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
+            } else {
+                let alert = UIAlertController(title: "접근 권한이 없습니다.", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default))
+                self.present(alert, animated: true, completion: nil)
+            }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
@@ -114,7 +103,4 @@ extension CellCollectionViewController {
         return "CELL 😘"
     }
     
-    //    func subtitle(for titleStackView: TitleStackView) -> String? {
-    //        return nil
-    //    }
 }
