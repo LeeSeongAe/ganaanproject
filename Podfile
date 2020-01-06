@@ -27,4 +27,5 @@ target 'Project1' do
   pod 'SDWebImage', :inhibit_warnings => true
   pod 'CryptoSwift', :inhibit_warnings => true
   pod 'Parchment', :inhibit_warnings => true
+  pod 'ZoomImageView', :inhibit_warnings => true
 end

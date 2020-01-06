@@ -67,6 +67,7 @@ class ViewController: UIViewController, TitleStackViewDataSource {
         currentUserCheck()
         
         setupIntentsForSiri()
+        
     }
     
     func setupIntentsForSiri() {

@@ -119,6 +119,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
         if let imageEntities = imageEntities, imageEntities.count > indexPath.row {
             let imageEntity = imageEntities[indexPath.item]
             if let urlString = imageEntity.url {
+                
                 albumCell.ganaanImage?.sd_setImage(with: URL(string: urlString), completed: nil)
             }
         }
