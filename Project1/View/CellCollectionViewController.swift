@@ -20,6 +20,8 @@ class CellCollectionViewController: UIViewController, UICollectionViewDelegate, 
     var authMinistry:String = ""
     var authPosition:String = ""
     
+    var isLoading = false
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var titleStackView: TitleStackView!
     
@@ -65,18 +67,24 @@ class CellCollectionViewController: UIViewController, UICollectionViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        isLoading = true
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CellCollectionViewCell
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
             cell.cellName.text = self.cellTotal[indexPath.item]
             cell.readerImage.image = UIImage(named: self.cellReaders[indexPath.item])
+            self.isLoading = false
         })
-        
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
+        guard !isLoading else {
+            return
+        }
             if cellTotal[indexPath.row] == self.authMinistry && self.authPosition == "셀장" {
                 self.performSegue(withIdentifier: "CellCheckCell", sender: cellTotal[indexPath.row])
             } else if self.authMinistry == "목사님" || self.authMinistry == "간사님" || self.authMinistry == "부장집사님" {
