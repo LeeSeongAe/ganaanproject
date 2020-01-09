@@ -35,6 +35,7 @@
 		AF50A5492338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50A5482338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift */; };
 		AF62AB5F22A657AD009BF162 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62AB5E22A657AD009BF162 /* NavigationView.swift */; };
 		AF62AB6122A657CB009BF162 /* PhotoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62AB6022A657CB009BF162 /* PhotoStackView.swift */; };
+		AF63472023C3081A00959F98 /* GanaanYouthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63471F23C3081A00959F98 /* GanaanYouthUITests.swift */; };
 		AF6AA44C2366CD6C00763694 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6AA44B2366CD6C00763694 /* CurrentUser.swift */; };
 		AF72E5C3232F83E400667B03 /* AlbumEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C2232F83E400667B03 /* AlbumEntity.swift */; };
 		AF72E5C5232F85A700667B03 /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72E5C4232F85A700667B03 /* AlbumService.swift */; };
@@ -87,6 +88,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = AF2487642384FCDC002708B1;
 			remoteInfo = SiriStart;
+		};
+		AF63472223C3081A00959F98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF1B0AB0227AE65F0022DE0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF1B0AB7227AE65F0022DE0E;
+			remoteInfo = Project1;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -145,6 +153,9 @@
 		AF50A5482338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumCollectionViewController+FlowLayoutDelegate.swift"; sourceTree = "<group>"; };
 		AF62AB5E22A657AD009BF162 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		AF62AB6022A657CB009BF162 /* PhotoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStackView.swift; sourceTree = "<group>"; };
+		AF63471D23C3081A00959F98 /* GanaanYouthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GanaanYouthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF63471F23C3081A00959F98 /* GanaanYouthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanaanYouthUITests.swift; sourceTree = "<group>"; };
+		AF63472123C3081A00959F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF6AA44B2366CD6C00763694 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		AF72E5C2232F83E400667B03 /* AlbumEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntity.swift; sourceTree = "<group>"; };
 		AF72E5C4232F85A700667B03 /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
@@ -213,6 +224,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF63471A23C3081A00959F98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -234,6 +252,7 @@
 				AF24874A2384F7EF002708B1 /* IntentsUI */,
 				AF2487662384FCDC002708B1 /* SiriStart */,
 				AF2487702384FCDC002708B1 /* SiriStartUI */,
+				AF63471E23C3081A00959F98 /* GanaanYouthUITests */,
 				AF1B0AB9227AE65F0022DE0E /* Products */,
 				942D5A27B7AF3EEE94F5505E /* Pods */,
 				BCD5E697934DEFAEFF3AC7FB /* Frameworks */,
@@ -246,6 +265,7 @@
 				AF1B0AB8227AE65F0022DE0E /* GanaanYouth.app */,
 				AF2487652384FCDC002708B1 /* SiriStart.appex */,
 				AF24876E2384FCDC002708B1 /* SiriStartUI.appex */,
+				AF63471D23C3081A00959F98 /* GanaanYouthUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -362,6 +382,15 @@
 				AFA759B4230F84A300F73E53 /* TitleStackView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		AF63471E23C3081A00959F98 /* GanaanYouthUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF63471F23C3081A00959F98 /* GanaanYouthUITests.swift */,
+				AF63472123C3081A00959F98 /* Info.plist */,
+			);
+			path = GanaanYouthUITests;
 			sourceTree = "<group>";
 		};
 		AF72E5C1232F83AE00667B03 /* Album */ = {
@@ -489,13 +518,31 @@
 			productReference = AF24876E2384FCDC002708B1 /* SiriStartUI.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		AF63471C23C3081A00959F98 /* GanaanYouthUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF63472623C3081A00959F98 /* Build configuration list for PBXNativeTarget "GanaanYouthUITests" */;
+			buildPhases = (
+				AF63471923C3081A00959F98 /* Sources */,
+				AF63471A23C3081A00959F98 /* Frameworks */,
+				AF63471B23C3081A00959F98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF63472323C3081A00959F98 /* PBXTargetDependency */,
+			);
+			name = GanaanYouthUITests;
+			productName = GanaanYouthUITests;
+			productReference = AF63471D23C3081A00959F98 /* GanaanYouthUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AF1B0AB0227AE65F0022DE0E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Yujinrobot;
 				TargetAttributes = {
@@ -508,6 +555,10 @@
 					};
 					AF24876D2384FCDC002708B1 = {
 						CreatedOnToolsVersion = 11.2.1;
+					};
+					AF63471C23C3081A00959F98 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = AF1B0AB7227AE65F0022DE0E;
 					};
 				};
 			};
@@ -527,6 +578,7 @@
 				AF1B0AB7227AE65F0022DE0E /* Project1 */,
 				AF2487642384FCDC002708B1 /* SiriStart */,
 				AF24876D2384FCDC002708B1 /* SiriStartUI */,
+				AF63471C23C3081A00959F98 /* GanaanYouthUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -558,6 +610,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF2487752384FCDC002708B1 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF63471B23C3081A00959F98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +737,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF63471923C3081A00959F98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF63472023C3081A00959F98 /* GanaanYouthUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -690,6 +757,11 @@
 			isa = PBXTargetDependency;
 			target = AF2487642384FCDC002708B1 /* SiriStart */;
 			targetProxy = AF24877A2384FCDC002708B1 /* PBXContainerItemProxy */;
+		};
+		AF63472323C3081A00959F98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF1B0AB7227AE65F0022DE0E /* Project1 */;
+			targetProxy = AF63472223C3081A00959F98 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -983,6 +1055,46 @@
 			};
 			name = Release;
 		};
+		AF63472423C3081A00959F98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFU5BM2782;
+				INFOPLIST_FILE = GanaanYouthUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seongae.ganaan.dev.GanaanYouthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Project1;
+			};
+			name = Debug;
+		};
+		AF63472523C3081A00959F98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFU5BM2782;
+				INFOPLIST_FILE = GanaanYouthUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seongae.ganaan.dev.GanaanYouthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Project1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1018,6 +1130,15 @@
 			buildConfigurations = (
 				AF2487812384FCDC002708B1 /* Debug */,
 				AF2487822384FCDC002708B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AF63472623C3081A00959F98 /* Build configuration list for PBXNativeTarget "GanaanYouthUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF63472423C3081A00959F98 /* Debug */,
+				AF63472523C3081A00959F98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
