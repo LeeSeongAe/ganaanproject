@@ -17,13 +17,6 @@
 		AF1B0AD4227D33A80022DE0E /* CellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B0AD3227D33A80022DE0E /* CellCollectionViewCell.swift */; };
 		AF1B0AD6227D3CBC0022DE0E /* CellCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B0AD5227D3CBC0022DE0E /* CellCollectionViewController.swift */; };
 		AF1B0AD8227D4E810022DE0E /* CellCheckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B0AD7227D4E810022DE0E /* CellCheckTableViewController.swift */; };
-		AF2487682384FCDC002708B1 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2487672384FCDC002708B1 /* IntentHandler.swift */; };
-		AF24876F2384FCDC002708B1 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2487482384F7EF002708B1 /* IntentsUI.framework */; };
-		AF2487722384FCDC002708B1 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2487712384FCDC002708B1 /* IntentViewController.swift */; };
-		AF2487752384FCDC002708B1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2487732384FCDC002708B1 /* MainInterface.storyboard */; };
-		AF2487792384FCDC002708B1 /* SiriStartUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF24876E2384FCDC002708B1 /* SiriStartUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		AF24877C2384FCDC002708B1 /* SiriStart.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF2487652384FCDC002708B1 /* SiriStart.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		AF2487842384FE4E002708B1 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = AF2487832384FE4E002708B1 /* Intents.intentdefinition */; };
 		AF372C7222AA4CC400749C17 /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF372C7122AA4CC400749C17 /* IntroduceViewController.swift */; };
 		AF372C7422AA4CE000749C17 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF372C7322AA4CE000749C17 /* ScheduleViewController.swift */; };
 		AF372C7622AA4CF600749C17 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF372C7522AA4CF600749C17 /* PhotoViewController.swift */; };
@@ -75,20 +68,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AF2487772384FCDC002708B1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AF1B0AB0227AE65F0022DE0E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AF24876D2384FCDC002708B1;
-			remoteInfo = SiriStartUI;
-		};
-		AF24877A2384FCDC002708B1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AF1B0AB0227AE65F0022DE0E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AF2487642384FCDC002708B1;
-			remoteInfo = SiriStart;
-		};
 		AF63472223C3081A00959F98 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF1B0AB0227AE65F0022DE0E /* Project object */;
@@ -105,8 +84,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				AF24877C2384FCDC002708B1 /* SiriStart.appex in Embed App Extensions */,
-				AF2487792384FCDC002708B1 /* SiriStartUI.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,22 +103,9 @@
 		AF1B0AD3227D33A80022DE0E /* CellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF1B0AD5227D3CBC0022DE0E /* CellCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionViewController.swift; sourceTree = "<group>"; };
 		AF1B0AD7227D4E810022DE0E /* CellCheckTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCheckTableViewController.swift; sourceTree = "<group>"; };
-		AF2487402384F7EF002708B1 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
-		AF2487422384F7EF002708B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF2487482384F7EF002708B1 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
-		AF24874B2384F7EF002708B1 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
-		AF24874E2384F7EF002708B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		AF2487502384F7EF002708B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF24875E2384F85D002708B1 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		AF2487602384F877002708B1 /* GanaanYouthRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GanaanYouthRelease.entitlements; sourceTree = "<group>"; };
-		AF2487652384FCDC002708B1 /* SiriStart.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriStart.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF2487672384FCDC002708B1 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
-		AF2487692384FCDC002708B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF24876E2384FCDC002708B1 /* SiriStartUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriStartUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF2487712384FCDC002708B1 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
-		AF2487742384FCDC002708B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		AF2487762384FCDC002708B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF2487832384FE4E002708B1 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		AF372C7122AA4CC400749C17 /* IntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
 		AF372C7322AA4CE000749C17 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		AF372C7522AA4CF600749C17 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -209,21 +173,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF2487622384FCDC002708B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF24876B2384FCDC002708B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AF24876F2384FCDC002708B1 /* IntentsUI.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AF63471A23C3081A00959F98 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,12 +195,7 @@
 		AF1B0AAF227AE65F0022DE0E = {
 			isa = PBXGroup;
 			children = (
-				AF2487832384FE4E002708B1 /* Intents.intentdefinition */,
 				AF1B0ABA227AE65F0022DE0E /* Project1 */,
-				AF24873F2384F7EF002708B1 /* Intents */,
-				AF24874A2384F7EF002708B1 /* IntentsUI */,
-				AF2487662384FCDC002708B1 /* SiriStart */,
-				AF2487702384FCDC002708B1 /* SiriStartUI */,
 				AF63471E23C3081A00959F98 /* GanaanYouthUITests */,
 				AF1B0AB9227AE65F0022DE0E /* Products */,
 				942D5A27B7AF3EEE94F5505E /* Pods */,
@@ -263,8 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				AF1B0AB8227AE65F0022DE0E /* GanaanYouth.app */,
-				AF2487652384FCDC002708B1 /* SiriStart.appex */,
-				AF24876E2384FCDC002708B1 /* SiriStartUI.appex */,
 				AF63471D23C3081A00959F98 /* GanaanYouthUITests.xctest */,
 			);
 			name = Products;
@@ -334,44 +276,6 @@
 				AF189FFE22C0DA4F00AF287C /* CellContentCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		AF24873F2384F7EF002708B1 /* Intents */ = {
-			isa = PBXGroup;
-			children = (
-				AF2487402384F7EF002708B1 /* IntentHandler.swift */,
-				AF2487422384F7EF002708B1 /* Info.plist */,
-			);
-			path = Intents;
-			sourceTree = "<group>";
-		};
-		AF24874A2384F7EF002708B1 /* IntentsUI */ = {
-			isa = PBXGroup;
-			children = (
-				AF24874B2384F7EF002708B1 /* IntentViewController.swift */,
-				AF24874D2384F7EF002708B1 /* MainInterface.storyboard */,
-				AF2487502384F7EF002708B1 /* Info.plist */,
-			);
-			path = IntentsUI;
-			sourceTree = "<group>";
-		};
-		AF2487662384FCDC002708B1 /* SiriStart */ = {
-			isa = PBXGroup;
-			children = (
-				AF2487672384FCDC002708B1 /* IntentHandler.swift */,
-				AF2487692384FCDC002708B1 /* Info.plist */,
-			);
-			path = SiriStart;
-			sourceTree = "<group>";
-		};
-		AF2487702384FCDC002708B1 /* SiriStartUI */ = {
-			isa = PBXGroup;
-			children = (
-				AF2487712384FCDC002708B1 /* IntentViewController.swift */,
-				AF2487732384FCDC002708B1 /* MainInterface.storyboard */,
-				AF2487762384FCDC002708B1 /* Info.plist */,
-			);
-			path = SiriStartUI;
 			sourceTree = "<group>";
 		};
 		AF62AB5D22A65784009BF162 /* UI */ = {
@@ -476,47 +380,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				AF2487782384FCDC002708B1 /* PBXTargetDependency */,
-				AF24877B2384FCDC002708B1 /* PBXTargetDependency */,
 			);
 			name = Project1;
 			productName = Project1;
 			productReference = AF1B0AB8227AE65F0022DE0E /* GanaanYouth.app */;
 			productType = "com.apple.product-type.application";
-		};
-		AF2487642384FCDC002708B1 /* SiriStart */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AF2487802384FCDC002708B1 /* Build configuration list for PBXNativeTarget "SiriStart" */;
-			buildPhases = (
-				AF2487612384FCDC002708B1 /* Sources */,
-				AF2487622384FCDC002708B1 /* Frameworks */,
-				AF2487632384FCDC002708B1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SiriStart;
-			productName = SiriStart;
-			productReference = AF2487652384FCDC002708B1 /* SiriStart.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		AF24876D2384FCDC002708B1 /* SiriStartUI */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AF24877D2384FCDC002708B1 /* Build configuration list for PBXNativeTarget "SiriStartUI" */;
-			buildPhases = (
-				AF24876A2384FCDC002708B1 /* Sources */,
-				AF24876B2384FCDC002708B1 /* Frameworks */,
-				AF24876C2384FCDC002708B1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SiriStartUI;
-			productName = SiriStartUI;
-			productReference = AF24876E2384FCDC002708B1 /* SiriStartUI.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 		AF63471C23C3081A00959F98 /* GanaanYouthUITests */ = {
 			isa = PBXNativeTarget;
@@ -550,12 +418,6 @@
 						CreatedOnToolsVersion = 10.2;
 						LastSwiftMigration = 1020;
 					};
-					AF2487642384FCDC002708B1 = {
-						CreatedOnToolsVersion = 11.2.1;
-					};
-					AF24876D2384FCDC002708B1 = {
-						CreatedOnToolsVersion = 11.2.1;
-					};
 					AF63471C23C3081A00959F98 = {
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = AF1B0AB7227AE65F0022DE0E;
@@ -576,8 +438,6 @@
 			projectRoot = "";
 			targets = (
 				AF1B0AB7227AE65F0022DE0E /* Project1 */,
-				AF2487642384FCDC002708B1 /* SiriStart */,
-				AF24876D2384FCDC002708B1 /* SiriStartUI */,
 				AF63471C23C3081A00959F98 /* GanaanYouthUITests */,
 			);
 		};
@@ -595,21 +455,6 @@
 				AF1B0AC1227AE65F0022DE0E /* Main.storyboard in Resources */,
 				AF372C7A22AE18D100749C17 /* Join.storyboard in Resources */,
 				AFF6C47922D459BC001E2775 /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF2487632384FCDC002708B1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF24876C2384FCDC002708B1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AF2487752384FCDC002708B1 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,7 +521,6 @@
 				AF1B0ABE227AE65F0022DE0E /* ViewController.swift in Sources */,
 				AF62AB6122A657CB009BF162 /* PhotoStackView.swift in Sources */,
 				AF9C718B2282CFC9002D0DF3 /* MenuViewController.swift in Sources */,
-				AF2487842384FE4E002708B1 /* Intents.intentdefinition in Sources */,
 				AF7505E122DC692F00146091 /* customLabel.swift in Sources */,
 				AFEFC1AE22A627B6005766B1 /* MenuTableViewCell.swift in Sources */,
 				AFEFC1AC22A54F48005766B1 /* JoinViewController.swift in Sources */,
@@ -721,22 +565,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF2487612384FCDC002708B1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AF2487682384FCDC002708B1 /* IntentHandler.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF24876A2384FCDC002708B1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AF2487722384FCDC002708B1 /* IntentViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AF63471923C3081A00959F98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -748,16 +576,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AF2487782384FCDC002708B1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AF24876D2384FCDC002708B1 /* SiriStartUI */;
-			targetProxy = AF2487772384FCDC002708B1 /* PBXContainerItemProxy */;
-		};
-		AF24877B2384FCDC002708B1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AF2487642384FCDC002708B1 /* SiriStart */;
-			targetProxy = AF24877A2384FCDC002708B1 /* PBXContainerItemProxy */;
-		};
 		AF63472323C3081A00959F98 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AF1B0AB7227AE65F0022DE0E /* Project1 */;
@@ -780,22 +598,6 @@
 				AF1B0AC5227AE6610022DE0E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		AF24874D2384F7EF002708B1 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF24874E2384F7EF002708B1 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-		AF2487732384FCDC002708B1 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF2487742384FCDC002708B1 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -925,7 +727,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = DFU5BM2782;
 				INFOPLIST_FILE = Project1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -951,7 +753,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Project1/GanaanYouthRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = DFU5BM2782;
 				INFOPLIST_FILE = Project1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -964,94 +766,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Project1/View/Project1-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		AF24877E2384FCDC002708B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.5;
-				DEVELOPMENT_TEAM = DFU5BM2782;
-				INFOPLIST_FILE = SiriStartUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth.SiriStartUI;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		AF24877F2384FCDC002708B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.5;
-				DEVELOPMENT_TEAM = DFU5BM2782;
-				INFOPLIST_FILE = SiriStartUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth.SiriStartUI;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		AF2487812384FCDC002708B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.5;
-				DEVELOPMENT_TEAM = DFU5BM2782;
-				INFOPLIST_FILE = SiriStart/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth.SiriStart;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		AF2487822384FCDC002708B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.5;
-				DEVELOPMENT_TEAM = DFU5BM2782;
-				INFOPLIST_FILE = SiriStart/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.seongae.ganaan.youth.SiriStart;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1112,24 +826,6 @@
 			buildConfigurations = (
 				AF1B0ACB227AE6610022DE0E /* Debug */,
 				AF1B0ACC227AE6610022DE0E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		AF24877D2384FCDC002708B1 /* Build configuration list for PBXNativeTarget "SiriStartUI" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AF24877E2384FCDC002708B1 /* Debug */,
-				AF24877F2384FCDC002708B1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		AF2487802384FCDC002708B1 /* Build configuration list for PBXNativeTarget "SiriStart" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AF2487812384FCDC002708B1 /* Debug */,
-				AF2487822384FCDC002708B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

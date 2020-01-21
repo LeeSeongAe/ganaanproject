@@ -143,7 +143,6 @@ PODS:
   - SnapKit (4.0.1)
   - SwiftyJSON (5.0.0)
   - TextFieldEffects (1.5.1)
-  - ZoomImageView (0.6.0)
 
 DEPENDENCIES:
   - BSImageView
@@ -166,10 +165,19 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SwiftyJSON
   - TextFieldEffects
-  - ZoomImageView
 
 SPEC REPOS:
-  http://github.com/CocoaPods/Specs.git:
+  https://cdn.cocoapods.org/:
+    - FirebaseAnalytics
+    - FirebaseAuthInterop
+    - FirebaseCore
+    - FirebaseStorage
+    - GoogleUtilities
+    - leveldb-library
+    - nanopb
+    - Protobuf
+    - RxSwift
+  https://github.com/cocoapods/specs.git:
     - BoringSSL-GRPC
     - BSImageView
     - CryptoSwift
@@ -182,11 +190,9 @@ SPEC REPOS:
     - FirebaseInstanceID
     - FirebaseRemoteConfig
     - GoogleAppMeasurement
-    - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
-    - nanopb
     - OpalImagePicker
     - Parchment
     - RxCocoa
@@ -195,18 +201,6 @@ SPEC REPOS:
     - SnapKit
     - SwiftyJSON
     - TextFieldEffects
-  https://cdn.cocoapods.org/:
-    - FirebaseAnalytics
-    - FirebaseAuthInterop
-    - FirebaseCore
-    - FirebaseStorage
-    - GoogleUtilities
-    - leveldb-library
-    - nanopb
-    - Protobuf
-    - RxSwift
-  https://github.com/cocoapods/specs.git:
-    - ZoomImageView
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -241,8 +235,7 @@ SPEC CHECKSUMS:
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
-  ZoomImageView: 2a88d0c10ad30b9a06c8f5660d51623fb32beed5
 
-PODFILE CHECKSUM: 44fe5f51f79e181d9087046da6cfcfeda3c8786a
+PODFILE CHECKSUM: ca8ef69bcf3777673570e6312dd5b72a78fff67c
 
 COCOAPODS: 1.7.5

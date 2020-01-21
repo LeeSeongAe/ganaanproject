@@ -74,25 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = nvc
         window?.makeKeyAndVisible()
     }
-    
-    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        
-        
-    }
-    
-    
-    internal func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping
-        ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        
-        if userActivity.activityType == "com.yujin.scout.siriStart" {
-            print("⭕️")
-        } else if userActivity.activityType == "SiriStartIntent" {
-            print("✅")
-        } else if userActivity.activityType == "com.yujin.scout.ent.SiriShortcutExtension" {
-            print("🛑")
-        }
-        return true
-    }
+
     
 }
 
