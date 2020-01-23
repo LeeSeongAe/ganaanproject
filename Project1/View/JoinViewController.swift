@@ -75,11 +75,6 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        joinName.text = "이성애"
-        joinEmail.text = "lsa@naver.com1"
-        joinPW.text = "12345678"
-        
     }
     
     @objc func dismissKeyboard() {
