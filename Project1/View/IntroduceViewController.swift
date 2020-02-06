@@ -13,7 +13,7 @@ class IntroduceViewController: UIViewController, TitleStackViewDataSource, UITab
     @IBOutlet weak var titleStackView: TitleStackView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    let nameList = ["김지훈 목사님","이새로미 간사님","정현승 집사님","이지애","최수빈","김지원","박해리"]
+    let nameList = ["김지훈 목사님","이새로미 전도사님","정현승 집사님","이지애","최수빈","김지원","박해리"]
     let readersImage:Array = ["목사님.png","간사님.png","집사님.png","지애.png","수빈.png","김지원.png","해리.png"]
     
     override func viewDidLoad() {

@@ -39,8 +39,7 @@ class IntroViewController: UIViewController, TitleStackViewDataSource {
         }
         
         reFreshButton.action = #selector(refreshAction(_:))
-        
-        
+        reFreshButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Courier", size: 15)!], for: .normal)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
