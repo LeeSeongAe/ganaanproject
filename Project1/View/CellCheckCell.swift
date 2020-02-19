@@ -32,6 +32,16 @@ class CellCheckCell: UITableViewCell, UITextViewDelegate {
         super.awakeFromNib()
         // Initialization code
         cellMemStatus.delegate = self
+        let toolbarKeyboard = UIToolbar()
+        toolbarKeyboard.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissKeyboard))
+        toolbarKeyboard.items = [doneButton]
+        toolbarKeyboard.tintColor = .blue
+        cellMemStatus.inputAccessoryView = toolbarKeyboard
+    }
+    
+    @objc func dismissKeyboard() {
+        self.cellMemStatus.endEditing(true)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

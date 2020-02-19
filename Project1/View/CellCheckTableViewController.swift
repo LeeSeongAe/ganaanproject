@@ -55,6 +55,11 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
 
         self.array.removeAll()
         
+        getInitData()
+        
+    }
+    
+    func getInitData() {
         Database.database().reference().child("Cell").child(self.navTitle).observe(.childAdded, with: {(snapshot) in
             print(snapshot.value!)
             print(snapshot.key)
@@ -78,8 +83,6 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
                 self.tableView.reloadData()
             }
         })
-        
-        
     }
     
     

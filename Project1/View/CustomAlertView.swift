@@ -38,13 +38,13 @@ class CustomAlertView: UIViewController, UIImagePickerControllerDelegate, UINavi
     }
     
     @objc func dismissKeyboard() {
-           view.endEditing(true)
-       }
+        view.endEditing(true)
+    }
     
     @objc func keyboardWillShow(_ sender:Notification){
         self.view.frame.origin.y = -150
     }
-        
+    
     @objc func keyboardWillHide(_ sender:Notification){
         self.view.frame.origin.y = 0
     }
@@ -60,7 +60,7 @@ class CustomAlertView: UIViewController, UIImagePickerControllerDelegate, UINavi
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIWindow.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector:
             #selector(keyboardWillShow(_:)), name: UIWindow.keyboardWillShowNotification,
-            object: nil)
+                                             object: nil)
     }
     
     override func viewDidLayoutSubviews() {
