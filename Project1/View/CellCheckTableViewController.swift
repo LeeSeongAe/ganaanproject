@@ -41,6 +41,7 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
     var uidKey : [String] = []
     var uid = Auth.auth().currentUser?.uid
     var profile = ["icon.png"]
+    var keyboardHeight: CGFloat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,9 +91,24 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
         view.endEditing(true)
     }
     
+    @objc func keyboardWillShow(_ sender:Notification){
+        let userInfo: NSDictionary = sender.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        keyboardHeight = keyboardRectangle.height
+    }
+
+    @objc func keyboardWillHide(_ sender:Notification){
+        self.view.frame.origin.y = 0
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         self.titleStackView.reloadData()
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIWindow.keyboardWillHideNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector:
+//            #selector(keyboardWillShow(_:)), name: UIWindow.keyboardWillShowNotification,
+//                                             object: nil)
     }
     
     
@@ -169,6 +185,20 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
         progressbar.stopAnimating()
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let userInfo: NSDictionary = sender.userInfo! as NSDictionary
+//        let keyboardFrame:NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
+//        let keyboardRectangle = keyboardFrame.cgRectValue
+//        let keyboardHeight = keyboardRectangle.height
+        
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 300))
+        return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 300
     }
     
     
