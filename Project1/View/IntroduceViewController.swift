@@ -13,8 +13,9 @@ class IntroduceViewController: UIViewController, TitleStackViewDataSource, UITab
     @IBOutlet weak var titleStackView: TitleStackView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    let nameList = ["김지훈 목사님","이새로미 전도사님","정현승 집사님","이지애","최수빈","김지원","박해리"]
-    let readersImage:Array = ["목사님.png","간사님.png","집사님.png","지애.png","수빈.png","김지원.png","해리.png"]
+    let nameList = ["김지훈","이새로미","정현승","박대현","황숙영","장예원","이성애", "김종혁"]
+    let labelList = ["목사님","전도사님","집사님","회장","부회장","총무","회계","서기"]
+    let readersImage:Array = ["목사님.png","간사님.png","집사님.png","대현.png","숙영.png","예원.png","성애.png", "종혁.png"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,7 @@ class IntroduceViewController: UIViewController, TitleStackViewDataSource, UITab
             return 3
         }
         
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,9 +54,12 @@ class IntroduceViewController: UIViewController, TitleStackViewDataSource, UITab
         if indexPath.section == 0 {
             cell.introduceImage.image = UIImage(named: readersImage[indexPath.row])
             cell.introduceName.text = nameList[indexPath.row]
+            cell.introduceLabel.text = labelList[indexPath.row]
+            
         } else if indexPath.section == 1 {
             cell.introduceImage.image = UIImage(named: readersImage[indexPath.row + 3])
             cell.introduceName.text = nameList[indexPath.row + 3]
+            cell.introduceLabel.text = labelList[indexPath.row + 3]
         }
         
         return cell
@@ -66,8 +70,9 @@ class IntroduceViewController: UIViewController, TitleStackViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20.0
+        return 30.0
     }
+    
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
@@ -80,6 +85,14 @@ class IntroduceViewController: UIViewController, TitleStackViewDataSource, UITab
             return ""
         }
     }
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        
+//        let view = UIView()
+//        view.backgroundColor = .yellow
+//        
+//        return view
+//    }
 
 }
 

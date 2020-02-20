@@ -13,6 +13,7 @@ class IntroduceCell: UITableViewCell {
     @IBOutlet weak var introduceImage: UIImageView!
     @IBOutlet weak var introduceName: customLabel!
     
+    @IBOutlet weak var introduceLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
