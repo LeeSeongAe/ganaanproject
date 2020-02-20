@@ -50,6 +50,7 @@ class DashBoardViewController: UIViewController, UIPageViewControllerDataSource 
         } else {
             deleteImageButton.isEnabled = false
         }
+        
     }
     
     

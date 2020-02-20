@@ -119,8 +119,9 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
         if let imageEntities = imageEntities, imageEntities.count > indexPath.row {
             let imageEntity = imageEntities[indexPath.item]
             if let urlString = imageEntity.url {
-                
+//                let transformer = SDImageResizingTransformer(size: CGSize(width: 1000,height: 1000), scaleMode: .fill)
                 albumCell.ganaanImage?.sd_setImage(with: URL(string: urlString), completed: nil)
+//                albumCell.ganaanImage.sd_setImage(with: URL(string: urlString), placeholderImage: nil, context: [.imageTransformer: transformer])
             }
         }
         albumCell.ganaanImage?.tag = indexPath.item

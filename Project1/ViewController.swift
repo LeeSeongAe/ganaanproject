@@ -118,7 +118,7 @@ class ViewController: UIViewController, TitleStackViewDataSource {
         if (caps) {
             let alert = UIAlertController(title: "공지사항", message: message, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: {(action) in
-                exit(0)
+//                exit(0)
             }))
             self.present(alert, animated: true, completion: nil)
         }

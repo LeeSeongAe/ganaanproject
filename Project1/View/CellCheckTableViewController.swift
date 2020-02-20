@@ -91,14 +91,14 @@ class CellCheckTableViewController: UIViewController, UITableViewDelegate, UITab
         view.endEditing(true)
     }
     
-    @objc func keyboardWillShow(_ sender:Notification){
+    @objc func keyboardWillShow(_ sender:Notification) {
         let userInfo: NSDictionary = sender.userInfo! as NSDictionary
         let keyboardFrame:NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
         let keyboardRectangle = keyboardFrame.cgRectValue
         keyboardHeight = keyboardRectangle.height
     }
 
-    @objc func keyboardWillHide(_ sender:Notification){
+    @objc func keyboardWillHide(_ sender:Notification) {
         self.view.frame.origin.y = 0
     }
     
