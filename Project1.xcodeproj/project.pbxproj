@@ -43,7 +43,6 @@
 		AF7505E322DC75E400146091 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E222DC75E400146091 /* customButton.swift */; };
 		AF7505E522DD8B9700146091 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E422DD8B9700146091 /* CustomAlertView.swift */; };
 		AF7505E722DDCDC900146091 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7505E622DDCDC900146091 /* UserDTO.swift */; };
-		AF8D40C8234EF1F500DC280A /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8D40C7234EF1F500DC280A /* PhotoDetailsViewController.swift */; };
 		AF971F98237A9B9400C54901 /* AuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF971F97237A9B9400C54901 /* AuthDTO.swift */; };
 		AF9C2C82233DEC1E0061C3AC /* slideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C2C81233DEC1E0061C3AC /* slideCell.swift */; };
 		AF9C2C852341D4480061C3AC /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C2C842341D4480061C3AC /* ExternalAccessory.framework */; };
@@ -134,7 +133,6 @@
 		AF7505E222DC75E400146091 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
 		AF7505E422DD8B9700146091 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		AF7505E622DDCDC900146091 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
-		AF8D40C7234EF1F500DC280A /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		AF971F97237A9B9400C54901 /* AuthDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDTO.swift; sourceTree = "<group>"; };
 		AF9C2C81233DEC1E0061C3AC /* slideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slideCell.swift; sourceTree = "<group>"; };
 		AF9C2C832341D4470061C3AC /* Project1Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Project1Release.entitlements; sourceTree = "<group>"; };
@@ -339,7 +337,6 @@
 				AF50A5462338B27600FACE3D /* AlbumCollectionViewController+Delegate.swift */,
 				AF50A5482338B33100FACE3D /* AlbumCollectionViewController+FlowLayoutDelegate.swift */,
 				AFA5C53B23153B650003CA0F /* AlbumCell.swift */,
-				AF8D40C7234EF1F500DC280A /* PhotoDetailsViewController.swift */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -555,7 +552,6 @@
 				AF372C7822AA4D0800749C17 /* QuestionsViewController.swift in Sources */,
 				AF189FFF22C0DA4F00AF287C /* CellContentCell.swift in Sources */,
 				AF7505E722DDCDC900146091 /* UserDTO.swift in Sources */,
-				AF8D40C8234EF1F500DC280A /* PhotoDetailsViewController.swift in Sources */,
 				AFA5C53E232650860003CA0F /* AlbumDTO.swift in Sources */,
 				AF1B0AD6227D3CBC0022DE0E /* CellCollectionViewController.swift in Sources */,
 				AF62AB5F22A657AD009BF162 /* NavigationView.swift in Sources */,
