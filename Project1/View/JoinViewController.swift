@@ -36,6 +36,8 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var selectedLabel1: NSLayoutConstraint!
     @IBOutlet weak var selectedLabel2: NSLayoutConstraint!
     
+    @IBOutlet weak var personalInfo: UITextView!
+    
     var ministryFlag = Int()
     
     let rollMember = ["", "목사님","전도사님","집사님", "요셉1셀","요셉2셀","요셉3셀","요셉4셀","요셉5셀","요셉6셀","요셉7셀","여호수아1셀","여호수아2셀","여호수아3셀","여호수아4셀","여호수아5셀","여호수아6셀","여호수아7셀","갈렙1셀","갈렙2셀", "갈렙3셀장", "갈렙4셀","갈렙5셀", "기타"]
@@ -67,6 +69,16 @@ class JoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         pickerView2Width.constant = setWidth
         selectedLabel1.constant = setWidth
         selectedLabel2.constant = setWidth
+        
+        let stringURL = URL(string: "개인정보처리방침.html")
+        var responseString: String? = nil
+        
+        do {
+            if let stringURL = stringURL {
+                responseString = try String(contentsOf: stringURL, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+            }
+        } catch { }
+        personalInfo.text = responseString
     }
     
     @objc func doneButtonAction() {

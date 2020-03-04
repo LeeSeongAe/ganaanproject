@@ -1,0 +1,32 @@
+body {
+    font-family: HelveticaNeue;
+    color: white;
+    font-size: 10pt;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+ol {
+    counter-reset: item;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+html, body, p, ol, ul, li, strong {
+    background-color: #2c2f30;
+    color: #bfbfbf;
+    font-family: "HelveticaNeue-Light", sans-serif;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 25px;
+    margin: 0;
+    padding: 0;
+}
+
